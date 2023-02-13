@@ -23,9 +23,9 @@
             </div>
 
             <div class="nav-bar-links-toggle-container">
-                <div class="up"></div>
-                <div class="middle"></div>
-                <div class="down"></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </nav>
 
@@ -42,5 +42,38 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const toggleBtn = document.querySelector('.nav-bar-links-toggle-container');
+        const navBarLinksContainer = document.querySelector('.nav-bar-links-container');
+        const navBarLinks = document.querySelectorAll('.nav-bar-links-container .link');
+
+        toggleBtn.addEventListener('click', () => {
+            toggleBtn.classList.toggle('active');
+            navBarLinksContainer.classList.toggle('show');
+        });
+
+        navBarLinks.forEach((navBarLink) => {
+            navBarLink.addEventListener('mouseover', () => {
+                decreaseOpacity();
+                navBarLink.style.opacity = 1;
+            });
+            navBarLink.addEventListener('mouseout', () => {
+                normalOpacity();
+            });
+        });
+
+        const decreaseOpacity = () => {
+            navBarLinks.forEach((navBarLink) => {
+                navBarLink.style.opacity = 0.5;
+            });
+        };
+
+        const normalOpacity = () => {
+            navBarLinks.forEach((navBarLink) => {
+                navBarLink.style.opacity = 1;
+        });
+    };
+    </script>
 </body>
 </html>
