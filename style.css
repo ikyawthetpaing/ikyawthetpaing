@@ -23,7 +23,7 @@
 .nav-bar-container {
     width: 100vw;
     height: var(--nav-bar-height);
-    padding: 0px 40px;
+    padding: 0px var(--primary-padding-side);
     position: fixed;
     z-index: 999;
 
@@ -50,7 +50,18 @@
 }
 
 .nav-bar-links-toggle-container {
+    width: 30px;
+    height: calc(var(--nav-bar-height) / 2);
     display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav-bar-links-toggle-container div {
+    width: inherit;
+    height: calc((100% / 3) - 3px);
+    background-color: #393939;
+
 }
 
 .intro-container {
@@ -64,57 +75,68 @@
 }
 
 .intro-content-container {
-    width: 100%;
+    text-transform: uppercase;
+    color: var(--primary-text-color);
 }
 
 .intro-content-hello {
     font-size: 3vw;
-    text-transform: uppercase;
-    color: var(--primary-text-color);
 }
 
 
 .intro-content-name {
     font-size: 5vw;
     font-weight: 1000;
-    text-transform: uppercase;
-    color: var(--primary-text-color);
     margin-left: -4px;
     margin-bottom: 1rem;
 }
 
 .intro-content-carrier {
     font-size: 1.7vw;
-    text-transform: uppercase;
-    color: var(--primary-text-color);
 }
 
 .intro-content-msg {
     margin-top: 3rem;
     font-size: 1.3vw;
-    color: var(--primary-text-color);
+    text-transform: none;
     opacity: 0.7;
     max-width: 40vw;
 }
 
 .intro-image-container {
-    background-color: #000;
+    border-bottom: 5px solid #000;
 }
 
-.intro-image {
+.intro-image-container .intro-image {
     width: 40vw;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 912px) {
+    :root {
+        --primary-padding-side: 10px;
+    }
+
     .nav-bar-links-container {
         display: none;
     }
 
+    .nav-bar-links-toggle-container {
+        display: flex;
+    }
+
     .intro-container {
+        height: max-content;
+        margin-top: calc(var(--primary-padding-side) + var(--nav-bar-height));
         flex-direction: column;
     }
 
+    .intro-content-container {
+        width: 100%;
+        padding-left: 8vw;
+    }
+
     .intro-content-hello {
+        margin-top: 2em;
         font-size: 5vw;
     }
 
@@ -133,7 +155,12 @@
         max-width: 60vw;
     }
 
-    .intro-image {
-        width: 70vw;
+    .intro-image-container {
+        width: 100%;
+        border-bottom: 2px solid #000;
+    }
+
+    .intro-image-container .intro-image {
+        width: inherit;
     }
 }
