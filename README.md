@@ -29,8 +29,7 @@ Welcome to my GitHub profile! I'm Kyaw Thet Paing, a software developer with a p
 
 ## Experience
 
-- Software Developer at XYZ Company (2021 - Present)
-- Software Developer Intern at ABC Company (2020 - 2021)
+- None
 
 ## Education
 
