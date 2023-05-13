@@ -1,16 +1,45 @@
-### Hi there 👋
+# Hello there! 👋
 
-<!--
-**ikyawthetpaing/ikyawthetpaing** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Welcome to my GitHub profile! I'm Kyaw Thet Paing, a software developer with a passion for creating efficient and elegant solutions for complex problems.
 
-Here are some ideas to get you started:
+## About Me
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- 🔭 I’m currently working on developing a web application for managing inventory
+- 🌱 I’m currently learning React and GraphQL
+- 💬 Ask me about web development, REST API design, and database management
+- 📫 How to reach me: kyawthetpaing@gmail.com
+- 😄 Pronouns: he/him
+
+## Skills
+
+- Proficient in HTML/CSS/JavaScript
+- Experience with Node.js, Express, and MongoDB
+- Familiar with React, GraphQL, and Docker
+
+## Projects
+
+- [Inventory Management System](https://github.com/kyawthetpaing/inventory-management-system)
+- [Weather App](https://github.com/kyawthetpaing/weather-app)
+- [Task Manager](https://github.com/kyawthetpaing/task-manager)
+
+## Certifications
+
+- MongoDB for Node.js Developers - MongoDB University
+- JavaScript Algorithms and Data Structures Certification - freeCodeCamp
+
+## Experience
+
+- Software Developer at XYZ Company (2021 - Present)
+- Software Developer Intern at ABC Company (2020 - 2021)
+
+## Education
+
+- Bachelor of Science in Computer Science from University of Computer Studies, Yangon (2017 - 2021)
+
+## Interests
+
+- Reading about new web technologies
+- Learning new programming languages
+- Playing video games
+
+Thanks for stopping by! Feel free to explore my repositories and don't hesitate to contact me if you have any questions or just want to say hi.
