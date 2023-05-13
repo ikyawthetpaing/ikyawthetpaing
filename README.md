@@ -6,8 +6,8 @@ Welcome to my GitHub profile! I'm Kyaw Thet Paing, a software developer with a p
 
 - 🔭 I’m currently working on developing a web application for managing inventory
 - 🌱 I’m currently learning React and GraphQL
-- 💬 Ask me about web development, REST API design, and database management
-- 📫 How to reach me: kyawthetpaing@gmail.com
+- 💬 Ask me about software development, REST API design and database management
+- 📫 How to reach me: ikyawthetpaing@gmail.com
 - 😄 Pronouns: he/him
 
 ## Skills
