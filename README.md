@@ -12,9 +12,9 @@ Welcome to my GitHub profile! I'm Kyaw Thet Paing, a software developer with a p
 
 ## Skills
 
-- Proficient in HTML/CSS/JavaScript
+- Proficient in C/C++ and Rust
 - Experience with Node.js, Express, and MongoDB
-- Familiar with React, GraphQL, and Docker
+- Familiar with NextJS, GraphQL, and Docker
 
 ## Projects
 
