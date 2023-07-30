@@ -18,7 +18,7 @@ Welcome to my GitHub profile! I'm Kyaw Thet Paing, a software developer with a p
 
 ## Projects
 
-- [Inventory Management System](https://github.com/kyawthetpaing/inventory-management-system)
+- [Voxellax](https://github.com/kyawthetpaing/voxellax) | [View Website](https://voxellax.vercel.app)
 - [Weather App](https://github.com/kyawthetpaing/weather-app)
 - [Task Manager](https://github.com/kyawthetpaing/task-manager)
 
