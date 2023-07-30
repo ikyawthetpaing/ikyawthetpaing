@@ -33,7 +33,7 @@ Welcome to my GitHub profile! I'm Kyaw Thet Paing, a software developer with a p
 
 ## Education
 
-- Bachelor of Science in Computer Science from University of Computer Studies, Yangon (2017 - 2021)
+- Finished High School (2020)
 
 ## Interests
 
