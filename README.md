@@ -18,7 +18,7 @@ Welcome to my GitHub profile! I'm Kyaw Thet Paing, a software developer with a p
 
 ## Projects
 
-- [Voxellax](https://github.com/kyawthetpaing/voxellax) - Voxellax is a comprehensive e-commerce platform built specifically for digital products. With a sleek and user-friendly interface, Voxellax allows users to discover, purchase, and manage a wide range of digital products conveniently. 
+- [Voxellax](https://github.com/ikyawthetpaing/voxellax) - Voxellax is a comprehensive e-commerce platform built specifically for digital products. With a sleek and user-friendly interface, Voxellax allows users to discover, purchase, and manage a wide range of digital products conveniently. 
 - [Weather App](https://github.com/kyawthetpaing/weather-app)
 - [Task Manager](https://github.com/kyawthetpaing/task-manager)
 
