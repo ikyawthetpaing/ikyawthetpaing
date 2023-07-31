@@ -24,7 +24,7 @@ Welcome to my GitHub profile! I'm Kyaw Thet Paing, a software developer with a p
 
 ## Certifications
 
-- MongoDB for Node.js Developers - MongoDB University
+- [Elements of AI](https://certificates.mooc.fi/validate/dxpxs6ao8gl) - University of Helsinki
 - JavaScript Algorithms and Data Structures Certification - freeCodeCamp
 
 ## Experience
