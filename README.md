@@ -18,8 +18,10 @@ Welcome to my GitHub profile! I'm Kyaw Thet Paing, a software developer with a p
 
 ## Projects
 
-- [Voxellax](https://github.com/ikyawthetpaing/voxellax) - Voxellax is a comprehensive e-commerce platform built specifically for digital products. With a sleek and user-friendly interface, Voxellax allows users to discover, purchase, and manage a wide range of digital products conveniently. 
+- [Voxellax](https://github.com/ikyawthetpaing/voxellax) - Voxellax is a comprehensive e-commerce platform built specifically for digital products. With a sleek and user-friendly interface, Voxellax allows users to discover, purchase, and manage a wide range of digital products conveniently.
+  
 - [Nexus](https://github.com/ikyawthetpaing/nexus.git) - Nexus is a cutting-edge social media application, meticulously crafted by a solo developer, bringing you the latest in React Native and Firebase technology. With Nexus, connect with friends, share your life's moments, and explore a world of seamless interaction.
+  
 - [Nova-API](https://github.com/ikyawthetpaing/nova-api.git) - Nova-API is dedicated to developing and maintaining the API infrastructure that powers our innovative services. With a focus on scalability, performance, and user-friendly interactions, Nova-API is the backbone of our platform, enabling seamless communication between clients and our backend services. 
 
 ## Certifications
