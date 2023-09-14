@@ -26,8 +26,9 @@ Welcome to my GitHub profile! I'm Kyaw Thet Paing, a software developer with a p
 
 ## Certifications
 
+- [Responsive Web Design](https://www.freecodecamp.org/certification/ikyawthetpaing/responsive-web-design) - freeCodeCamp
+- [JavaScript Algorithms and Data Structures Certification](https://www.freecodecamp.org/certification/ikyawthetpaing/javascript-algorithms-and-data-structures) - freeCodeCamp
 - [Elements of AI](https://certificates.mooc.fi/validate/dxpxs6ao8gl) - University of Helsinki
-- JavaScript Algorithms and Data Structures Certification - freeCodeCamp
 
 ## Experience
 
