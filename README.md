@@ -1,20 +1,26 @@
 # Hello there! 👋
 
-Welcome to my GitHub profile! I'm Kyaw Thet Paing, a software developer with a passion for creating efficient and elegant solutions for complex problems.
+Welcome to my GitHub profile! I'm Kyaw Thet Paing, a passionate software developer with a knack for turning coffee into code. I thrive on turning complex problems into elegant solutions and believe in the power of clean, efficient, and well-documented code.
 
 ## About Me
 
+- 🎯 My goal here is to collaborate, learn, and build amazing things together. Feel free to explore my repositories, open issues, and let's connect! 
+- 📫 You can reach me at ikyawthetpaing@outlook.com or connect with me on [X(Twitter)](https://twitter.com/ikyawthetpaing), where I share my insights, experiences, and occasional tech memes.
+- 🎨 When I'm not immersed in code, you can often find me exploring the realms of art and creativity, because life is all about striking that perfect balance, don't you think?
+- 💬 Ask me about software development, REST API design and database management
+- 👉 Ready to embark on a coding adventure? Let's write some code that changes the world, one commit at a time! 🌍✨
 - 🔭 I’m currently working on developing a web application for managing inventory
 - 🌱 I’m currently learning React and GraphQL
-- 💬 Ask me about software development, REST API design and database management
-- 📫 How to reach me: ikyawthetpaing@outlook.com
+- 🌟 Open-source enthusiast: I love giving back to the community, and you'll often find me contributing to projects that make the world a better place.
+- 📚 Lifelong learner: I'm on a never-ending quest to expand my knowledge, whether it's through books, online courses, or hands-on experimentation.
+- 🔧 My toolbox: Python, JavaScript, React, Node.js, and an ever-growing list of technologies that I'm constantly exploring.
 - 😄 Pronouns: he/him
 
 ## Skills
 
 - Proficient in C/C++ and Rust
 - Experience with Node.js, Express, and MongoDB
-- Familiar with NextJS, GraphQL, and Docker
+- Familiar with NextJS, GraphQL, and Flutter
 
 ## Projects
 
@@ -29,14 +35,6 @@ Welcome to my GitHub profile! I'm Kyaw Thet Paing, a software developer with a p
 - [Responsive Web Design](https://www.freecodecamp.org/certification/ikyawthetpaing/responsive-web-design) - freeCodeCamp
 - [JavaScript Algorithms and Data Structures Certification](https://www.freecodecamp.org/certification/ikyawthetpaing/javascript-algorithms-and-data-structures) - freeCodeCamp
 - [Elements of AI](https://certificates.mooc.fi/validate/dxpxs6ao8gl) - University of Helsinki
-
-## Experience
-
-- None
-
-## Education
-
-- Finished High School (2020)
 
 ## Interests
 
