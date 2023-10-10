@@ -26,6 +26,7 @@ export type BaseConfig = {
 export type NavItem = {
   title: string;
   href: string;
+  disabled?: boolean;
 };
 
 type Icon = keyof typeof Icons;
@@ -43,10 +44,17 @@ type Service = {
 
 type BigBrand = {
   name: string;
-  image: string;
+  icon: Icon;
 };
 
 type FeaturedProject = {
   name: string;
   description: string;
+  icon: Icon;
+  thumbnail: string;
+  githubLink: string;
+  preview: {
+    label: string;
+    href: string;
+  };
 };

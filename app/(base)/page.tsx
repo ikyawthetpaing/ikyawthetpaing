@@ -1,4 +1,5 @@
-import { Icons } from "@/components/icons";
+import { Icon, Icons } from "@/components/icons";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { baseConfig } from "@/config/base";
 import { cn } from "@/lib/utils";
@@ -53,6 +54,7 @@ export default function Home() {
                 alt="Kyaw Thet Paing: Software Developer Sketch Art Image"
                 width={9999}
                 height={9999}
+                priority
                 className="object-cover w-full h-full"
               />
             </div>
@@ -63,39 +65,34 @@ export default function Home() {
         <div className="flex gap-12">
           <div className="flex flex-1">
             <ul className="flex flex-col gap-12 w-full">
-              {baseConfig.services.map((service, index) => {
-                const Icon = Icons[service.icon];
-                return (
-                  <li key={index}>
-                    <div
-                      className={cn(
-                        "flex",
-                        index % 2 === 0 ? "justify-end" : "justify-start"
-                      )}
-                    >
-                      <div className="p-6 sm:px-12 sm:py-8 bg-accent rounded-3xl w-full sm:w-3/4 flex flex-col gap-8">
-                        <div className="flex flex-col gap-4">
-                          <div className="p-4 rounded-full bg-background w-fit">
-                            <Icon className="w-5 h-5" />
-                          </div>
-                          <h2 className="font-medium text-xl">
-                            {service.title}
-                          </h2>
-                          <p className="max-w-lg text-muted-foreground">
-                            {service.description}
-                          </p>
+              {baseConfig.services.map((service, index) => (
+                <li key={index}>
+                  <div
+                    className={cn(
+                      "flex",
+                      index % 2 === 0 ? "justify-end" : "justify-start"
+                    )}
+                  >
+                    <div className="p-6 sm:px-12 sm:py-8 bg-accent rounded-3xl w-full sm:w-3/4 flex flex-col gap-8">
+                      <div className="flex flex-col gap-4">
+                        <div className="p-4 rounded-full bg-background w-fit">
+                          <Icon icon={service.icon} className="w-5 h-5" />
                         </div>
-                        <Link
-                          href={service.href}
-                          className="uppercase text-sm font-medium w-fit hover:underline underline-offset-4"
-                        >
-                          See Projects
-                        </Link>
+                        <h2 className="font-medium text-xl">{service.title}</h2>
+                        <p className="max-w-lg text-muted-foreground">
+                          {service.description}
+                        </p>
                       </div>
+                      <Link
+                        href={service.href}
+                        className="uppercase text-sm font-medium w-fit hover:underline underline-offset-4"
+                      >
+                        See Projects
+                      </Link>
                     </div>
-                  </li>
-                );
-              })}
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
@@ -121,17 +118,10 @@ export default function Home() {
             </p>
           </div>
           <div className="flex justify-center">
-            <ul className="grid grid-cols-2 sm:grid-cols-4 w-fit gap-12">
+            <ul className="grid grid-cols-2 md:grid-cols-4">
               {baseConfig.bigBrands.map((brand, index) => (
-                <li key={index}>
-                  <div className="py-6 px-8 bg-accent rounded-3xl flex flex-col items-center gap-4 w-full h-full">
-                    <img
-                      src={brand.image}
-                      alt={brand.image}
-                      className="w-20 flex-1"
-                    />
-                    <h3 className="font-medium">{brand.name}</h3>
-                  </div>
+                <li key={index} className="px-12 flex-1 flex-shrink-0">
+                  <Icon icon={brand.icon} className="h-24" />
                 </li>
               ))}
             </ul>
@@ -177,14 +167,43 @@ export default function Home() {
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {baseConfig.featuredProjects.map((project, index) => (
               <li key={index} className="flex-1">
-                <div className="p-6 sm:px-12 sm:py-8 bg-accent rounded-3xl">
-                  <div className="flex flex-col gap-4">
-                    <h3 className="text-3xl font-semibold">{project.name}</h3>
-                    <p className="text-muted-foreground">
-                      {project.description}
-                    </p>
+                <div className="bg-accent rounded-3xl border overflow-hidden">
+                  <div className="flex flex-col gap-4 p-6 sm:px-12 sm:py-8 ">
+                    <div className="flex gap-4">
+                      <div>
+                        <div className="p-4 rounded-full bg-background w-fit">
+                          <Icon icon={project.icon} className="w-5 h-5" />
+                        </div>
+                      </div>
+                      <div className="flex gap-4 flex-col">
+                        <div>
+                          <h3 className="text-2xl font-medium">
+                            {project.name}
+                          </h3>
+                          <p className="text-muted-foreground">
+                            {project.description}
+                          </p>
+                        </div>
+                        <div className="flex gap-4">
+                          <Link href={project.preview.href}>
+                            <Badge>{project.preview.label}</Badge>
+                          </Link>
+                          <Link href={project.githubLink}>
+                            <Badge>Code</Badge>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="h-96"></div>
+                  <div>
+                    <Image
+                      src={project.thumbnail}
+                      alt={project.name}
+                      width={9999}
+                      height={9999}
+                      className="w-full"
+                    />
+                  </div>
                 </div>
               </li>
             ))}

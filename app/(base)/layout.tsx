@@ -7,9 +7,9 @@ interface Props {
 
 export default function BaseLayout({ children }: Props) {
   return (
-    <div className="flex min-h-screen flex-col gap-32">
+    <div className="flex min-h-screen flex-col">
       <SiteHeader />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 mb-32 mt-16">{children}</main>
       <SiteFooter />
     </div>
   );

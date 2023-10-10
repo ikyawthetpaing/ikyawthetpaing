@@ -12,7 +12,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   return (
     <header>
-      <div className="container flex items-center justify-between py-8 sm:py-12">
+      <div className="container flex items-center justify-between py-6 sm:py-12">
         <Link href="/" className="flex items-center">
           <Icons.kyax className="h-5" />
         </Link>
@@ -20,9 +20,9 @@ export function SiteHeader() {
           navItems={baseConfig.mainNavItems}
           className="hidden md:flex gap-12"
         />
-        <Button variant="ghost" size="icon" className="md:hidden">
-          <Icons.menu className="w-6 h-6" />
-        </Button>
+        <button className="md:hidden">
+          <Icons.menu className="w-7 h-7" />
+        </button>
       </div>
     </header>
   );

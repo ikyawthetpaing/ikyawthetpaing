@@ -1,4 +1,3 @@
-import { Icons } from "@/components/icons";
 import { BaseConfig } from "@/types";
 
 export const baseConfig: BaseConfig = {
@@ -10,18 +9,22 @@ export const baseConfig: BaseConfig = {
     {
       title: "Blog",
       href: "/blog",
+      disabled: true,
     },
     {
       title: "Projects",
       href: "/projects",
+      disabled: true,
     },
     {
       title: "Contact",
       href: "/contact",
+      disabled: true,
     },
     {
       title: "About",
       href: "/about",
+      disabled: true,
     },
   ],
   socialLinks: [
@@ -67,32 +70,43 @@ export const baseConfig: BaseConfig = {
   bigBrands: [
     {
       name: "Upwork",
-      image:
-        "https://assets-global.website-files.com/603fea6471d9d8559d077603/6092b7514135708162a4be92_Favicon%20256.png",
+      icon: "upwork",
     },
     {
       name: "Fiverr",
-      image:
-        "https://freelogopng.com/images/all_img/1656738037fiverr-icon-png.png",
+      icon: "fiverr",
     },
     {
-      name: "Freelancer",
-      image:
-        "https://seeklogo.com/images/F/freelancer-com-logo-2B5CE1A961-seeklogo.com.png",
+      name: "envato",
+      icon: "envato",
     },
     {
-      name: "Shopify",
-      image: "https://logosandtypes.com/wp-content/uploads/2020/11/shopify.svg",
+      name: "ASUS",
+      icon: "asus",
     },
   ],
   featuredProjects: [
     {
       name: "Voxellax",
-      description: "E-commerce website for digital products.",
+      description: "E-commerce website for selling digital products.",
+      icon: "globe",
+      thumbnail: "/images/projects/voxellax-thumbnail.png",
+      githubLink: "https://github.com/ikyawthetpaing/voxellax",
+      preview: {
+        label: "View",
+        href: "https://voxellax.vercel.app",
+      },
     },
     {
       name: "Nexus",
-      description: "A Twitter-like social media app.",
+      description: "A social media platform resembling Twitter.",
+      icon: "smartphone",
+      thumbnail: "/images/projects/voxellax-thumbnail.png",
+      githubLink: "https://github.com/ikyawthetpaing/nexus",
+      preview: {
+        label: "Download",
+        href: "https://github.com/ikyawthetpaing/nexus/releases/download/v1.0.0/nexus-v1.0.0.apk",
+      },
     },
   ],
 };

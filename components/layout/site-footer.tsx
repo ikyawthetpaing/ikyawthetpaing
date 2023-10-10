@@ -12,12 +12,15 @@ export function SiteFooter() {
         <div className="container flex flex-col items-center gap-8">
           <h2 className="text-xl font-semibold">Stay Connected</h2>
           <div className="text-center flex flex-col gap-2">
-            <h3 className="text-lg text-muted-foreground">San Francisco, CA</h3>
+            <h3 className="text-lg text-muted-foreground">Bangkok, Thailand</h3>
             <Link
               href={"mailto:ikyawthetpaing@gmail.com"}
               className="text-2xl sm:text-3xl font-medium"
             >
               ikyawthetpaing@gmail.com
+            </Link>
+            <Link href="tel:+66937418692" className="text-lg font-light">
+              (+66) 937-418-692
             </Link>
           </div>
           <ul className="flex gap-4">
@@ -36,9 +39,11 @@ export function SiteFooter() {
           </ul>
         </div>
         <div className="container flex justify-between gap-12">
-          <Link href={"/"}>
-            <Icons.kyax className="h-5" />
-          </Link>
+          <div>
+            <Link href={"/"}>
+              <Icons.kyax className="h-5" />
+            </Link>
+          </div>
           <MainNavItems
             navItems={baseConfig.mainNavItems}
             className="flex gap-12 flex-wrap justify-end"
