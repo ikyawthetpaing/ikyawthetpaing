@@ -1,40 +1,5 @@
 import { Icons } from "@/components/icons";
-
-type BaseConfig = {
-  mainNavItems: NavItem[];
-  socialLinks: IconNavItem[];
-  services: Service[];
-  bigBrands: BigBrand[];
-  featuredProjects: FeaturedProject[];
-};
-
-type NavItem = {
-  title: string;
-  href: string;
-};
-
-type Icon = keyof typeof Icons;
-
-type IconNavItem = NavItem & {
-  icon: Icon;
-};
-
-type Service = {
-  title: string;
-  description: string;
-  icon: Icon;
-  href: string;
-};
-
-type BigBrand = {
-  name: string;
-  image: string;
-};
-
-type FeaturedProject = {
-  name: string;
-  description: string;
-};
+import { BaseConfig } from "@/types";
 
 export const baseConfig: BaseConfig = {
   mainNavItems: [

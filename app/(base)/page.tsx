@@ -17,7 +17,7 @@ export default function Home() {
                 return (
                   <li key={index}>
                     <Link href={href} target="_blank">
-                      <Icon className="w-5 h-5 text-foreground" />
+                      <Icon className="w-5 h-5 text-muted-foreground" />
                     </Link>
                   </li>
                 );
@@ -53,7 +53,7 @@ export default function Home() {
                 alt="Kyaw Thet Paing: Software Developer Sketch Art Image"
                 width={9999}
                 height={9999}
-                className="object-cover w-full h-full opacity-5"
+                className="object-cover w-full h-full"
               />
             </div>
           </div>
@@ -138,7 +138,9 @@ export default function Home() {
           </div>
           <div className="flex gap-12 flex-col md:flex-row md:justify-center">
             <div className="flex items-center gap-4">
-              <h3 className="text-6xl font-medium">3</h3>
+              <h3 className="text-6xl font-medium">
+                {new Date().getFullYear() - 2021}
+              </h3>
               <p className="text-muted-foreground">
                 Years
                 <br />
@@ -146,7 +148,7 @@ export default function Home() {
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <h3 className="text-6xl font-medium">102</h3>
+              <h3 className="text-6xl font-medium">73</h3>
               <p className="text-muted-foreground">
                 Satisfied
                 <br />
@@ -154,7 +156,7 @@ export default function Home() {
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <h3 className="text-6xl font-medium">285</h3>
+              <h3 className="text-6xl font-medium">237</h3>
               <p className="text-muted-foreground">
                 Projects Completed In
                 <br />
