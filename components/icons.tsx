@@ -1,10 +1,22 @@
-import { Twitter, Menu, Linkedin, Instagram, LucideProps } from "lucide-react";
+import {
+  Twitter,
+  Linkedin,
+  Instagram,
+  Menu,
+  AppWindow,
+  Smartphone,
+  Globe,
+  LucideProps,
+} from "lucide-react";
 
 export const Icons = {
   twitter: Twitter,
   linkedin: Linkedin,
   instagram: Instagram,
   menu: Menu,
+  appWindow: AppWindow,
+  smartphone: Smartphone,
+  globe: Globe,
   kyax: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

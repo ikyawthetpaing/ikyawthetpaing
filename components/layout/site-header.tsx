@@ -10,7 +10,7 @@ import { Button } from "../ui/button";
 export function SiteHeader() {
   const pathname = usePathname();
   return (
-    <header className="sticky top-0 z-40">
+    <header>
       <div className="container flex items-center justify-between py-8 sm:py-12">
         <Link href="/" className="flex items-center">
           <Icons.kyax className="h-5" />

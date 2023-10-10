@@ -5,7 +5,7 @@ Welcome to my GitHub profile! I'm Kyaw Thet Paing, a passionate software develop
 ## About Me
 
 - 🎯 My goal here is to collaborate, learn, and build amazing things together. Feel free to explore my repositories, open issues, and let's connect!
-- 📫 You can reach me at [ikyawthetpaing@outlook.com](mailto:ikyawthetpaing@gmail.com) or connect with me on [𝕏(Twitter)](https://twitter.com/ikyawthetpaing), where I share my insights, experiences, and occasional tech memes.
+- 📫 You can reach me at [ikyawthetpaing@gmail.com](mailto:ikyawthetpaing@gmail.com) or connect with me on [𝕏(Twitter)](https://twitter.com/ikyawthetpaing), where I share my insights, experiences, and occasional tech memes.
 - 🎨 When I'm not immersed in code, you can often find me exploring the realms of art and creativity, because life is all about striking that perfect balance, don't you think?
 - 💬 Ask me about software development, REST API design and database management
 - 👉 Ready to embark on a coding adventure? Let's write some code that changes the world, one commit at a time! 🌍✨
