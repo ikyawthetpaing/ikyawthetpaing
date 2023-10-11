@@ -11,7 +11,11 @@ export type SiteConfig = {
     github: string;
   };
   authors: Author[];
-  creator: string;
+  creator: {
+    name: string;
+    username: string;
+    email: string;
+  };
   keywords: string[];
 };
 

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: siteConfig.keywords,
   authors: siteConfig.authors,
-  creator: siteConfig.creator,
+  creator: siteConfig.creator.username,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: siteConfig.creator,
+    creator: siteConfig.creator.username,
   },
   icons: {
     icon: "/favicon.ico",

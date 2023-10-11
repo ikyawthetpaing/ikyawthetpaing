@@ -210,6 +210,35 @@ export default function Home() {
           </ul>
         </div>
       </section>
+      <section className="container">
+        <div className="w-full lg:w-3/4 mx-auto">
+          <div>
+            <Image
+              src="/images/pet.png"
+              alt="Pet Image"
+              width={9999}
+              height={9999}
+              className="object-cover w-28 ml-12 translate-y-2"
+            />
+          </div>
+          <div className="p-8 sm:p-12 md:px-24 md:py-24 lg:px-32 bg-accent rounded-3xl">
+            <div className="flex justify-between gap-8 flex-col sm:flex-row">
+              <div className="flex flex-col gap-4 sm:gap-8">
+                <h2 className="text-4xl font-semibold">Work Inquiry</h2>
+                <p className="text-muted-foreground">
+                  Let&apos;s work together and I&apos;ll help you by all my
+                  best.
+                </p>
+              </div>
+              <div className="flex items-center">
+                <Button className="text-xl uppercase px-10 py-8 sm:px-12 sm:py-10 rounded-2xl font-bold min-w-max">
+                  Let&apos;s Chat
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

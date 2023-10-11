@@ -12,19 +12,17 @@ export const baseConfig: BaseConfig = {
       disabled: true,
     },
     {
-      title: "Projects",
-      href: "/projects",
+      title: "Work",
+      href: "/Work",
       disabled: true,
     },
     {
       title: "Contact",
       href: "/contact",
-      disabled: true,
     },
     {
       title: "About",
       href: "/about",
-      disabled: true,
     },
   ],
   socialLinks: [
@@ -90,7 +88,7 @@ export const baseConfig: BaseConfig = {
       name: "Voxellax",
       description: "E-commerce website for selling digital products.",
       icon: "globe",
-      thumbnail: "/images/projects/voxellax-thumbnail.png",
+      thumbnail: "/images/projects/voxellax/thumbnail.png",
       githubLink: "https://github.com/ikyawthetpaing/voxellax",
       preview: {
         label: "View",
@@ -101,7 +99,7 @@ export const baseConfig: BaseConfig = {
       name: "Nexus",
       description: "A social media platform resembling Twitter.",
       icon: "smartphone",
-      thumbnail: "/images/projects/voxellax-thumbnail.png",
+      thumbnail: "/images/projects/nexus/thumbnail.png",
       githubLink: "https://github.com/ikyawthetpaing/nexus",
       preview: {
         label: "Download",

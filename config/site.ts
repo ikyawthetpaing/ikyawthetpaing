@@ -16,7 +16,11 @@ export const siteConfig: SiteConfig = {
   authors: [
     { name: "@ikyawthetpaing", url: "https://twitter.com/ikyawthetpaing" },
   ],
-  creator: "@ikyawthetpaing",
+  creator: {
+    name: "Kyaw Thet Paing",
+    username: "@ikyawthetpaing",
+    email: "ikyawthetpaing@gmail.com",
+  },
   keywords: [
     "Freelance Software Developer",
     "Software Development Services",
