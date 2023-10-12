@@ -1,80 +1,126 @@
-import { siteConfig } from "@/config/site";
+import { Icons } from "@/components/icons";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { creatorConfig } from "@/config/creator";
+import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Explore my journey and expertise in creating robust and impactful software applications.",
+};
 
 export default function AboutPage() {
   return (
     <section className="container flex flex-col gap-8">
-      <div className="flex gap-8 flex-col md:flex-row">
-        <div className="flex-1 flex flex-col gap-8">
-          <h2 className="text-8xl sm:text-9xl font-semibold">About</h2>
-          <h3 className="text-3xl sm:text-4xl uppercase">
-            I`&apos;m Kyaw Thet Paing. A developer, maker and problem solver.
-          </h3>
-          <p>
-            The cusp of art and technology has always fascinated me and
-            I`&apos;ve never been afraid to just jump in and give it a go,
-            whether it`&apos;s Paint, Photoshop, Sketch or CSS. I’ve been
-            designing with computers since the day I first opened Microsoft
-            Paint.
-          </p>
-          <p>
-            Fast forward to 2023 and I’ve tried it all, from Digital Campaign
-            Design and Flash Actionscript to Web Design, Animation, HTML/CSS,
-            No-Code Web Development, Product Design and Product Management.
-            Everything I have done, small or big, has been a vital stepping
-            stone for where I am today.
-          </p>
-          <p>
-            What excites me most about being a Product Designer is being able to
-            design and create things that have purpose and solve real problems.
-            It goes beyond designing buttons and websites and involves having a
-            passion for designing experiences and solutions that help people,
-            whether it`&apos;s helping them make better videos, market
-            themselves online, or buy something online. Leaning into customer
-            insight and understanding their needs, finding the right problems to
-            solve, delivering solutions as quickly as possible, learning from
-            those and then iterating and improving that value over time is the
-            key to great product design.
-          </p>
+      <h2 className="text-3xl font-medium">About Me</h2>
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col sm:flex-row gap-8">
+          <div className="flex-1">
+            <h3 className="text-5xl md:text-6xl lg:text-7xl font-medium">
+              I&apos;m Kyaw Thet Paing. A software developer, creator, and
+              puzzle solver.
+            </h3>
+          </div>
+          <div className="flex flex-col gap-8 flex-1 justify-end">
+            <p className="text-lg">
+              The intersection of art and technology has always intrigued me. I
+              have a fearless approach to exploring this realm, diving into
+              various tools and technologies without hesitation. From my early
+              days with computers, I&apos;ve been captivated by the creative
+              possibilities, continuously experimenting and pushing boundaries
+              in software development.
+            </p>
+            <div className="flex justify-end">
+              <Link
+                href="/contact"
+                className="text-lg hover:underline hover:underline-offset-4 flex gap-2 items-center hover:gap-4 duration-150 transition-all font-medium"
+              >
+                Let&apos;s Chat <Icons.moveRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className="flex-1">
-          <div className="w-full h-fit overflow-hidden rounded-full">
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-accent rounded-3xl flex items-end">
             <Image
               src="/images/landing.png"
               alt="Kyaw Thet Paing: Software Developer Sketch Art Image"
               width={9999}
               height={9999}
               priority
-              className="object-cover w-full h-full"
+              className="h-96 object-contain"
             />
+          </div>
+          <div className="flex flex-col gap-8">
+            <p className="text-lg">
+              Fast forward to {new Date().getFullYear()} and I&apos;ve immersed
+              myself in a variety of technologies, ranging from PHP, NextJS,
+              NodeJS, and Django for web development, to C/C++, Python, and
+              React Native for software development. Every project, whether big
+              or small, has played a pivotal role in shaping my skills and
+              expertise. Each endeavor has been a significant stepping stone,
+              guiding me to where I am in my software development journey today.
+            </p>
+            <p className="text-lg">
+              What excites me as a Software Developer is creating purposeful
+              solutions. It&apos;s not just about writing code, but designing
+              seamless digital experiences that solve real problems. I thrive on
+              user feedback, understanding needs, and refining solutions over
+              time for lasting impact.
+            </p>
+          </div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="flex flex-col gap-8">
+            <p>
+              One of my favorite quotes, attributed to Peter Drucker, guides my
+              work:
+            </p>
+            <p className="text-4xl font-medium">
+              “There is nothing so useless as doing efficiently that which
+              should not be done at all.”
+            </p>
+            <p>
+              This quote deeply resonates with me. I am not interested in
+              creating mere aesthetic illusions. My passion lies in developing
+              software solutions that are purposeful, impactful, and meaningful.
+            </p>
+          </div>
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4">
+              <h3 className="text-2xl font-medium">Experience</h3>
+              <ul>
+                <li className="text-lg">
+                  - 1 year experience in Software Development and Product
+                  Development
+                </li>
+                <li className="text-lg">
+                  - 2 years experience in Digital Design and Web Development
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col gap-4">
+              <h3 className="text-2xl font-medium">Skills</h3>
+              <ul className="flex flex-wrap gap-2">
+                {creatorConfig.skills.map((skill, index) => (
+                  <li key={index}>
+                    <Badge variant="outline" key={index}>
+                      {skill}
+                    </Badge>
+                    {/* <div className="p-2">{skill}</div> */}
+                  </li>
+                ))}
+              </ul>
+              <Button className="w-fit rounded-full px-8 hover:px-12 duration-150 transition-all">
+                My Resume
+              </Button>
+            </div>
           </div>
         </div>
       </div>
-      {/* <h2 className="text-center text-6xl md:text-7xl lg:text-9xl font-semibold uppercase">
-        I`&apos;m {siteConfig.creator.name}.
-      </h2>
-      <div className="flex gap-8 flex-col md:flex-row">
-        <div className="max-w-lg overflow-hidden rounded-full">
-          <Image
-            src="/images/landing.png"
-            alt="Kyaw Thet Paing: Software Developer Sketch Art Image"
-            width={9999}
-            height={9999}
-            priority
-            className="object-cover w-full h-full"
-          />
-        </div>
-        <div className="flex flex-col justify-center gap-12">
-          <h1 className="text-3xl sm:text-5xl font-semibold max-w-xl">
-            I`&apos;m a Software Designer working remotely from Bangkok, Thailand.
-          </h1>
-          <p className="text-xl font-light">
-            Over the past 12+ years, I`&apos;ve worked in various areas of digital
-            design, including front-end development, email, marketing, and app
-            UI/UX. I`&apos;m proud to have worn many hats.
-          </p>
-        </div>
-      </div> */}
     </section>
   );
 }

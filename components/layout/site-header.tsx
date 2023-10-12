@@ -1,15 +1,9 @@
-"use client";
-
 import Link from "next/link";
 import { Icons } from "@/components/icons";
 import { baseConfig } from "@/config/base";
-import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
-import { Button } from "../ui/button";
-import { MainNavItems } from "./main-nav-items";
+import { MainNavItems } from "@/components/layout/main-nav";
 
 export function SiteHeader() {
-  const pathname = usePathname();
   return (
     <header>
       <div className="container flex items-center justify-between py-6 sm:py-12">

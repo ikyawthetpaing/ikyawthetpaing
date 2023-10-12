@@ -1,4 +1,5 @@
 import { Icons } from "@/components/icons";
+import { type } from "os";
 
 export type SiteConfig = {
   name: string;
@@ -11,20 +12,31 @@ export type SiteConfig = {
     github: string;
   };
   authors: Author[];
-  creator: {
-    name: string;
-    username: string;
-    email: string;
-  };
+  creator: string;
   keywords: string[];
 };
 
 export type BaseConfig = {
   mainNavItems: NavItem[];
-  socialLinks: IconNavItem[];
-  services: Service[];
-  bigBrands: BigBrand[];
-  featuredProjects: FeaturedProject[];
+};
+
+type CreatorConfig = {
+  name: string;
+  username: string;
+  email: string;
+  tel: Option;
+  media: {
+    title: string;
+    href: string;
+    icon: Icon;
+  }[];
+  services: { title: string; description: string; icon: Icon; href: string }[];
+  bigClients: {
+    name: string;
+    icon: Icon;
+  }[];
+  featuredProjects: Project[];
+  skills: string[];
 };
 
 export type NavItem = {
@@ -35,23 +47,12 @@ export type NavItem = {
 
 type Icon = keyof typeof Icons;
 
-type IconNavItem = NavItem & {
-  icon: Icon;
+type Option = {
+  label: string;
+  value: string;
 };
 
-type Service = {
-  title: string;
-  description: string;
-  icon: Icon;
-  href: string;
-};
-
-type BigBrand = {
-  name: string;
-  icon: Icon;
-};
-
-type FeaturedProject = {
+type Project = {
   name: string;
   description: string;
   icon: Icon;

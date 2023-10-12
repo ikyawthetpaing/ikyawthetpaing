@@ -1,9 +1,8 @@
 import { baseConfig } from "@/config/base";
-import { Icons } from "../icons";
+import { Icons } from "@/components/icons";
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
-import { cn, getRandomColor } from "@/lib/utils";
-import { MainNavItems } from "./main-nav-items";
+import { MainNavItems } from "@/components/layout/main-nav";
+import { creatorConfig } from "@/config/creator";
 
 export function SiteFooter() {
   return (
@@ -14,21 +13,24 @@ export function SiteFooter() {
           <div className="text-center flex flex-col gap-2">
             <h3 className="text-lg text-muted-foreground">Bangkok, Thailand</h3>
             <Link
-              href={"mailto:ikyawthetpaing@gmail.com"}
+              href={`mailto:${creatorConfig.email}`}
               className="text-2xl sm:text-3xl font-medium"
             >
-              ikyawthetpaing@gmail.com
+              {creatorConfig.email}
             </Link>
-            <Link href="tel:+66937418692" className="text-lg font-light">
-              (+66) 937-418-692
+            <Link
+              href={`tel:${creatorConfig.tel.value}`}
+              className="text-lg font-light"
+            >
+              {creatorConfig.tel.label}
             </Link>
           </div>
           <ul className="flex gap-4">
-            {baseConfig.socialLinks.map((socialLink, index) => {
-              const Icon = Icons[socialLink.icon];
+            {creatorConfig.media.map((media, index) => {
+              const Icon = Icons[media.icon];
               return (
                 <li key={index}>
-                  <Link href={socialLink.href}>
+                  <Link href={media.href}>
                     <div className="bg-accent rounded-full p-4">
                       <Icon className="w-6 h-6 text-muted-foreground" />
                     </div>
@@ -40,7 +42,7 @@ export function SiteFooter() {
         </div>
         <div className="container flex justify-between gap-12">
           <div>
-            <Link href={"/"}>
+            <Link href="/">
               <Icons.kyax className="h-5" />
             </Link>
           </div>
@@ -53,12 +55,12 @@ export function SiteFooter() {
           &copy; {new Date().getFullYear()} ikyawthetpaing. All rights reserved.
         </p>
         <ul className="flex">
-          {new Array(5).fill(null).map((_, index) => {
+          {["#ed5b42", "#f4aa85", "#c3dae0", "#414247"].map((color, index) => {
             return (
               <li
                 key={index}
                 className="flex-1 h-4"
-                style={{ backgroundColor: getRandomColor() }}
+                style={{ backgroundColor: color }}
               ></li>
             );
           })}

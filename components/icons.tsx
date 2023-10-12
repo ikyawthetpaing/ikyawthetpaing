@@ -7,6 +7,7 @@ import {
   AppWindow,
   Smartphone,
   Globe,
+  MoveRight,
   LucideProps,
 } from "lucide-react";
 
@@ -18,6 +19,7 @@ export const Icons = {
   appWindow: AppWindow,
   smartphone: Smartphone,
   globe: Globe,
+  moveRight: MoveRight,
   kyax: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

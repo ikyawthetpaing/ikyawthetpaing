@@ -1,7 +1,7 @@
 import { Icon, Icons } from "@/components/icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { baseConfig } from "@/config/base";
+import { creatorConfig } from "@/config/creator";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,11 +13,11 @@ export default function Home() {
         <div className="flex gap-12">
           <div className="flex flex-col justify-end">
             <ul className="flex flex-col gap-4">
-              {baseConfig.socialLinks.map(({ href, icon }, index) => {
-                const Icon = Icons[icon];
+              {creatorConfig.media.map((media, index) => {
+                const Icon = Icons[media.icon];
                 return (
                   <li key={index}>
-                    <Link href={href} target="_blank">
+                    <Link href={media.href} target="_blank">
                       <Icon className="w-5 h-5 text-muted-foreground" />
                     </Link>
                   </li>
@@ -65,7 +65,7 @@ export default function Home() {
         <div className="flex gap-12">
           <div className="flex flex-1">
             <ul className="flex flex-col gap-12 w-full">
-              {baseConfig.services.map((service, index) => (
+              {creatorConfig.services.map((service, index) => (
                 <li key={index}>
                   <div
                     className={cn(
@@ -119,9 +119,9 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
             <ul className="grid grid-cols-2 md:grid-cols-4">
-              {baseConfig.bigBrands.map((brand, index) => (
+              {creatorConfig.bigClients.map((bigClient, index) => (
                 <li key={index} className="px-12 flex-1 flex-shrink-0">
-                  <Icon icon={brand.icon} className="h-24" />
+                  <Icon icon={bigClient.icon} className="h-24" />
                 </li>
               ))}
             </ul>
@@ -165,7 +165,7 @@ export default function Home() {
             </p>
           </div>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {baseConfig.featuredProjects.map((project, index) => (
+            {creatorConfig.featuredProjects.map((project, index) => (
               <li key={index} className="flex-1">
                 <div className="bg-accent rounded-3xl border overflow-hidden">
                   <div className="flex flex-col gap-4 p-6 sm:px-12 sm:py-8 ">
