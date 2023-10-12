@@ -25,7 +25,7 @@ export default function AboutPage() {
             </h3>
           </div>
           <div className="flex flex-col gap-8 flex-1 justify-end">
-            <p className="text-lg">
+            <p>
               The intersection of art and technology has always intrigued me. I
               have a fearless approach to exploring this realm, diving into
               various tools and technologies without hesitation. From my early
@@ -55,7 +55,7 @@ export default function AboutPage() {
             />
           </div>
           <div className="flex flex-col gap-8">
-            <p className="text-lg">
+            <p>
               Fast forward to {new Date().getFullYear()} and I&apos;ve immersed
               myself in a variety of technologies, ranging from PHP, NextJS,
               NodeJS, and Django for web development, to C/C++, Python, and
@@ -64,7 +64,7 @@ export default function AboutPage() {
               expertise. Each endeavor has been a significant stepping stone,
               guiding me to where I am in my software development journey today.
             </p>
-            <p className="text-lg">
+            <p>
               What excites me as a Software Developer is creating purposeful
               solutions. It&apos;s not just about writing code, but designing
               seamless digital experiences that solve real problems. I thrive on
@@ -93,11 +93,11 @@ export default function AboutPage() {
             <div className="flex flex-col gap-4">
               <h3 className="text-2xl font-medium">Experience</h3>
               <ul>
-                <li className="text-lg">
+                <li>
                   - 1 year experience in Software Development and Product
                   Development
                 </li>
-                <li className="text-lg">
+                <li>
                   - 2 years experience in Digital Design and Web Development
                 </li>
               </ul>
