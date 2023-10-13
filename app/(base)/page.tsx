@@ -1,6 +1,6 @@
 import { Icon, Icons } from "@/components/icons";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { creatorConfig } from "@/config/creator";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -44,8 +44,15 @@ export default function Home() {
               </div>
 
               <div className="flex gap-6">
-                <Button>Let&apos;s Chat</Button>
-                <Button variant="outline">Resume</Button>
+                <Link href="/contact" className={buttonVariants()}>
+                  Let&apos;s Chat
+                </Link>
+                <Link
+                  href="/files/resume.pdf"
+                  className={buttonVariants({ variant: "outline" })}
+                >
+                  Resume
+                </Link>
               </div>
             </div>
             <div className="max-w-lg overflow-hidden rounded-full">
@@ -231,9 +238,15 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex items-center">
-                <Button className="text-xl uppercase px-10 py-8 sm:px-12 sm:py-10 rounded-2xl font-bold min-w-max">
+                <Link
+                  href="/contact"
+                  className={cn(
+                    buttonVariants(),
+                    "text-xl uppercase px-10 py-8 sm:px-12 sm:py-10 rounded-2xl font-bold min-w-max"
+                  )}
+                >
                   Let&apos;s Chat
-                </Button>
+                </Link>
               </div>
             </div>
           </div>

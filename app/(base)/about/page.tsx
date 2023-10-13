@@ -1,7 +1,8 @@
 import { Icons } from "@/components/icons";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { creatorConfig } from "@/config/creator";
+import { cn } from "@/lib/utils";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,17 +16,17 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <section className="container flex flex-col gap-8">
-      <h2 className="text-3xl font-medium">About Me</h2>
+      <h2 className="text-3xl font-light">About Me</h2>
       <div className="flex flex-col gap-8">
         <div className="flex flex-col sm:flex-row gap-8">
           <div className="flex-1">
-            <h3 className="text-5xl md:text-6xl lg:text-7xl font-medium">
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-medium uppercase">
               I&apos;m Kyaw Thet Paing. A software developer, creator, and
               puzzle solver.
             </h3>
           </div>
           <div className="flex flex-col gap-8 flex-1 justify-end">
-            <p>
+            <p className="text-muted-foreground">
               The intersection of art and technology has always intrigued me. I
               have a fearless approach to exploring this realm, diving into
               various tools and technologies without hesitation. From my early
@@ -55,7 +56,7 @@ export default function AboutPage() {
             />
           </div>
           <div className="flex flex-col gap-8">
-            <p>
+            <p className="text-muted-foreground">
               Fast forward to {new Date().getFullYear()} and I&apos;ve immersed
               myself in a variety of technologies, ranging from PHP, NextJS,
               NodeJS, and Django for web development, to C/C++, Python, and
@@ -64,7 +65,7 @@ export default function AboutPage() {
               expertise. Each endeavor has been a significant stepping stone,
               guiding me to where I am in my software development journey today.
             </p>
-            <p>
+            <p className="text-muted-foreground">
               What excites me as a Software Developer is creating purposeful
               solutions. It&apos;s not just about writing code, but designing
               seamless digital experiences that solve real problems. I thrive on
@@ -75,15 +76,15 @@ export default function AboutPage() {
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="flex flex-col gap-8">
-            <p>
+            <p className="text-muted-foreground">
               One of my favorite quotes, attributed to Peter Drucker, guides my
               work:
             </p>
-            <p className="text-4xl font-medium">
+            <p className="text-2xl md:text-3xl font-medium">
               “There is nothing so useless as doing efficiently that which
               should not be done at all.”
             </p>
-            <p>
+            <p className="text-muted-foreground">
               This quote deeply resonates with me. I am not interested in
               creating mere aesthetic illusions. My passion lies in developing
               software solutions that are purposeful, impactful, and meaningful.
@@ -114,9 +115,15 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
-              <Button className="w-fit rounded-full px-8 hover:px-12 duration-150 transition-all">
+              <Link
+                href="/files/resume.pdf"
+                className={cn(
+                  buttonVariants({ variant: "outline" }),
+                  "w-fit rounded-full px-8 hover:px-12 duration-150 transition-all"
+                )}
+              >
                 My Resume
-              </Button>
+              </Link>
             </div>
           </div>
         </div>

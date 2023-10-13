@@ -9,12 +9,10 @@ export const baseConfig: BaseConfig = {
     {
       title: "Blog",
       href: "/blog",
-      disabled: true,
     },
     {
       title: "Work",
-      href: "/Work",
-      disabled: true,
+      href: "/work",
     },
     {
       title: "Contact",
