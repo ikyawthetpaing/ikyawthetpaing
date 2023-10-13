@@ -1,5 +1,4 @@
 import { Icons } from "@/components/icons";
-import { type } from "os";
 
 export type SiteConfig = {
   name: string;
@@ -20,7 +19,7 @@ export type BaseConfig = {
   mainNavItems: NavItem[];
 };
 
-type CreatorConfig = {
+export type CreatorConfig = {
   name: string;
   username: string;
   email: string;
@@ -45,14 +44,14 @@ export type NavItem = {
   disabled?: boolean;
 };
 
-type Icon = keyof typeof Icons;
+export type Icon = keyof typeof Icons;
 
-type Option = {
+export type Option = {
   label: string;
   value: string;
 };
 
-type Project = {
+export type Project = {
   name: string;
   description: string;
   icon: Icon;

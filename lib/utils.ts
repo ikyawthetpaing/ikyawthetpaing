@@ -23,3 +23,13 @@ export function getRandomColor() {
   }
   return color;
 }
+
+export function formatDate(date: Date, format: string = "en-US"): string {
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  };
+
+  return new Intl.DateTimeFormat(format, options).format(date);
+}

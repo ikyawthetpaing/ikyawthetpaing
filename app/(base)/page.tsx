@@ -1,4 +1,5 @@
 import { Icon, Icons } from "@/components/icons";
+import { ProjectItem } from "@/components/project-item";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { creatorConfig } from "@/config/creator";
@@ -173,45 +174,8 @@ export default function Home() {
           </div>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {creatorConfig.featuredProjects.map((project, index) => (
-              <li key={index} className="flex-1">
-                <div className="bg-accent rounded-3xl border overflow-hidden">
-                  <div className="flex flex-col gap-4 p-6 sm:px-12 sm:py-8 ">
-                    <div className="flex gap-4">
-                      <div>
-                        <div className="p-4 rounded-full bg-background w-fit">
-                          <Icon icon={project.icon} className="w-5 h-5" />
-                        </div>
-                      </div>
-                      <div className="flex gap-4 flex-col">
-                        <div>
-                          <h3 className="text-2xl font-medium">
-                            {project.name}
-                          </h3>
-                          <p className="text-muted-foreground">
-                            {project.description}
-                          </p>
-                        </div>
-                        <div className="flex gap-4">
-                          <Link href={project.preview.href}>
-                            <Badge>{project.preview.label}</Badge>
-                          </Link>
-                          <Link href={project.githubLink}>
-                            <Badge>Code</Badge>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <Image
-                      src={project.thumbnail}
-                      alt={project.name}
-                      width={9999}
-                      height={9999}
-                      className="w-full"
-                    />
-                  </div>
-                </div>
+              <li key={index}>
+                <ProjectItem project={project} />
               </li>
             ))}
           </ul>
