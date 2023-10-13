@@ -24,12 +24,11 @@ export function getRandomColor() {
   return color;
 }
 
-export function formatDate(date: Date, format: string = "en-US"): string {
-  const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "short",
+export function formatDate(input: string | number): string {
+  const date = new Date(input);
+  return date.toLocaleDateString("en-US", {
+    month: "long",
     day: "numeric",
-  };
-
-  return new Intl.DateTimeFormat(format, options).format(date);
+    year: "numeric",
+  });
 }
