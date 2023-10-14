@@ -6,10 +6,6 @@ export type SiteConfig = {
   description: string;
   url: string;
   ogImage: string;
-  links: {
-    twitter: string;
-    github: string;
-  };
   authors: Author[];
   creator: string;
   keywords: string[];

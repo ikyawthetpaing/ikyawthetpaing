@@ -12,6 +12,8 @@ import { env } from "@/env.mjs";
 import { absoluteUrl, cn, formatDate } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
+import { MdxPager } from "@/components/mdx/mdx-pager";
+import { compareDesc } from "date-fns";
 
 interface PostPageProps {
   params: {
@@ -60,8 +62,8 @@ export async function generateMetadata({
       images: [
         {
           url: ogUrl.toString(),
-          width: 1200,
-          height: 630,
+          width: 1920,
+          height: 1080,
           alt: post.title,
         },
       ],
@@ -97,21 +99,13 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <article className="container relative max-w-3xl py-6 lg:py-10">
       <div>
-        {/* {post.date && (
-          <time
-            dateTime={post.date}
-            className="block text-sm text-muted-foreground"
-          >
-            Published on {formatDate(post.date)}
-          </time>
-        )} */}
         <div className="flex items-center space-x-2 text-sm text-muted-foreground">
           {post.date && (
             <time dateTime={post.date} className="block">
               Published on {formatDate(post.date)}
             </time>
           )}
-          {post.date ? <div>•</div> : null}
+          {post.date ? <span>•</span> : null}
           <div>{post.readingTime}min</div>
         </div>
         <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl">
@@ -119,10 +113,10 @@ export default async function PostPage({ params }: PostPageProps) {
         </h1>
         {authors?.length ? (
           <div className="mt-4 flex space-x-4">
-            {authors.map((author) =>
+            {authors.map((author, index) =>
               author ? (
                 <Link
-                  key={author._id}
+                  key={index}
                   href={`https://twitter.com/${author.twitter}`}
                   className="flex items-center space-x-2 text-sm"
                 >
@@ -131,6 +125,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     alt={author.title}
                     width={42}
                     height={42}
+                    quality={100}
                     className="rounded-full bg-white"
                   />
                   <div className="flex-1 text-left leading-tight">
@@ -151,12 +146,23 @@ export default async function PostPage({ params }: PostPageProps) {
           alt={post.title}
           width={9999}
           height={9999}
-          className="my-8 rounded-md border bg-muted transition-colors"
+          className="my-8 rounded-lg border bg-muted transition-colors"
           priority
+          quality={100}
         />
       )}
       <Mdx code={post.body.code} />
       <hr className="mt-12" />
+      <div className="py-6">
+        <MdxPager
+          currentItem={post}
+          allItems={allPosts
+            .filter((post) => post.published)
+            .sort((a, b) => {
+              return compareDesc(new Date(a.date), new Date(b.date));
+            })}
+        />
+      </div>
       <div className="flex justify-center py-6 lg:py-10">
         <Link href="/blog" className={cn(buttonVariants({ variant: "ghost" }))}>
           <Icons.chevronLeft className="mr-2 h-4 w-4" />

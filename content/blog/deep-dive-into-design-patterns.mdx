@@ -1,0 +1,129 @@
+---
+title: Deep Dive into Design Patterns
+description: Exploring advanced design patterns like Observer, Proxy, and Decorator with real-world examples and use cases.
+image: /images/blogs/deep-dive-into-design-patterns.jpg
+date: "2023-10-14"
+authors:
+  - ikyawthetpaing
+---
+
+Design patterns are essential blueprints that guide developers in solving recurring design problems in software development. They encapsulate best practices and provide effective solutions for various scenarios. In this in-depth exploration, we'll take a profound dive into advanced design patterns like Observer, Proxy, and Decorator. Through real-world examples and hands-on code, we will unravel the mysteries behind these powerful patterns.
+
+## Understanding the Observer Pattern
+
+The Observer pattern is used to establish a one-to-many dependency between objects. When the state of one object changes, all its dependents are notified and updated automatically. Imagine a real-world scenario where weather data is observed by multiple devices:
+
+```javascript
+class WeatherStation {
+  constructor() {
+    this.temperature = 0;
+    this.observers = [];
+  }
+
+  addObserver(observer) {
+    this.observers.push(observer);
+  }
+
+  setTemperature(temperature) {
+    this.temperature = temperature;
+    this.notifyObservers();
+  }
+
+  notifyObservers() {
+    for (const observer of this.observers) {
+      observer.update(this.temperature);
+    }
+  }
+}
+
+class TemperatureDisplay {
+  update(temperature) {
+    console.log(`Temperature: ${temperature}°C`);
+  }
+}
+
+const station = new WeatherStation();
+const display = new TemperatureDisplay();
+
+station.addObserver(display);
+station.setTemperature(25); // Output: Temperature: 25°C
+```
+
+In this example, `WeatherStation` acts as the subject, while `TemperatureDisplay` is the observer. When the temperature changes, the observer is automatically notified and updated.
+
+## Exploring the Proxy Pattern
+
+The Proxy pattern involves creating a surrogate or placeholder object, which controls access to another object. This can be useful for implementing lazy initialization, access control, logging, or monitoring. Let's consider a proxy for loading high-resolution images:
+
+```javascript
+class Image {
+  constructor(url) {
+    this.url = url;
+  }
+
+  display() {
+    console.log(`Displaying image from ${this.url}`);
+  }
+}
+
+class ImageProxy {
+  constructor(url) {
+    this.url = url;
+    this.image = null;
+  }
+
+  display() {
+    if (!this.image) {
+      this.image = new Image(this.url);
+    }
+    this.image.display();
+  }
+}
+
+const highResImage = new ImageProxy("high-res-image.jpg");
+highResImage.display(); // Output: Displaying image from high-res-image.jpg
+```
+
+In this scenario, the `ImageProxy` controls access to the actual `Image` object, allowing for efficient loading and displaying of high-resolution images only when necessary.
+
+## Mastering the Decorator Pattern
+
+The Decorator pattern enables behavior to be added to individual objects without altering their structures. It is often used for extending functionalities dynamically. Consider a coffee example, where decorators add condiments to a base coffee:
+
+```javascript
+class SimpleCoffee {
+  cost() {
+    return 5;
+  }
+}
+
+class MilkDecorator {
+  constructor(coffee) {
+    this.coffee = coffee;
+  }
+
+  cost() {
+    return this.coffee.cost() + 2;
+  }
+}
+
+class SugarDecorator {
+  constructor(coffee) {
+    this.coffee = coffee;
+  }
+
+  cost() {
+    return this.coffee.cost() + 1;
+  }
+}
+
+const myCoffee = new SimpleCoffee();
+const milkCoffee = new MilkDecorator(myCoffee);
+const sweetMilkCoffee = new SugarDecorator(milkCoffee);
+
+console.log(`Cost of sweet milk coffee: $${sweetMilkCoffee.cost()}`); // Output: Cost of sweet milk coffee: $8
+```
+
+In this example, `MilkDecorator` and `SugarDecorator` dynamically add costs to the base `SimpleCoffee` object without altering its structure.
+
+By understanding and mastering advanced design patterns like Observer, Proxy, and Decorator, developers can significantly enhance their software design skills. These patterns provide elegant solutions to complex problems, ensuring maintainability, scalability, and flexibility in software applications. Happy coding!

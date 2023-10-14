@@ -32,3 +32,7 @@ export function formatDate(input: string | number): string {
     year: "numeric",
   });
 }
+
+export function truncate(str: string, length: number) {
+  return str.length > length ? `${str.substring(0, length)}...` : str;
+}

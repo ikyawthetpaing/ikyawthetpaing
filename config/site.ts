@@ -6,13 +6,9 @@ export const siteConfig: SiteConfig = {
   name: "Kyaw Thet Paing",
   title: "Kyaw Thet Paing: A Professional Software Developer",
   description:
-    "Explore Kyaw Thet Paing's Portfolio: Professional Software Developer. Discover innovative projects, sleek interfaces, and robust solutions. Expert in software development, Kyaw Thet Paing transforms ideas into reality. Explore now!",
+    "Discover my world of software development expertise through a portfolio of innovative projects and meticulously crafted code.",
   url: absoluteUrl(),
-  ogImage: absoluteUrl("/og.png"),
-  links: {
-    twitter: "https://twitter.com/ikyawthetpaing",
-    github: "https://github.com/ikyawthetpaing/ikyawthetpaing",
-  },
+  ogImage: absoluteUrl("/og.jpg"),
   authors: [
     { name: "@ikyawthetpaing", url: "https://twitter.com/ikyawthetpaing" },
   ],
@@ -48,5 +44,17 @@ export const siteConfig: SiteConfig = {
     "Software Prototyping",
     "Code Optimization",
     "Software Consulting Services",
+    "Web Development",
+    "Full-Stack Development",
+    "Front-End Development",
+    "Back-End Development",
+    "Software Architecture",
+    "Game Development",
+    "DevOps and Deployment",
+    "Machine Learning and AI",
+    "Open Source Contributions",
+    "Portfolio",
+    "Blog",
+    "Contact",
   ],
 };
