@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { Callout } from "@/components/mdx/callout";
 import { MdxCard } from "@/components/mdx/mdx-card";
 import { HTMLAttributes } from "react";
-import { CodeBlock } from "./code-block";
+import { CodeBlock } from "@/components/mdx/code-block";
 
 const components = {
   h1: ({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) => (

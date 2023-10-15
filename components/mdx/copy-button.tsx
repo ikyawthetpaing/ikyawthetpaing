@@ -3,7 +3,7 @@
 import * as React from "react";
 
 import { Button, type ButtonProps } from "@/components/ui/button";
-import { CheckIcon, CopyIcon } from "lucide-react";
+import { Icons } from "@/components/icons";
 
 export function CopyButton({ value, ...props }: ButtonProps) {
   const [isCopied, setIsCopied] = React.useState(false);
@@ -22,9 +22,9 @@ export function CopyButton({ value, ...props }: ButtonProps) {
       {...props}
     >
       {isCopied ? (
-        <CheckIcon className="h-3 w-3" aria-hidden="true" />
+        <Icons.checkIcon className="h-3 w-3" aria-hidden="true" />
       ) : (
-        <CopyIcon className="h-3 w-3" aria-hidden="true" />
+        <Icons.copyIcon className="h-3 w-3" aria-hidden="true" />
       )}
       <span className="sr-only">
         {isCopied ? "Copied" : "Copy to clipboard"}

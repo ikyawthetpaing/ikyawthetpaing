@@ -1,10 +1,14 @@
-import { baseConfig } from "@/config/base";
 import { Icons } from "@/components/icons";
 import Link from "next/link";
-import { MainNavItems } from "@/components/layout/main-nav";
+import { MainNavItems } from "@/components/layout/main-nav-items";
 import { creatorConfig } from "@/config/creator";
+import { NavItem } from "@/types";
 
-export function SiteFooter() {
+interface Props {
+  navItems: NavItem[];
+}
+
+export function SiteFooter({ navItems }: Props) {
   return (
     <footer>
       <div className="flex flex-col gap-12">
@@ -47,8 +51,8 @@ export function SiteFooter() {
             </Link>
           </div>
           <MainNavItems
-            navItems={baseConfig.mainNavItems}
-            className="flex gap-12 flex-wrap justify-end"
+            navItems={navItems}
+            className="flex gap-8 flex-wrap justify-end"
           />
         </div>
         <p className="text-sm uppercase text-center">

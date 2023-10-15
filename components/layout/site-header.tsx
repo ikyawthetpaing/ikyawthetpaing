@@ -1,22 +1,22 @@
 import Link from "next/link";
 import { Icons } from "@/components/icons";
-import { baseConfig } from "@/config/base";
-import { MainNavItems } from "@/components/layout/main-nav";
+import { MainNavItems } from "@/components/layout/main-nav-items";
+import { MainNavSheet } from "@/components/layout/main-nav-sheet";
+import { NavItem } from "@/types";
 
-export function SiteHeader() {
+interface Props {
+  navItems: NavItem[];
+}
+
+export function SiteHeader({ navItems }: Props) {
   return (
     <header>
       <div className="container flex items-center justify-between py-6 sm:py-12">
         <Link href="/" className="flex items-center">
           <Icons.kyax className="h-5" />
         </Link>
-        <MainNavItems
-          navItems={baseConfig.mainNavItems}
-          className="hidden md:flex gap-12"
-        />
-        <button className="md:hidden">
-          <Icons.menu className="w-7 h-7" />
-        </button>
+        <MainNavItems navItems={navItems} className="hidden md:flex gap-12" />
+        <MainNavSheet navItems={navItems} />
       </div>
     </header>
   );

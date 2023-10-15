@@ -35,7 +35,7 @@ export const siteConfig: SiteConfig = {
     "React.js Developer",
     "Node.js Developer",
     "PHP Developer",
-    "Mobile App Developer (iOS/Android)",
+    "Mobile App Developer",
     "Database Management",
     "Cloud Computing Solutions",
     "Software Maintenance and Support",

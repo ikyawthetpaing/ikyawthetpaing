@@ -1,7 +1,6 @@
-import { Icon, Icons } from "@/components/icons";
+import { Icon } from "@/components/icons";
 import { ProjectItem } from "@/components/project-item";
-import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { creatorConfig } from "@/config/creator";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -14,16 +13,16 @@ export default function Home() {
         <div className="flex gap-12">
           <div className="flex flex-col justify-end">
             <ul className="flex flex-col gap-4">
-              {creatorConfig.media.map((media, index) => {
-                const Icon = Icons[media.icon];
-                return (
-                  <li key={index}>
-                    <Link href={media.href} target="_blank">
-                      <Icon className="w-5 h-5 text-muted-foreground" />
-                    </Link>
-                  </li>
-                );
-              })}
+              {creatorConfig.media.map((media, index) => (
+                <li key={index}>
+                  <Link href={media.href} target="_blank">
+                    <Icon
+                      icon={media.icon}
+                      className="w-5 h-5 text-muted-foreground"
+                    />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="flex flex-1 gap-4 md:justify-center max-md:items-end flex-col md:flex-row">
@@ -59,7 +58,7 @@ export default function Home() {
             <div className="max-w-lg overflow-hidden rounded-full">
               <Image
                 src="/images/landing.png"
-                alt="Kyaw Thet Paing: Software Developer Sketch Art Image"
+                alt="Kyaw Thet Paing's Art Sketch Image"
                 width={9999}
                 height={9999}
                 priority

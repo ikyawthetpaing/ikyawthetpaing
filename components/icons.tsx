@@ -8,7 +8,10 @@ import {
   Smartphone,
   Globe,
   MoveRight,
+  CheckIcon,
+  CopyIcon,
   ChevronLeft,
+  ChevronRight,
   LucideProps,
 } from "lucide-react";
 
@@ -21,7 +24,10 @@ export const Icons = {
   smartphone: Smartphone,
   globe: Globe,
   moveRight: MoveRight,
+  checkIcon: CheckIcon,
+  copyIcon: CopyIcon,
   chevronLeft: ChevronLeft,
+  chevronRight: ChevronRight,
   kyax: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

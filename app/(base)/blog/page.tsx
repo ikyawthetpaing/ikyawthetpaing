@@ -17,7 +17,10 @@ export default function BlogPage() {
         <div className="flex flex-col gap-4">
           <h2 className="text-4xl font-semibold">Blogs</h2>
           <p className="text-muted-foreground">
-            I consider those projects as my top selections to exhibit my skills.
+            Explore my in-depth insights on programming, design patterns, and
+            more, arranged chronologically for easy reading.
+            {/* Within these blogs, I present my finest work, carefully curated to
+            showcase my skills and expertise. */}
           </p>
         </div>
         {posts?.length ? (

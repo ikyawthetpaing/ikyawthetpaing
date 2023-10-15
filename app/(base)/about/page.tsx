@@ -1,6 +1,6 @@
 import { Icons } from "@/components/icons";
 import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { creatorConfig } from "@/config/creator";
 import { cn } from "@/lib/utils";
 import { Metadata } from "next";
@@ -20,10 +20,10 @@ export default function AboutPage() {
       <div className="flex flex-col gap-8">
         <div className="flex flex-col sm:flex-row gap-8">
           <div className="flex-1">
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-medium uppercase">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium uppercase">
               I&apos;m Kyaw Thet Paing. A software developer, creator, and
               puzzle solver.
-            </h3>
+            </h1>
           </div>
           <div className="flex flex-col gap-8 flex-1 justify-end">
             <p className="text-muted-foreground">
