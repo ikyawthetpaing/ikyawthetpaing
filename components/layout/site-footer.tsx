@@ -1,7 +1,7 @@
 import { Icons } from "@/components/icons";
 import Link from "next/link";
 import { MainNavItems } from "@/components/layout/main-nav-items";
-import { creatorConfig } from "@/config/creator";
+import { developerConfig } from "@/config/developer";
 import { NavItem } from "@/types";
 
 interface Props {
@@ -17,24 +17,24 @@ export function SiteFooter({ navItems }: Props) {
           <div className="text-center flex flex-col gap-2">
             <h3 className="text-lg text-muted-foreground">Bangkok, Thailand</h3>
             <Link
-              href={`mailto:${creatorConfig.email}`}
+              href={`mailto:${developerConfig.email}`}
               className="text-2xl sm:text-3xl font-medium"
             >
-              {creatorConfig.email}
+              {developerConfig.email}
             </Link>
             <Link
-              href={`tel:${creatorConfig.tel.value}`}
+              href={`tel:${developerConfig.tel.value}`}
               className="text-lg font-light"
             >
-              {creatorConfig.tel.label}
+              {developerConfig.tel.label}
             </Link>
           </div>
           <ul className="flex gap-4">
-            {creatorConfig.media.map((media, index) => {
+            {developerConfig.media.map((media, index) => {
               const Icon = Icons[media.icon];
               return (
                 <li key={index}>
-                  <Link href={media.href}>
+                  <Link href={media.href} target="_blank">
                     <div className="bg-accent rounded-full p-4">
                       <Icon className="w-6 h-6 text-muted-foreground" />
                     </div>

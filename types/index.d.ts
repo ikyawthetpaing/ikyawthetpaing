@@ -15,7 +15,7 @@ export type BaseConfig = {
   mainNavItems: NavItem[];
 };
 
-export type CreatorConfig = {
+export type DeveloperConfig = {
   name: string;
   username: string;
   email: string;

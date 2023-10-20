@@ -1,5 +1,5 @@
 import { ProjectItem } from "@/components/project-item";
-import { creatorConfig } from "@/config/creator";
+import { developerConfig } from "@/config/developer";
 
 export default function WorkPage() {
   return (
@@ -12,7 +12,7 @@ export default function WorkPage() {
           </p>
         </div>
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {creatorConfig.featuredProjects.map((project, index) => (
+          {developerConfig.featuredProjects.map((project, index) => (
             <li key={index}>
               <ProjectItem project={project} />
             </li>

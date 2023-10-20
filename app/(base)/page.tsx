@@ -1,7 +1,7 @@
 import { Icon } from "@/components/icons";
 import { ProjectItem } from "@/components/project-item";
 import { buttonVariants } from "@/components/ui/button";
-import { creatorConfig } from "@/config/creator";
+import { developerConfig } from "@/config/developer";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +13,7 @@ export default function Home() {
         <div className="flex gap-12">
           <div className="flex flex-col justify-end">
             <ul className="flex flex-col gap-4">
-              {creatorConfig.media.map((media, index) => (
+              {developerConfig.media.map((media, index) => (
                 <li key={index}>
                   <Link href={media.href} target="_blank">
                     <Icon
@@ -72,7 +72,7 @@ export default function Home() {
         <div className="flex gap-12">
           <div className="flex flex-1">
             <ul className="flex flex-col gap-12 w-full">
-              {creatorConfig.services.map((service, index) => (
+              {developerConfig.services.map((service, index) => (
                 <li key={index}>
                   <div
                     className={cn(
@@ -126,7 +126,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
             <ul className="grid grid-cols-2 md:grid-cols-4">
-              {creatorConfig.bigClients.map((bigClient, index) => (
+              {developerConfig.bigClients.map((bigClient, index) => (
                 <li key={index} className="px-12 flex-1 flex-shrink-0">
                   <Icon icon={bigClient.icon} className="h-24" />
                 </li>
@@ -172,7 +172,7 @@ export default function Home() {
             </p>
           </div>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {creatorConfig.featuredProjects.map((project, index) => (
+            {developerConfig.featuredProjects.map((project, index) => (
               <li key={index}>
                 <ProjectItem project={project} />
               </li>

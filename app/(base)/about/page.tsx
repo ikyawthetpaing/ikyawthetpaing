@@ -1,7 +1,7 @@
 import { Icons } from "@/components/icons";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { creatorConfig } from "@/config/creator";
+import { developerConfig } from "@/config/developer";
 import { cn } from "@/lib/utils";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -106,7 +106,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-4">
               <h3 className="text-2xl font-medium">Skills</h3>
               <ul className="flex flex-wrap gap-2">
-                {creatorConfig.skills.map((skill, index) => (
+                {developerConfig.skills.map((skill, index) => (
                   <li key={index}>
                     <Badge variant="outline" key={index}>
                       {skill}
