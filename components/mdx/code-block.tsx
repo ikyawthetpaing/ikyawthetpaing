@@ -1,8 +1,9 @@
 /** Originally from `t3-env-docs`
  * @link https://github.com/t3-oss/t3-env/blob/main/docs/src/components/mdx/code-block.tsx
  */
-import { CopyButton } from "@/components/mdx/copy-button";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
+
+import { CopyButton } from "@/components/mdx/copy-button";
 
 type CodeBlockProps = DetailedHTMLProps<
   HTMLAttributes<HTMLPreElement>,

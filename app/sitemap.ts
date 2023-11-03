@@ -1,8 +1,9 @@
 import { type MetadataRoute } from "next";
 import { allPosts } from "contentlayer/generated";
 
-import { absoluteUrl } from "@/lib/utils";
 import { baseConfig } from "@/config/base";
+
+import { absoluteUrl } from "@/lib/utils";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = allPosts.map((post) => ({

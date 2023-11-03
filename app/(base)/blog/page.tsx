@@ -1,9 +1,10 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
+
 import { formatDate } from "@/lib/utils";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -23,7 +24,7 @@ export default function BlogPage() {
       <div className="flex flex-col gap-12">
         <div className="flex flex-col gap-4">
           <h2 className="text-4xl font-semibold">Blogs</h2>
-          <p className="text-muted-foreground max-w-2xl">
+          <p className="max-w-2xl text-muted-foreground">
             {/* Explore my in-depth insights on programming, design patterns, and
             more, arranged chronologically for easy reading. */}
             I&apos;m a software engineer with a passion for sharing my knowledge

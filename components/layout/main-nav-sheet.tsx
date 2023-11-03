@@ -1,11 +1,12 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { NavItem } from "@/types";
+
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Icons } from "@/components/icons";
 import { MainNavItems } from "@/components/layout/main-nav-items";
-import { NavItem } from "@/types";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 
 interface Props {
   navItems: NavItem[];
@@ -19,13 +20,13 @@ export function MainNavSheet({ navItems }: Props) {
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <button className="md:hidden">
-          <Icons.menu className="w-7 h-7" />
+          <Icons.menu className="h-7 w-7" />
         </button>
       </SheetTrigger>
       <SheetContent>
         <MainNavItems
           navItems={navItems}
-          className="h-full flex-col flex justify-center items-center gap-8"
+          className="flex h-full flex-col items-center justify-center gap-8"
         />
       </SheetContent>
     </Sheet>

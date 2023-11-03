@@ -4,16 +4,18 @@ import { allAuthors, allPosts } from "contentlayer/generated";
 import { Mdx } from "@/components/mdx/mdx-components";
 
 import "@/styles/mdx.css";
+
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { compareDesc } from "date-fns";
 
 import { env } from "@/env.mjs";
+
 import { absoluteUrl, cn, formatDate } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 import { MdxPager } from "@/components/mdx/mdx-pager";
-import { compareDesc } from "date-fns";
 
 interface PostPageProps {
   params: {
@@ -108,7 +110,7 @@ export default async function PostPage({ params }: PostPageProps) {
           {post.date ? <span>•</span> : null}
           <div>{post.readingTime}min</div>
         </div>
-        <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl">
+        <h1 className="font-heading mt-2 inline-block text-4xl leading-tight lg:text-5xl">
           {post.title}
         </h1>
         {authors?.length ? (

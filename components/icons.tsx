@@ -1,18 +1,18 @@
 import { Icon as IconType } from "@/types";
 import {
-  Twitter,
-  Linkedin,
-  Instagram,
-  Menu,
   AppWindow,
-  Smartphone,
-  Globe,
-  MoveRight,
   CheckIcon,
-  CopyIcon,
   ChevronLeft,
   ChevronRight,
+  CopyIcon,
+  Globe,
+  Instagram,
+  Linkedin,
   LucideProps,
+  Menu,
+  MoveRight,
+  Smartphone,
+  Twitter,
 } from "lucide-react";
 
 interface Props extends LucideProps {

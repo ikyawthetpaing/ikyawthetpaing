@@ -1,6 +1,7 @@
-import { Project } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
+import { Project } from "@/types";
+
 import { Badge } from "@/components/ui/badge";
 import { Icon } from "@/components/icons";
 
@@ -10,15 +11,15 @@ interface Props {
 
 export function ProjectItem({ project }: Props) {
   return (
-    <div className="bg-accent rounded-3xl border overflow-hidden">
+    <div className="overflow-hidden rounded-3xl border bg-accent">
       <div className="flex flex-col gap-4 p-6 sm:px-12 sm:py-8 ">
         <div className="flex gap-4">
           <div>
-            <div className="p-4 rounded-full bg-background w-fit">
-              <Icon name={project.icon} className="w-5 h-5" />
+            <div className="w-fit rounded-full bg-background p-4">
+              <Icon name={project.icon} className="h-5 w-5" />
             </div>
           </div>
-          <div className="flex gap-4 flex-col">
+          <div className="flex flex-col gap-4">
             <div>
               <h3 className="text-2xl font-medium">{project.name}</h3>
               <p className="text-muted-foreground">{project.description}</p>

@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { NavItem } from "@/types";
+
 import { Icons } from "@/components/icons";
 import { MainNavItems } from "@/components/layout/main-nav-items";
 import { MainNavSheet } from "@/components/layout/main-nav-sheet";
-import { NavItem } from "@/types";
 
 interface Props {
   navItems: NavItem[];
@@ -15,7 +16,7 @@ export function SiteHeader({ navItems }: Props) {
         <Link href="/" className="flex items-center">
           <Icons.kyax className="h-5" />
         </Link>
-        <MainNavItems navItems={navItems} className="hidden md:flex gap-12" />
+        <MainNavItems navItems={navItems} className="hidden gap-12 md:flex" />
         <MainNavSheet navItems={navItems} />
       </div>
     </header>

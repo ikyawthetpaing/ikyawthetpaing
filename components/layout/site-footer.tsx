@@ -1,8 +1,10 @@
-import { Icons } from "@/components/icons";
 import Link from "next/link";
-import { MainNavItems } from "@/components/layout/main-nav-items";
-import { developerConfig } from "@/config/developer";
 import { NavItem } from "@/types";
+
+import { developerConfig } from "@/config/developer";
+
+import { Icons } from "@/components/icons";
+import { MainNavItems } from "@/components/layout/main-nav-items";
 
 interface Props {
   navItems: NavItem[];
@@ -14,11 +16,11 @@ export function SiteFooter({ navItems }: Props) {
       <div className="flex flex-col gap-12">
         <div className="container flex flex-col items-center gap-8">
           <h2 className="text-xl font-semibold">Keep In Touch</h2>
-          <div className="text-center flex flex-col gap-2">
+          <div className="flex flex-col gap-2 text-center">
             <h3 className="text-lg text-muted-foreground">Bangkok, Thailand</h3>
             <Link
               href={`mailto:${developerConfig.email}`}
-              className="text-2xl sm:text-3xl font-medium"
+              className="text-2xl font-medium sm:text-3xl"
             >
               {developerConfig.email}
             </Link>
@@ -35,8 +37,8 @@ export function SiteFooter({ navItems }: Props) {
               return (
                 <li key={index}>
                   <Link href={media.href} target="_blank">
-                    <div className="bg-accent rounded-full p-4">
-                      <Icon className="w-6 h-6 text-muted-foreground" />
+                    <div className="rounded-full bg-accent p-4">
+                      <Icon className="h-6 w-6 text-muted-foreground" />
                     </div>
                   </Link>
                 </li>
@@ -52,10 +54,10 @@ export function SiteFooter({ navItems }: Props) {
           </div>
           <MainNavItems
             navItems={navItems}
-            className="flex gap-8 flex-wrap justify-end"
+            className="flex flex-wrap justify-end gap-8"
           />
         </div>
-        <p className="text-sm uppercase text-center">
+        <p className="text-center text-sm uppercase">
           &copy; {new Date().getFullYear()} ikyawthetpaing. All rights reserved.
         </p>
         <ul className="flex">
@@ -63,7 +65,7 @@ export function SiteFooter({ navItems }: Props) {
             return (
               <li
                 key={index}
-                className="flex-1 h-4"
+                className="h-4 flex-1"
                 style={{ backgroundColor: color }}
               ></li>
             );

@@ -1,10 +1,12 @@
-import { Icon } from "@/components/icons";
-import { ProjectItem } from "@/components/project-item";
-import { buttonVariants } from "@/components/ui/button";
-import { developerConfig } from "@/config/developer";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+
+import { developerConfig } from "@/config/developer";
+
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { Icon } from "@/components/icons";
+import { ProjectItem } from "@/components/project-item";
 
 export default function Home() {
   return (
@@ -18,20 +20,20 @@ export default function Home() {
                   <Link href={media.href} target="_blank">
                     <Icon
                       name={media.icon}
-                      className="w-5 h-5 text-muted-foreground"
+                      className="h-5 w-5 text-muted-foreground"
                     />
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="flex flex-1 gap-4 md:justify-center max-md:items-end flex-col md:flex-row">
+          <div className="flex flex-1 flex-col gap-4 max-md:items-end md:flex-row md:justify-center">
             <div className="flex flex-col justify-center gap-12">
               <div className="flex flex-col gap-6">
-                <h1 className="text-3xl font-medium sm:text-4xl md:text-5xl lg:text-6xl uppercase">
+                <h1 className="text-3xl font-medium uppercase sm:text-4xl md:text-5xl lg:text-6xl">
                   {developerConfig.name}
                 </h1>
-                <h2 className="text-xl md:text-2xl font-light uppercase">
+                <h2 className="text-xl font-light uppercase md:text-2xl">
                   {developerConfig.role}
                 </h2>
                 <p className="max-w-lg text-muted-foreground">
@@ -58,7 +60,7 @@ export default function Home() {
                 width={9999}
                 height={9999}
                 priority
-                className="object-cover w-full h-full"
+                className="h-full w-full object-cover"
               />
             </div>
           </div>
@@ -67,7 +69,7 @@ export default function Home() {
       <section className="container">
         <div className="flex gap-12">
           <div className="flex flex-1">
-            <ul className="flex flex-col gap-12 w-full">
+            <ul className="flex w-full flex-col gap-12">
               {developerConfig.services.map((service, index) => (
                 <li key={index}>
                   <div
@@ -76,19 +78,19 @@ export default function Home() {
                       index % 2 === 0 ? "justify-end" : "justify-start"
                     )}
                   >
-                    <div className="p-6 sm:px-12 sm:py-8 bg-accent rounded-3xl w-full sm:w-3/4 flex flex-col gap-8">
+                    <div className="flex w-full flex-col gap-8 rounded-3xl bg-accent p-6 sm:w-3/4 sm:px-12 sm:py-8">
                       <div className="flex flex-col gap-4">
-                        <div className="p-4 rounded-full bg-background w-fit">
-                          <Icon name={service.icon} className="w-5 h-5" />
+                        <div className="w-fit rounded-full bg-background p-4">
+                          <Icon name={service.icon} className="h-5 w-5" />
                         </div>
-                        <h2 className="font-medium text-xl">{service.title}</h2>
+                        <h2 className="text-xl font-medium">{service.title}</h2>
                         <p className="max-w-lg text-muted-foreground">
                           {service.description}
                         </p>
                       </div>
                       <Link
                         href={service.href}
-                        className="uppercase text-sm font-medium w-fit hover:underline underline-offset-4"
+                        className="w-fit text-sm font-medium uppercase underline-offset-4 hover:underline"
                       >
                         See Projects
                       </Link>
@@ -103,7 +105,7 @@ export default function Home() {
               {"SERVICES".split("").map((value, index) => (
                 <li
                   key={index}
-                  className="leading-[0.75] text-center rotate-90"
+                  className="rotate-90 text-center leading-[0.75]"
                 >
                   {value}
                 </li>
@@ -123,13 +125,13 @@ export default function Home() {
           <div className="flex justify-center">
             <ul className="grid grid-cols-2 md:grid-cols-4">
               {developerConfig.bigClients.map((bigClient, index) => (
-                <li key={index} className="px-12 flex-1 flex-shrink-0">
+                <li key={index} className="flex-1 shrink-0 px-12">
                   <Icon name={bigClient.icon} className="h-24" />
                 </li>
               ))}
             </ul>
           </div>
-          <div className="flex gap-12 flex-col md:flex-row md:justify-center">
+          <div className="flex flex-col gap-12 md:flex-row md:justify-center">
             <div className="flex items-center gap-4">
               <h3 className="text-6xl font-medium">
                 {new Date().getFullYear() - 2021}
@@ -167,7 +169,7 @@ export default function Home() {
               Featured projects, which are my best choices to showcase.
             </p>
           </div>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <ul className="grid grid-cols-1 gap-12 md:grid-cols-2">
             {developerConfig.featuredProjects.map((project, index) => (
               <li key={index}>
                 <ProjectItem project={project} />
@@ -177,18 +179,18 @@ export default function Home() {
         </div>
       </section>
       <section className="container">
-        <div className="w-full lg:w-3/4 mx-auto">
+        <div className="mx-auto w-full lg:w-3/4">
           <div>
             <Image
               src="/images/pet.png"
               alt="Pet Image"
               width={9999}
               height={9999}
-              className="object-cover w-28 ml-12 translate-y-2"
+              className="ml-12 w-28 translate-y-2 object-cover"
             />
           </div>
-          <div className="p-8 sm:p-12 md:px-24 md:py-24 lg:px-32 bg-accent rounded-3xl">
-            <div className="flex justify-between gap-8 flex-col sm:flex-row">
+          <div className="rounded-3xl bg-accent p-8 sm:p-12 md:p-24 lg:px-32">
+            <div className="flex flex-col justify-between gap-8 sm:flex-row">
               <div className="flex flex-col gap-4 sm:gap-8">
                 <h2 className="text-4xl font-semibold">Work Inquiry</h2>
                 <p className="text-muted-foreground">
@@ -201,7 +203,7 @@ export default function Home() {
                   href="/contact"
                   className={cn(
                     buttonVariants(),
-                    "text-xl uppercase px-10 py-8 sm:px-12 sm:py-10 rounded-2xl font-bold min-w-max"
+                    "min-w-max rounded-2xl px-10 py-8 text-xl font-bold uppercase sm:px-12 sm:py-10"
                   )}
                 >
                   Let&apos;s Chat

@@ -1,6 +1,8 @@
-import { ProjectItem } from "@/components/project-item";
-import { developerConfig } from "@/config/developer";
 import { Metadata } from "next";
+
+import { developerConfig } from "@/config/developer";
+
+import { ProjectItem } from "@/components/project-item";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -14,13 +16,13 @@ export default function WorkPage() {
       <div className="flex flex-col gap-12">
         <div className="flex flex-col gap-4">
           <h2 className="text-4xl font-semibold">Works</h2>
-          <p className="text-muted-foreground max-w-2xl">
+          <p className="max-w-2xl text-muted-foreground">
             I&apos;ve carefully selected these projects to showcase my skills as
             a software engineer. These projects demonstrate my ability to
             design, develop, and deliver high-quality software solutions.
           </p>
         </div>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <ul className="grid grid-cols-1 gap-12 md:grid-cols-2">
           {developerConfig.featuredProjects.map((project, index) => (
             <li key={index}>
               <ProjectItem project={project} />

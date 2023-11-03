@@ -1,10 +1,11 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { NavItem } from "@/types";
+import { HTMLAttributes } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { HTMLAttributes } from "react";
+import { NavItem } from "@/types";
+
+import { cn } from "@/lib/utils";
 
 interface Props extends HTMLAttributes<HTMLUListElement> {
   navItems: NavItem[];
@@ -23,7 +24,7 @@ export function MainNavItems({ navItems, ...props }: Props) {
             <Link
               href={navItem.href}
               className={cn(
-                "uppercase text-lg font-medium",
+                "text-lg font-medium uppercase",
                 isActive ? "text-foreground" : "text-muted-foreground"
               )}
             >

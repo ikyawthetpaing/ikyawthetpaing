@@ -1,11 +1,13 @@
-import { Icons } from "@/components/icons";
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
-import { developerConfig } from "@/config/developer";
-import { cn } from "@/lib/utils";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+import { developerConfig } from "@/config/developer";
+
+import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+import { Icons } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "About",
@@ -18,14 +20,14 @@ export default function AboutPage() {
     <section className="container flex flex-col gap-8">
       <h2 className="text-3xl font-light">About Me</h2>
       <div className="flex flex-col gap-8">
-        <div className="flex flex-col sm:flex-row gap-8">
+        <div className="flex flex-col gap-8 sm:flex-row">
           <div className="flex-1">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium uppercase">
+            <h1 className="text-4xl font-medium uppercase md:text-5xl lg:text-6xl">
               I&apos;m Kyaw Thet Paing. A software engineer, creator, and puzzle
               solver.
             </h1>
           </div>
-          <div className="flex flex-col gap-8 flex-1 justify-end">
+          <div className="flex flex-1 flex-col justify-end gap-8">
             <p className="text-muted-foreground">
               The intersection of art and technology has always intrigued me. I
               have a fearless approach to exploring this realm, diving into
@@ -37,15 +39,15 @@ export default function AboutPage() {
             <div className="flex justify-end">
               <Link
                 href="/contact"
-                className="text-lg hover:underline hover:underline-offset-4 flex gap-2 items-center hover:gap-4 duration-150 transition-all font-medium"
+                className="flex items-center gap-2 text-lg font-medium transition-all duration-150 hover:gap-4 hover:underline hover:underline-offset-4"
               >
-                Let&apos;s Chat <Icons.moveRight className="w-4 h-4" />
+                Let&apos;s Chat <Icons.moveRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-accent rounded-3xl flex items-end">
+        <div className="grid gap-8 md:grid-cols-2">
+          <div className="flex items-end rounded-3xl bg-accent">
             <Image
               src="/images/landing.png"
               alt="Kyaw Thet Paing: Software Developer Sketch Art Image"
@@ -74,13 +76,13 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid gap-8 md:grid-cols-2">
           <div className="flex flex-col gap-8">
             <p className="text-muted-foreground">
               One of my favorite quotes, attributed to Peter Drucker, guides my
               work:
             </p>
-            <p className="text-2xl md:text-3xl font-medium">
+            <p className="text-2xl font-medium md:text-3xl">
               “There is nothing so useless as doing efficiently that which
               should not be done at all.”
             </p>
@@ -118,7 +120,7 @@ export default function AboutPage() {
                 href={developerConfig.resumeFilePath}
                 className={cn(
                   buttonVariants({ variant: "outline" }),
-                  "w-fit rounded-full px-8 hover:px-12 duration-150 transition-all"
+                  "w-fit rounded-full px-8 transition-all duration-150 hover:px-12"
                 )}
               >
                 My Resume
