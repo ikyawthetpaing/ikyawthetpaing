@@ -1,8 +1,8 @@
 import { Project } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
-import { Icon } from "@/components/icons";
 import { Badge } from "@/components/ui/badge";
+import { Icon } from "@/components/icons";
 
 interface Props {
   project: Project;
@@ -15,7 +15,7 @@ export function ProjectItem({ project }: Props) {
         <div className="flex gap-4">
           <div>
             <div className="p-4 rounded-full bg-background w-fit">
-              <Icon icon={project.icon} className="w-5 h-5" />
+              <Icon name={project.icon} className="w-5 h-5" />
             </div>
           </div>
           <div className="flex gap-4 flex-col">

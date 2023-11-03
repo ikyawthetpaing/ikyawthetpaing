@@ -18,7 +18,10 @@ export type BaseConfig = {
 export type DeveloperConfig = {
   name: string;
   username: string;
+  description: string;
+  role: string;
   email: string;
+  resumeFilePath: string;
   tel: Option;
   media: {
     title: string;

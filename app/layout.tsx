@@ -14,7 +14,7 @@ const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 export const metadata: Metadata = {
   title: {
     default: siteConfig.title,
-    template: `%s - ${siteConfig.name}`,
+    template: `${siteConfig.name} • %s`,
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,

@@ -2,8 +2,12 @@ import { DeveloperConfig } from "@/types";
 
 export const developerConfig: DeveloperConfig = {
   name: "Kyaw Thet Paing",
+  role: "Software Engineer",
+  description:
+    "I am a software engineer with a passion for building innovative and user-friendly applications. I have a strong foundation in full stack development, including experience with a variety of programming languages, frameworks, and databases. I am also skilled in agile development methodologies and have a proven track record of delivering high-quality software on time and within budget.",
   username: "ikyawthetpaing",
   email: "ikyawthetpaing@gmail.com",
+  resumeFilePath: "/files/resume.pdf",
   tel: {
     label: "(+66) 937-418-692",
     value: "+66937418692",
@@ -15,7 +19,7 @@ export const developerConfig: DeveloperConfig = {
       icon: "linkedin",
     },
     {
-      title: "X",
+      title: "Twitter",
       href: "https://www.twitter.com/ikyawthetpaing",
       icon: "twitter",
     },

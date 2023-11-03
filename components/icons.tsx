@@ -1,4 +1,4 @@
-import { Icon } from "@/types";
+import { Icon as IconType } from "@/types";
 import {
   Twitter,
   Linkedin,
@@ -14,6 +14,15 @@ import {
   ChevronRight,
   LucideProps,
 } from "lucide-react";
+
+interface Props extends LucideProps {
+  name: IconType;
+}
+
+export function Icon({ name, ...props }: Props) {
+  const Icon = Icons[name];
+  return <Icon {...props} />;
+}
 
 export const Icons = {
   twitter: Twitter,
@@ -67,6 +76,7 @@ export const Icons = {
       </g>
     </svg>
   ),
+
   upwork: ({ ...props }: LucideProps) => (
     <svg
       viewBox="0 -179.5 512 512"
@@ -158,12 +168,3 @@ export const Icons = {
     </svg>
   ),
 };
-
-interface Props extends LucideProps {
-  icon: Icon;
-}
-
-export function Icon({ icon, ...props }: Props) {
-  const Icon = Icons[icon];
-  return <Icon {...props} />;
-}

@@ -3,6 +3,13 @@ import Link from "next/link";
 import { allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
 import { formatDate } from "@/lib/utils";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Explore my in-depth insights on programming, design patterns, and more, arranged chronologically for easy reading.",
+};
 
 export default function BlogPage() {
   const posts = allPosts
@@ -16,11 +23,14 @@ export default function BlogPage() {
       <div className="flex flex-col gap-12">
         <div className="flex flex-col gap-4">
           <h2 className="text-4xl font-semibold">Blogs</h2>
-          <p className="text-muted-foreground">
-            Explore my in-depth insights on programming, design patterns, and
-            more, arranged chronologically for easy reading.
-            {/* Within these blogs, I present my finest work, carefully curated to
-            showcase my skills and expertise. */}
+          <p className="text-muted-foreground max-w-2xl">
+            {/* Explore my in-depth insights on programming, design patterns, and
+            more, arranged chronologically for easy reading. */}
+            I&apos;m a software engineer with a passion for sharing my knowledge
+            and experience with others. In my blog, I write about a variety of
+            topics related to software engineering, including programming,
+            design patterns, and more. I want my blog to be a resource for other
+            software engineers who are looking to learn and grow.
           </p>
         </div>
         {posts?.length ? (

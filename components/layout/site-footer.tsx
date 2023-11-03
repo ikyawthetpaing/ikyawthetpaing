@@ -13,7 +13,7 @@ export function SiteFooter({ navItems }: Props) {
     <footer>
       <div className="flex flex-col gap-12">
         <div className="container flex flex-col items-center gap-8">
-          <h2 className="text-xl font-semibold">Stay Connected</h2>
+          <h2 className="text-xl font-semibold">Keep In Touch</h2>
           <div className="text-center flex flex-col gap-2">
             <h3 className="text-lg text-muted-foreground">Bangkok, Thailand</h3>
             <Link

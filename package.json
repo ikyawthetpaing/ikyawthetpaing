@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "contentlayer build && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check:lint": "eslint . --ext ts --ext tsx --ext js",
+    "check:types": "tsc --pretty --noEmit"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",

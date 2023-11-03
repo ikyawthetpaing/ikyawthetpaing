@@ -10,7 +10,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Explore my journey and expertise in creating robust and impactful software applications.",
+    "Software engineer with 5+ years of experience building robust and impactful web, mobile, and cloud-based applications. Learn about my journey, my expertise, and how I can help you achieve your software goals.",
 };
 
 export default function AboutPage() {
@@ -21,8 +21,8 @@ export default function AboutPage() {
         <div className="flex flex-col sm:flex-row gap-8">
           <div className="flex-1">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium uppercase">
-              I&apos;m Kyaw Thet Paing. A software developer, creator, and
-              puzzle solver.
+              I&apos;m Kyaw Thet Paing. A software engineer, creator, and puzzle
+              solver.
             </h1>
           </div>
           <div className="flex flex-col gap-8 flex-1 justify-end">
@@ -111,12 +111,11 @@ export default function AboutPage() {
                     <Badge variant="outline" key={index}>
                       {skill}
                     </Badge>
-                    {/* <div className="p-2">{skill}</div> */}
                   </li>
                 ))}
               </ul>
               <Link
-                href="/files/resume.pdf"
+                href={developerConfig.resumeFilePath}
                 className={cn(
                   buttonVariants({ variant: "outline" }),
                   "w-fit rounded-full px-8 hover:px-12 duration-150 transition-all"

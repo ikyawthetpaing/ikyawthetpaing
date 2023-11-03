@@ -17,7 +17,7 @@ export default function Home() {
                 <li key={index}>
                   <Link href={media.href} target="_blank">
                     <Icon
-                      icon={media.icon}
+                      name={media.icon}
                       className="w-5 h-5 text-muted-foreground"
                     />
                   </Link>
@@ -29,17 +29,13 @@ export default function Home() {
             <div className="flex flex-col justify-center gap-12">
               <div className="flex flex-col gap-6">
                 <h1 className="text-3xl font-medium sm:text-4xl md:text-5xl lg:text-6xl uppercase">
-                  Kyaw Thet Paing
+                  {developerConfig.name}
                 </h1>
                 <h2 className="text-xl md:text-2xl font-light uppercase">
-                  Software Developer
+                  {developerConfig.role}
                 </h2>
                 <p className="max-w-lg text-muted-foreground">
-                  I specialize in software development and web technologies,
-                  with a passion for fostering optimism and building vibrant
-                  communities. My current role involves shaping developer
-                  experiences and guiding a community around Next.js, an
-                  open-source web framework developed using React.
+                  {developerConfig.description}
                 </p>
               </div>
 
@@ -48,7 +44,7 @@ export default function Home() {
                   Let&apos;s Chat
                 </Link>
                 <Link
-                  href="/files/resume.pdf"
+                  href={developerConfig.resumeFilePath}
                   className={buttonVariants({ variant: "outline" })}
                 >
                   Resume
@@ -83,7 +79,7 @@ export default function Home() {
                     <div className="p-6 sm:px-12 sm:py-8 bg-accent rounded-3xl w-full sm:w-3/4 flex flex-col gap-8">
                       <div className="flex flex-col gap-4">
                         <div className="p-4 rounded-full bg-background w-fit">
-                          <Icon icon={service.icon} className="w-5 h-5" />
+                          <Icon name={service.icon} className="w-5 h-5" />
                         </div>
                         <h2 className="font-medium text-xl">{service.title}</h2>
                         <p className="max-w-lg text-muted-foreground">
@@ -128,7 +124,7 @@ export default function Home() {
             <ul className="grid grid-cols-2 md:grid-cols-4">
               {developerConfig.bigClients.map((bigClient, index) => (
                 <li key={index} className="px-12 flex-1 flex-shrink-0">
-                  <Icon icon={bigClient.icon} className="h-24" />
+                  <Icon name={bigClient.icon} className="h-24" />
                 </li>
               ))}
             </ul>

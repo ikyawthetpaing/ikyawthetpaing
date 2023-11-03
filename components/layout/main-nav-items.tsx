@@ -14,21 +14,24 @@ export function MainNavItems({ navItems, ...props }: Props) {
   const pathname = usePathname();
   return (
     <ul {...props}>
-      {navItems.map((navItem, index) => (
-        <li key={index}>
-          <Link
-            href={navItem.href}
-            className={cn(
-              "uppercase text-lg font-medium",
-              pathname === navItem.href
-                ? "text-foreground"
-                : "text-muted-foreground"
-            )}
-          >
-            {navItem.title}
-          </Link>
-        </li>
-      ))}
+      {navItems.map((navItem, index) => {
+        const isActive =
+          pathname === navItem.href ||
+          (navItem.href !== "/" && pathname.startsWith(navItem.href));
+        return (
+          <li key={index}>
+            <Link
+              href={navItem.href}
+              className={cn(
+                "uppercase text-lg font-medium",
+                isActive ? "text-foreground" : "text-muted-foreground"
+              )}
+            >
+              {navItem.title}
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 }

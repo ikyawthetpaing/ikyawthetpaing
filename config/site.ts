@@ -4,7 +4,7 @@ import { absoluteUrl } from "@/lib/utils";
 
 export const siteConfig: SiteConfig = {
   name: "Kyaw Thet Paing",
-  title: "Kyaw Thet Paing: A Professional Software Developer",
+  title: "Kyaw Thet Paing • Software Engineer",
   description:
     "Discover my world of software development expertise through a portfolio of innovative projects and meticulously crafted code.",
   url: absoluteUrl(),
@@ -53,8 +53,13 @@ export const siteConfig: SiteConfig = {
     "DevOps and Deployment",
     "Machine Learning and AI",
     "Open Source Contributions",
-    "Portfolio",
-    "Blog",
-    "Contact",
+    "Version Control Systems",
+    "Problem Solving",
+    "Algorithm Design and Optimization",
+    "Debugging and Testing",
+    "Continuous Integration and Deployment (CI/CD)",
+    "Security Protocols and Encryption",
+    "Data Structures and Algorithms",
+    "Collaboration and Teamwork",
   ],
 };
