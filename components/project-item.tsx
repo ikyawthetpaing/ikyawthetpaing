@@ -11,11 +11,11 @@ interface Props {
 
 export function ProjectItem({ project }: Props) {
   return (
-    <div className="overflow-hidden rounded-3xl border bg-accent">
+    <div className="bg-accent overflow-hidden rounded-3xl border">
       <div className="flex flex-col gap-4 p-6 sm:px-12 sm:py-8 ">
         <div className="flex gap-4">
           <div>
-            <div className="w-fit rounded-full bg-background p-4">
+            <div className="bg-background w-fit rounded-full p-4">
               <Icon name={project.icon} className="h-5 w-5" />
             </div>
           </div>

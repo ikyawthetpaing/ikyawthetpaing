@@ -20,7 +20,7 @@ export default function Home() {
                   <Link href={media.href} target="_blank">
                     <Icon
                       name={media.icon}
-                      className="h-5 w-5 text-muted-foreground"
+                      className="text-muted-foreground h-5 w-5"
                     />
                   </Link>
                 </li>
@@ -36,7 +36,7 @@ export default function Home() {
                 <h2 className="text-xl font-light uppercase md:text-2xl">
                   {developerConfig.role}
                 </h2>
-                <p className="max-w-lg text-muted-foreground">
+                <p className="text-muted-foreground max-w-lg">
                   {developerConfig.description}
                 </p>
               </div>
@@ -78,13 +78,13 @@ export default function Home() {
                       index % 2 === 0 ? "justify-end" : "justify-start"
                     )}
                   >
-                    <div className="flex w-full flex-col gap-8 rounded-3xl bg-accent p-6 sm:w-3/4 sm:px-12 sm:py-8">
+                    <div className="bg-accent flex w-full flex-col gap-8 rounded-3xl p-6 sm:w-3/4 sm:px-12 sm:py-8">
                       <div className="flex flex-col gap-4">
-                        <div className="w-fit rounded-full bg-background p-4">
+                        <div className="bg-background w-fit rounded-full p-4">
                           <Icon name={service.icon} className="h-5 w-5" />
                         </div>
                         <h2 className="text-xl font-medium">{service.title}</h2>
-                        <p className="max-w-lg text-muted-foreground">
+                        <p className="text-muted-foreground max-w-lg">
                           {service.description}
                         </p>
                       </div>
@@ -189,7 +189,7 @@ export default function Home() {
               className="ml-12 w-28 translate-y-2 object-cover"
             />
           </div>
-          <div className="rounded-3xl bg-accent p-8 sm:p-12 md:p-24 lg:px-32">
+          <div className="bg-accent rounded-3xl p-8 sm:p-12 md:p-24 lg:px-32">
             <div className="flex flex-col justify-between gap-8 sm:flex-row">
               <div className="flex flex-col gap-4 sm:gap-8">
                 <h2 className="text-4xl font-semibold">Work Inquiry</h2>

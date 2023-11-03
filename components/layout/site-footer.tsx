@@ -17,7 +17,7 @@ export function SiteFooter({ navItems }: Props) {
         <div className="container flex flex-col items-center gap-8">
           <h2 className="text-xl font-semibold">Keep In Touch</h2>
           <div className="flex flex-col gap-2 text-center">
-            <h3 className="text-lg text-muted-foreground">Bangkok, Thailand</h3>
+            <h3 className="text-muted-foreground text-lg">Bangkok, Thailand</h3>
             <Link
               href={`mailto:${developerConfig.email}`}
               className="text-2xl font-medium sm:text-3xl"
@@ -37,8 +37,8 @@ export function SiteFooter({ navItems }: Props) {
               return (
                 <li key={index}>
                   <Link href={media.href} target="_blank">
-                    <div className="rounded-full bg-accent p-4">
-                      <Icon className="h-6 w-6 text-muted-foreground" />
+                    <div className="bg-accent rounded-full p-4">
+                      <Icon className="text-muted-foreground h-6 w-6" />
                     </div>
                   </Link>
                 </li>

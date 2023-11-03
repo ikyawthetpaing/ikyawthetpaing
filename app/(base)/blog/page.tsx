@@ -24,7 +24,7 @@ export default function BlogPage() {
       <div className="flex flex-col gap-12">
         <div className="flex flex-col gap-4">
           <h2 className="text-4xl font-semibold">Blogs</h2>
-          <p className="max-w-2xl text-muted-foreground">
+          <p className="text-muted-foreground max-w-2xl">
             {/* Explore my in-depth insights on programming, design patterns, and
             more, arranged chronologically for easy reading. */}
             I&apos;m a software engineer with a passion for sharing my knowledge
@@ -47,7 +47,7 @@ export default function BlogPage() {
                     alt={post.title}
                     width={9999}
                     height={9999}
-                    className="rounded-lg border bg-muted transition-colors"
+                    className="bg-muted rounded-lg border transition-colors"
                     priority={index <= 1}
                   />
                 )}
@@ -56,7 +56,7 @@ export default function BlogPage() {
                   <p className="text-muted-foreground">{post.description}</p>
                 )}
                 {post.date && (
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-muted-foreground text-sm">
                     {formatDate(post.date)}
                   </p>
                 )}

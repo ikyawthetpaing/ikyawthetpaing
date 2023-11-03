@@ -101,7 +101,7 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <article className="container relative max-w-3xl py-6 lg:py-10">
       <div>
-        <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+        <div className="text-muted-foreground flex items-center space-x-2 text-sm">
           {post.date && (
             <time dateTime={post.date} className="block">
               Published on {formatDate(post.date)}
@@ -132,7 +132,7 @@ export default async function PostPage({ params }: PostPageProps) {
                   />
                   <div className="flex-1 text-left leading-tight">
                     <p className="font-medium">{author.title}</p>
-                    <p className="text-[12px] text-muted-foreground">
+                    <p className="text-muted-foreground text-[12px]">
                       @{author.twitter}
                     </p>
                   </div>
@@ -148,7 +148,7 @@ export default async function PostPage({ params }: PostPageProps) {
           alt={post.title}
           width={9999}
           height={9999}
-          className="my-8 rounded-lg border bg-muted transition-colors"
+          className="bg-muted my-8 rounded-lg border transition-colors"
           priority
           quality={100}
         />

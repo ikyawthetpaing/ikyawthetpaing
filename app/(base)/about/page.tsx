@@ -47,7 +47,7 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="flex items-end rounded-3xl bg-accent">
+          <div className="bg-accent flex items-end rounded-3xl">
             <Image
               src="/images/landing.png"
               alt="Kyaw Thet Paing: Software Developer Sketch Art Image"

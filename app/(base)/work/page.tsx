@@ -16,7 +16,7 @@ export default function WorkPage() {
       <div className="flex flex-col gap-12">
         <div className="flex flex-col gap-4">
           <h2 className="text-4xl font-semibold">Works</h2>
-          <p className="max-w-2xl text-muted-foreground">
+          <p className="text-muted-foreground max-w-2xl">
             I&apos;ve carefully selected these projects to showcase my skills as
             a software engineer. These projects demonstrate my ability to
             design, develop, and deliver high-quality software solutions.
