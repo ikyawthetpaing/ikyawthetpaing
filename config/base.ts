@@ -11,8 +11,8 @@ export const baseConfig: BaseConfig = {
       href: "/blog",
     },
     {
-      title: "Work",
-      href: "/work",
+      title: "Project",
+      href: "/project",
     },
     {
       title: "Contact",

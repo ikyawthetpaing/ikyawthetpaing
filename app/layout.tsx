@@ -1,8 +1,9 @@
 import "@/styles/globals.css";
 
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
 
+import { env } from "@/env.mjs";
 import { siteConfig } from "@/config/site";
 
 import { absoluteUrl, cn } from "@/lib/utils";
@@ -12,18 +13,15 @@ import { ThemeProvider } from "@/components/theme-provider";
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
   title: {
     default: siteConfig.title,
-    template: `${siteConfig.name} • %s`,
+    template: `${siteConfig.name} | %s`,
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
   authors: siteConfig.authors,
   creator: siteConfig.creator,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -38,6 +36,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [siteConfig.ogImage],
     creator: siteConfig.creator,
+    site: siteConfig.creator,
   },
   icons: {
     icon: "/favicon.ico",
@@ -45,6 +44,14 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: absoluteUrl("/site.webmanifest"),
+};
+
+export const viewport: Viewport = {
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
 };
 
 export default function RootLayout({

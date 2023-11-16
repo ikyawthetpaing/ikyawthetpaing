@@ -25,8 +25,6 @@ export default function BlogPage() {
         <div className="flex flex-col gap-4">
           <h2 className="text-4xl font-semibold">Blogs</h2>
           <p className="text-muted-foreground max-w-2xl">
-            {/* Explore my in-depth insights on programming, design patterns, and
-            more, arranged chronologically for easy reading. */}
             I&apos;m a software engineer with a passion for sharing my knowledge
             and experience with others. In my blog, I write about a variety of
             topics related to software engineering, including programming,
@@ -42,14 +40,16 @@ export default function BlogPage() {
                 className="group relative flex flex-col space-y-2"
               >
                 {post.image && (
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    width={9999}
-                    height={9999}
-                    className="bg-muted rounded-lg border transition-colors"
-                    priority={index <= 1}
-                  />
+                  <div className="bg-muted aspect-video overflow-x-hidden rounded-lg border transition-colors">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={9999}
+                      height={9999}
+                      className="h-full w-full object-cover"
+                      priority={index <= 1}
+                    />
+                  </div>
                 )}
                 <h2 className="text-2xl font-extrabold">{post.title}</h2>
                 {post.description && (

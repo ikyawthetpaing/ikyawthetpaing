@@ -143,15 +143,17 @@ export default async function PostPage({ params }: PostPageProps) {
         ) : null}
       </div>
       {post.image && (
-        <Image
-          src={post.image}
-          alt={post.title}
-          width={9999}
-          height={9999}
-          className="bg-muted my-8 rounded-lg border transition-colors"
-          priority
-          quality={100}
-        />
+        <div className="bg-muted my-8 aspect-video overflow-x-hidden rounded-lg border transition-colors">
+          <Image
+            src={post.image}
+            alt={post.title}
+            width={9999}
+            height={9999}
+            className="h-full w-full object-cover"
+            priority
+            quality={100}
+          />
+        </div>
       )}
       <Mdx code={post.body.code} />
       <hr className="mt-12" />

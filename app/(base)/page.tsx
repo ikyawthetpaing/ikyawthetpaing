@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { allProjects } from "@/.contentlayer/generated";
 
-import { developerConfig } from "@/config/developer";
+import { creatorConfig } from "@/config/creator";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -10,12 +11,12 @@ import { ProjectItem } from "@/components/project-item";
 
 export default function Home() {
   return (
-    <main className="grid gap-32">
+    <div className="grid gap-32">
       <section className="container">
         <div className="flex gap-12">
           <div className="flex flex-col justify-end">
             <ul className="flex flex-col gap-4">
-              {developerConfig.media.map((media, index) => (
+              {creatorConfig.media.map((media, index) => (
                 <li key={index}>
                   <Link href={media.href} target="_blank">
                     <Icon
@@ -31,13 +32,13 @@ export default function Home() {
             <div className="flex flex-col justify-center gap-12">
               <div className="flex flex-col gap-6">
                 <h1 className="text-3xl font-medium uppercase sm:text-4xl md:text-5xl lg:text-6xl">
-                  {developerConfig.name}
+                  {creatorConfig.name}
                 </h1>
                 <h2 className="text-xl font-light uppercase md:text-2xl">
-                  {developerConfig.role}
+                  {creatorConfig.role}
                 </h2>
                 <p className="text-muted-foreground max-w-lg">
-                  {developerConfig.description}
+                  {creatorConfig.description}
                 </p>
               </div>
 
@@ -46,7 +47,7 @@ export default function Home() {
                   Let&apos;s Chat
                 </Link>
                 <Link
-                  href={developerConfig.resumeFilePath}
+                  href={creatorConfig.resumeFilePath}
                   className={buttonVariants({ variant: "outline" })}
                 >
                   Resume
@@ -70,7 +71,7 @@ export default function Home() {
         <div className="flex gap-12">
           <div className="flex flex-1">
             <ul className="flex w-full flex-col gap-12">
-              {developerConfig.services.map((service, index) => (
+              {creatorConfig.services.map((service, index) => (
                 <li key={index}>
                   <div
                     className={cn(
@@ -124,7 +125,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
             <ul className="grid grid-cols-2 md:grid-cols-4">
-              {developerConfig.bigClients.map((bigClient, index) => (
+              {creatorConfig.bigClients.map((bigClient, index) => (
                 <li key={index} className="flex-1 shrink-0 px-12">
                   <Icon name={bigClient.icon} className="h-24" />
                 </li>
@@ -170,7 +171,7 @@ export default function Home() {
             </p>
           </div>
           <ul className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            {developerConfig.featuredProjects.map((project, index) => (
+            {allProjects.map((project, index) => (
               <li key={index}>
                 <ProjectItem project={project} />
               </li>
@@ -213,6 +214,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

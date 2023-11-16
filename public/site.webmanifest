@@ -1,5 +1,5 @@
 {
-  "name": "Kyaw Thet Paing: A Professional Software Developer",
+  "name": "Kyaw Thet Paing: A Professional Software Engineer",
   "short_name": "Kyaw Thet Paing",
   "description": "Discover my world of software development expertise through a portfolio of innovative projects and meticulously crafted code.",
   "icons": [
@@ -17,9 +17,9 @@
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone",
-
   "orientation": "any",
   "scope": "/",
+  "start_url": "/",
   "prefer_related_applications": false,
   "related_applications": [],
   "categories": [

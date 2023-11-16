@@ -1,13 +1,14 @@
-import { DeveloperConfig } from "@/types";
+import { CreatorConfig } from "@/types";
 
-export const developerConfig: DeveloperConfig = {
+export const creatorConfig: CreatorConfig = {
   name: "Kyaw Thet Paing",
-  role: "Software Engineer",
+  role: "Software Engineer and Full-Stack Developer",
   description:
     "I am a software engineer with a passion for building innovative and user-friendly applications. I have a strong foundation in full stack development, including experience with a variety of programming languages, frameworks, and databases. I am also skilled in agile development methodologies and have a proven track record of delivering high-quality software on time and within budget.",
-  username: "ikyawthetpaing",
+  username: "@ikyawthetpaing",
   email: "ikyawthetpaing@gmail.com",
   resumeFilePath: "/files/resume.pdf",
+  location: "Bangkok, Thailand",
   tel: {
     label: "(+66) 937-418-692",
     value: "+66937418692",
@@ -70,30 +71,41 @@ export const developerConfig: DeveloperConfig = {
       icon: "asus",
     },
   ],
-  featuredProjects: [
-    {
-      name: "Voxellax",
-      description: "E-commerce website for selling digital products.",
-      icon: "globe",
-      thumbnail: "/images/projects/voxellax/thumbnail.png",
-      githubLink: "https://github.com/ikyawthetpaing/voxellax",
-      preview: {
-        label: "View",
-        href: "https://voxellax.vercel.app",
-      },
-    },
-    {
-      name: "Nexus",
-      description: "A social media platform resembling Twitter.",
-      icon: "smartphone",
-      thumbnail: "/images/projects/nexus/thumbnail.png",
-      githubLink: "https://github.com/ikyawthetpaing/nexus",
-      preview: {
-        label: "Download",
-        href: "https://github.com/ikyawthetpaing/nexus/releases/download/v1.0.0/nexus-v1.0.0.apk",
-      },
-    },
-  ],
+  // featuredProjects: [
+  //   {
+  //     name: "Voxellax",
+  //     description: "E-commerce website for selling digital products.",
+  //     icon: "globe",
+  //     thumbnail: "/images/projects/voxellax/thumbnail.png",
+  //     githubLink: "https://github.com/ikyawthetpaing/voxellax",
+  //     preview: {
+  //       label: "Visit",
+  //       href: "https://voxellax.vercel.app",
+  //     },
+  //   },
+  //   {
+  //     name: "Nexus",
+  //     description: "A social media platform resembling Twitter.",
+  //     icon: "smartphone",
+  //     thumbnail: "/images/projects/nexus/thumbnail.png",
+  //     githubLink: "https://github.com/ikyawthetpaing/nexus",
+  //     preview: {
+  //       label: "Download",
+  //       href: "https://github.com/ikyawthetpaing/nexus/releases/download/v1.0.0/nexus-v1.0.0.apk",
+  //     },
+  //   },
+  //   {
+  //     name: "Euolingo",
+  //     description: "The ultimate app for seamless language learning.",
+  //     icon: "smartphone",
+  //     thumbnail: "/images/projects/euolingo/thumbnail.png",
+  //     githubLink: "https://github.com/ikyawthetpaing/euolingo",
+  //     preview: {
+  //       label: "Visit",
+  //       href: "https://euolingo.vercel.app",
+  //     },
+  //   },
+  // ],
   skills: [
     "Full-stack Development",
     "Database Management",

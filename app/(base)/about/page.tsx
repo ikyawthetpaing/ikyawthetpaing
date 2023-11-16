@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { developerConfig } from "@/config/developer";
+import { creatorConfig } from "@/config/creator";
 
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -108,7 +108,7 @@ export default function AboutPage() {
             <div className="flex flex-col gap-4">
               <h3 className="text-2xl font-medium">Skills</h3>
               <ul className="flex flex-wrap gap-2">
-                {developerConfig.skills.map((skill, index) => (
+                {creatorConfig.skills.map((skill, index) => (
                   <li key={index}>
                     <Badge variant="outline" key={index}>
                       {skill}
@@ -117,7 +117,7 @@ export default function AboutPage() {
                 ))}
               </ul>
               <Link
-                href={developerConfig.resumeFilePath}
+                href={creatorConfig.resumeFilePath}
                 className={cn(
                   buttonVariants({ variant: "outline" }),
                   "w-fit rounded-full px-8 transition-all duration-150 hover:px-12"

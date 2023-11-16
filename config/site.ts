@@ -2,17 +2,18 @@ import { SiteConfig } from "@/types";
 
 import { absoluteUrl } from "@/lib/utils";
 
+import { creatorConfig } from "./creator";
+
 export const siteConfig: SiteConfig = {
-  name: "Kyaw Thet Paing",
-  title: "Kyaw Thet Paing • Software Engineer",
-  description:
-    "Discover my world of software development expertise through a portfolio of innovative projects and meticulously crafted code.",
+  name: creatorConfig.name,
+  title: `${creatorConfig.name} | ${creatorConfig.role}`,
+  description: creatorConfig.description,
   url: absoluteUrl(),
   ogImage: absoluteUrl("/og.jpg"),
   authors: [
-    { name: "@ikyawthetpaing", url: "https://twitter.com/ikyawthetpaing" },
+    { name: "Kyaw Thet Paing", url: "https://twitter.com/ikyawthetpaing" },
   ],
-  creator: "@ikyawthetpaing",
+  creator: creatorConfig.username,
   keywords: [
     "Freelance Software Developer",
     "Software Development Services",

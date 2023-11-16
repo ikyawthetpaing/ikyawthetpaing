@@ -4,10 +4,10 @@ export type SiteConfig = {
   name: string;
   title: string;
   description: string;
+  creator: string;
   url: string;
   ogImage: string;
   authors: Author[];
-  creator: string;
   keywords: string[];
 };
 
@@ -15,12 +15,13 @@ export type BaseConfig = {
   mainNavItems: NavItem[];
 };
 
-export type DeveloperConfig = {
+export type CreatorConfig = {
   name: string;
   username: string;
   description: string;
   role: string;
   email: string;
+  location: string;
   resumeFilePath: string;
   tel: Option;
   media: {
@@ -33,7 +34,7 @@ export type DeveloperConfig = {
     name: string;
     icon: Icon;
   }[];
-  featuredProjects: Project[];
+  // featuredProjects: Project[];
   skills: string[];
 };
 
@@ -50,14 +51,14 @@ export type Option = {
   value: string;
 };
 
-export type Project = {
-  name: string;
-  description: string;
-  icon: Icon;
-  thumbnail: string;
-  githubLink: string;
-  preview: {
-    label: string;
-    href: string;
-  };
-};
+// export type Project = {
+//   name: string;
+//   description: string;
+//   icon: Icon;
+//   thumbnail: string;
+//   githubLink: string;
+//   preview: {
+//     label: string;
+//     href: string;
+//   };
+// };
