@@ -4,7 +4,6 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 
 import { cn } from "@/lib/utils";
 import { Callout } from "@/components/mdx/callout";
-import { CodeBlock } from "@/components/mdx/code-block";
 import { MdxCard } from "@/components/mdx/mdx-card";
 
 const components = {
@@ -131,7 +130,14 @@ const components = {
       {...props}
     />
   ),
-  pre: CodeBlock,
+  pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => {
+    return (
+      <pre
+        className="hide-scrollbar mt-4 max-h-[650px] overflow-x-auto rounded-lg border p-4 font-mono"
+        {...props}
+      />
+    );
+  },
   code: ({ className, ...props }: HTMLAttributes<HTMLElement>) => (
     <code
       className={cn(
