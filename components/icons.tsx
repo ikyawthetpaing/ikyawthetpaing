@@ -1,10 +1,8 @@
 import { Icon as IconType } from "@/types";
 import {
   AppWindow,
-  CheckIcon,
   ChevronLeft,
   ChevronRight,
-  CopyIcon,
   Globe,
   Instagram,
   Linkedin,
@@ -33,8 +31,6 @@ export const Icons = {
   smartphone: Smartphone,
   globe: Globe,
   moveRight: MoveRight,
-  checkIcon: CheckIcon,
-  copyIcon: CopyIcon,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
   kyax: ({ ...props }: LucideProps) => (
