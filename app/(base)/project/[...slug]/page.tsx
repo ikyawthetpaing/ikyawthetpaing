@@ -93,7 +93,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <article className="container relative max-w-3xl py-6 lg:py-10">
       <div>
-        <div className="text-sm text-muted-foreground">
+        <div className="text-muted-foreground text-sm">
           {project.date && (
             <time dateTime={project.date} className="block">
               Published on {formatDate(project.date)}
@@ -105,7 +105,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </h1>
       </div>
       {project.image && (
-        <div className="my-8 aspect-video overflow-x-hidden rounded-lg border bg-muted transition-colors">
+        <div className="bg-muted my-8 aspect-video overflow-x-hidden rounded-lg border transition-colors">
           <Image
             src={project.image}
             alt={project.title}
