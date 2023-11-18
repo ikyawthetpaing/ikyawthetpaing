@@ -13,18 +13,16 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const posts = allPosts
-    .filter((post) => post.published)
-    .sort((a, b) => {
-      return compareDesc(new Date(a.date), new Date(b.date));
-    });
+  const posts = allPosts.sort((a, b) => {
+    return compareDesc(new Date(a.date), new Date(b.date));
+  });
 
   return (
     <section className="container">
       <div className="flex flex-col gap-12">
         <div className="flex flex-col gap-4">
           <h2 className="text-4xl font-semibold">Blogs</h2>
-          <p className="text-muted-foreground max-w-2xl">
+          <p className="max-w-2xl text-muted-foreground">
             I am passionate about imparting knowledge and distilling my
             experiences into a treasure trove of valuable insights. Dive into my
             blog, where I articulate a spectrum of topics within the realm of
@@ -39,7 +37,7 @@ export default function BlogPage() {
                 className="group relative flex flex-col space-y-2"
               >
                 {post.image && (
-                  <div className="bg-muted aspect-video overflow-x-hidden rounded-lg border transition-colors">
+                  <div className="aspect-video overflow-x-hidden rounded-lg border bg-muted transition-colors">
                     <Image
                       src={post.image}
                       alt={post.title}
@@ -55,7 +53,7 @@ export default function BlogPage() {
                   <p className="text-muted-foreground">{post.description}</p>
                 )}
                 {post.date && (
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-sm text-muted-foreground">
                     {formatDate(post.date)}
                   </p>
                 )}

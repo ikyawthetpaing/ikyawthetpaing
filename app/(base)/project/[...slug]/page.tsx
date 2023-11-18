@@ -7,8 +7,13 @@ import "@/styles/mdx.css";
 
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { compareDesc } from "date-fns";
 
-import { absoluteUrl, formatDate } from "@/lib/utils";
+import { absoluteUrl, cn, formatDate } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { Icons } from "@/components/icons";
+import { MdxPager } from "@/components/mdx/mdx-pager";
 
 interface ProjectPageProps {
   params: {
@@ -88,7 +93,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <article className="container relative max-w-3xl py-6 lg:py-10">
       <div>
-        <div className="text-muted-foreground text-sm">
+        <div className="text-sm text-muted-foreground">
           {project.date && (
             <time dateTime={project.date} className="block">
               Published on {formatDate(project.date)}
@@ -100,7 +105,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </h1>
       </div>
       {project.image && (
-        <div className="bg-muted my-8 aspect-video overflow-x-hidden rounded-lg border transition-colors">
+        <div className="my-8 aspect-video overflow-x-hidden rounded-lg border bg-muted transition-colors">
           <Image
             src={project.image}
             alt={project.title}
@@ -114,6 +119,23 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       )}
       <Mdx code={project.body.code} />
       <hr className="mt-12" />
+      <div className="py-6">
+        <MdxPager
+          currentItem={project}
+          allItems={allProjects.sort((a, b) => {
+            return compareDesc(new Date(a.date), new Date(b.date));
+          })}
+        />
+      </div>
+      <div className="flex justify-center py-6 lg:py-10">
+        <Link
+          href="/project"
+          className={cn(buttonVariants({ variant: "ghost" }))}
+        >
+          <Icons.chevronLeft className="mr-2 h-4 w-4" />
+          See all projects
+        </Link>
+      </div>
     </article>
   );
 }

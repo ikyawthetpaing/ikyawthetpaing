@@ -4,7 +4,7 @@ export const creatorConfig: CreatorConfig = {
   name: "Kyaw Thet Paing",
   role: "Software Engineer and Full-Stack Developer",
   description:
-    "I am a software engineer with a passion for building innovative and user-friendly applications. I have a strong foundation in full stack development, including experience with a variety of programming languages, frameworks, and databases. I am also skilled in agile development methodologies and have a proven track record of delivering high-quality software on time and within budget.",
+    "I am a software engineer with a passion for building innovative and user-friendly applications. I have a strong foundation in full stack development, including experience with a variety of programming languages, frameworks, and databases.", //  I am also skilled in agile development methodologies and have a proven track record of delivering high-quality software on time and within budget.
   username: "@ikyawthetpaing",
   email: "ikyawthetpaing@gmail.com",
   resumeFilePath: "/files/resume.pdf",

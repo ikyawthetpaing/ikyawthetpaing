@@ -1,7 +1,7 @@
 ---
 name: Syncloud
 title: Syncloud - API Infrastructure for Seamless Communication
-description: A scalable, performant, and user-friendly API infrastructure
+description: A scalable and performant API infrastructure
 projectType: backend
 image: /images/projects/syncloud/thumbnail.png
 date: "2023-11-13"
@@ -36,8 +36,11 @@ Syncloud leverages the following technologies to provide a robust and efficient 
 - **Query Parameters:**
   - `fields`: Comma-separated list of fields to include in the response.
 - **Example Requests:**
-  - `GET /api/v1/countries`
-  - `GET /api/v1/countries?fields=name,iso2,flag,states.name,states.state_code,states.cities.name`
+
+```http
+GET /api/v1/countries
+GET /api/v1/countries?fields=name,iso2,flag,states.name,states.state_code,states.cities.name
+```
 
 ### Country by ISO2 Code
 
@@ -48,8 +51,11 @@ Syncloud leverages the following technologies to provide a robust and efficient 
 - **Query Parameters:**
   - `fields`: Comma-separated list of fields to include in the response.
 - **Example Requests:**
-  - `GET /api/v1/countries/US`
-  - `GET /api/v1/countries/US?fields=name,iso2,flag,states.name,states.state_code,states.cities.name`
+
+```http
+GET /api/v1/countries/US`
+GET /api/v1/countries/US?fields=name,iso2,flag,states.name,states.state_code,states.cities.name
+```
 
 Syncloud's documentation provides detailed information on using these API endpoints. Feel free to explore and integrate Syncloud's API into your projects.
 

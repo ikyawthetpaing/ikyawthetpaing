@@ -2,8 +2,7 @@ import Link from "next/link";
 
 import { cn, truncate } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-
-import { Icons } from "../icons";
+import { Icons } from "@/components/icons";
 
 interface MdxPagerItem {
   title: string;
@@ -34,7 +33,6 @@ export function MdxPager({
     >
       {pager?.prev ? (
         <Link
-          aria-label="Previous post"
           href={pager.prev.slug}
           className={cn(buttonVariants({ variant: "ghost" }))}
         >
@@ -44,7 +42,6 @@ export function MdxPager({
       ) : null}
       {pager?.next ? (
         <Link
-          aria-label="Next post"
           href={pager.next.slug}
           className={cn(buttonVariants({ variant: "ghost" }), "ml-auto")}
         >
