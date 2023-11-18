@@ -7,7 +7,8 @@ import { creatorConfig } from "./creator";
 export const siteConfig: SiteConfig = {
   name: creatorConfig.name,
   title: `${creatorConfig.name} | ${creatorConfig.role}`,
-  description: creatorConfig.description,
+  description:
+    "Discover my world of software development expertise through a portfolio of innovative projects and meticulously crafted code.",
   url: absoluteUrl(),
   ogImage: absoluteUrl("/og.jpg"),
   authors: [

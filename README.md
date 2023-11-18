@@ -5,7 +5,7 @@ Welcome to my GitHub profile! I'm Kyaw Thet Paing, a passionate software develop
 ## About Me
 
 - 🎯 My goal here is to collaborate, learn, and build amazing things together. Feel free to explore my repositories, open issues, and let's connect!
-- 📫 You can reach me at [ikyawthetpaing@gmail.com](mailto:ikyawthetpaing@gmail.com) or connect with me on [𝕏(Twitter)](https://twitter.com/ikyawthetpaing), where I share my insights, experiences, and occasional tech memes.
+- 📫 You can reach me at [ikyawthetpaing@gmail.com](mailto:ikyawthetpaing@gmail.com) or visit my website at [ikyawthetpaing.com](https://ikyawthetpaing.vercel.app) or connect with me on [𝕏(Twitter)](https://twitter.com/ikyawthetpaing), where I share my insights, experiences, and occasional tech memes.
 - 🎨 When I'm not immersed in code, you can often find me exploring the realms of art and creativity, because life is all about striking that perfect balance, don't you think?
 - 💬 Ask me about software development, REST API design and database management
 - 👉 Ready to embark on a coding adventure? Let's write some code that changes the world, one commit at a time! 🌍✨
@@ -18,15 +18,16 @@ Welcome to my GitHub profile! I'm Kyaw Thet Paing, a passionate software develop
 
 ## Skills
 
-- Proficient in C/C++ and Rust
-- Experience with NextJS, React Native, and Firebase
-- Familiar with NodeJS, GraphQL, and Python
+- Proficient in C/C++, Python and TypeScript
+- Experience with NextJS, React Native (Expo), and Vue.js
+- Familiar with Node.js, MongoDB, SQL and AWS
 
 ## Projects
 
 - [Voxellax](https://github.com/ikyawthetpaing/voxellax) - Voxellax is a comprehensive e-commerce platform built specifically for digital products. With a sleek and user-friendly interface, Voxellax allows users to discover, purchase, and manage a wide range of digital products conveniently.
+- [Euolingo](https://github.com/ikyawthetpaing/euolingo.git) - Euolingo is a playful language learning app, a Duolingo alternative. Built with React Native, Expo, and Firebase for a fun and interactive language learning experience.
 - [Nexus](https://github.com/ikyawthetpaing/nexus.git) - Nexus is a cutting-edge social media application, meticulously crafted by a solo developer, bringing you the latest in React Native and Firebase technology. With Nexus, connect with friends, share your life's moments, and explore a world of seamless interaction.
-- [Nova-API](https://github.com/ikyawthetpaing/nova-api.git) - Nova-API is dedicated to developing and maintaining the API infrastructure that powers our innovative services. With a focus on scalability, performance, and user-friendly interactions, Nova-API is the backbone of our platform, enabling seamless communication between clients and our backend services.
+- [Syncloud](https://github.com/ikyawthetpaing/syncloud.git) - Syncloud is dedicated to developing and maintaining the API infrastructure that powers our innovative services. With a focus on scalability, performance, and user-friendly interactions, Syncloud is the backbone of our platform, enabling seamless communication between clients and our backend services.
 
 ## Certifications
 

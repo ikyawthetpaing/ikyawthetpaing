@@ -25,11 +25,10 @@ export default function BlogPage() {
         <div className="flex flex-col gap-4">
           <h2 className="text-4xl font-semibold">Blogs</h2>
           <p className="text-muted-foreground max-w-2xl">
-            I&apos;m a software engineer with a passion for sharing my knowledge
-            and experience with others. In my blog, I write about a variety of
-            topics related to software engineering, including programming,
-            design patterns, and more. I want my blog to be a resource for other
-            software engineers who are looking to learn and grow.
+            I am passionate about imparting knowledge and distilling my
+            experiences into a treasure trove of valuable insights. Dive into my
+            blog, where I articulate a spectrum of topics within the realm of
+            software engineering.
           </p>
         </div>
         {posts?.length ? (

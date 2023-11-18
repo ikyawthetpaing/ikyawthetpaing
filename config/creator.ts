@@ -36,21 +36,21 @@ export const creatorConfig: CreatorConfig = {
       description:
         "I engineer tailored software solutions. Share your needs, and I'll craft efficient, custom applications, turning your unique requirements into seamless, user-friendly software experiences.",
       icon: "smartphone",
-      href: "/work",
+      href: "/project",
     },
     {
       title: "Website Development",
       description:
         "I craft exceptional websites. Share your vision, and I'll design a user-friendly, visually stunning site that represents your brand online, making your digital presence stand out.",
       icon: "globe",
-      href: "/work",
+      href: "/project",
     },
     {
       title: "Web Design",
       description:
         "I design captivating websites. Share your vision, and I'll transform it into a visually appealing, user-friendly site that reflects your brand identity, ensuring a memorable online experience for your visitors.",
       icon: "appWindow",
-      href: "/work",
+      href: "/project",
     },
   ],
   bigClients: [
