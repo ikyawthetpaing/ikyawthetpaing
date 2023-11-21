@@ -14,7 +14,8 @@ import { env } from "@/env.mjs";
 
 import { absoluteUrl, cn, formatDate } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { Icons } from "@/components/icons";
+import { BlogShareDialog } from "@/components/blog-share-dialog";
+import { Icon, Icons } from "@/components/icons";
 import { MdxPager } from "@/components/mdx/mdx-pager";
 
 interface PostPageProps {
@@ -114,7 +115,7 @@ export default async function PostPage({ params }: PostPageProps) {
           {post.title}
         </h1>
         {authors?.length ? (
-          <div className="mt-4 flex space-x-4">
+          <div className="mt-4 flex justify-between space-x-4">
             {authors.map((author, index) =>
               author ? (
                 <Link
@@ -130,7 +131,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     quality={100}
                     className="rounded-full bg-white"
                   />
-                  <div className="flex-1 text-left leading-tight">
+                  <div className="flex-1 space-y-1 text-left leading-tight">
                     <p className="font-medium">{author.title}</p>
                     <p className="text-muted-foreground text-[12px]">
                       @{author.twitter}
@@ -139,6 +140,13 @@ export default async function PostPage({ params }: PostPageProps) {
                 </Link>
               ) : null
             )}
+            <div className="grid place-content-center">
+              <BlogShareDialog
+                url={absoluteUrl(post.slug)}
+                title={post.title}
+                description={post.description}
+              />
+            </div>
           </div>
         ) : null}
       </div>
