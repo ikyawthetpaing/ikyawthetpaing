@@ -60,8 +60,8 @@ export default function Home() {
                 alt="Kyaw Thet Paing's Art Sketch Image"
                 width={9999}
                 height={9999}
-                priority
                 className="h-full w-full object-cover"
+                quality={100}
               />
             </div>
           </div>

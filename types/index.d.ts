@@ -34,8 +34,8 @@ export type CreatorConfig = {
     name: string;
     icon: Icon;
   }[];
-  // featuredProjects: Project[];
   skills: string[];
+  imageGallery: { alt: string; url: string }[];
 };
 
 export type NavItem = {
@@ -50,15 +50,3 @@ export type Option = {
   label: string;
   value: string;
 };
-
-// export type Project = {
-//   name: string;
-//   description: string;
-//   icon: Icon;
-//   thumbnail: string;
-//   githubLink: string;
-//   preview: {
-//     label: string;
-//     href: string;
-//   };
-// };
