@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <section className="container flex flex-col gap-8">
-      <h1 className="text-3xl font-light">About Me —</h1>
+      <h1 className="text-muted-foreground text-3xl font-light">About Me —</h1>
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-8 sm:flex-row">
           <div className="flex-1">
@@ -46,7 +46,8 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-        <div className="grid gap-8 md:grid-cols-2">
+
+        <div className="columns-1 gap-8 sm:columns-2">
           <div className="grid gap-8">
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {creatorConfig.imageGallery.map((image, index) => (
@@ -64,6 +65,40 @@ export default function AboutPage() {
                   />
                 </div>
               ))}
+            </div>
+            <div className="flex flex-col gap-8 ">
+              <p>
+                As a full-stack developer, my passion lies in crafting
+                purpose-driven solutions that transcend mere code writing. I am
+                dedicated to architecting seamless digital experiences that
+                address tangible challenges. My approach centers around thriving
+                on user feedback, keenly understanding user needs, and
+                iteratively refining solutions over time to deliver enduring
+                impact.
+              </p>
+              <p>
+                What sets me apart is not only my technical proficiency but also
+                my commitment to creating solutions that resonate with users and
+                meet the genuine needs of businesses. I am adept at translating
+                client requirements into innovative digital solutions, and I
+                excel in the dynamic process of continuous improvement, ensuring
+                that the solutions I build evolve alongside the ever-changing
+                landscape of technology and user expectations.
+              </p>
+              <p className="">
+                One of my favorite quotes, attributed to Peter Drucker, guides
+                my work:
+              </p>
+              <p className="text-2xl font-medium md:text-3xl">
+                “There is nothing so useless as doing efficiently that which
+                should not be done at all.”
+              </p>
+              <p className="">
+                This quote deeply resonates with me. I am not interested in
+                creating mere aesthetic illusions. My passion lies in developing
+                software solutions that are purposeful, impactful, and
+                meaningful.
+              </p>
             </div>
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-4">
@@ -88,38 +123,6 @@ export default function AboutPage() {
                 </Link>
               </div>
             </div>
-          </div>
-          <div className="flex flex-col gap-8 ">
-            <p>
-              As a full-stack developer, my passion lies in crafting
-              purpose-driven solutions that transcend mere code writing. I am
-              dedicated to architecting seamless digital experiences that
-              address tangible challenges. My approach centers around thriving
-              on user feedback, keenly understanding user needs, and iteratively
-              refining solutions over time to deliver enduring impact.
-            </p>
-            <p>
-              What sets me apart is not only my technical proficiency but also
-              my commitment to creating solutions that resonate with users and
-              meet the genuine needs of businesses. I am adept at translating
-              client requirements into innovative digital solutions, and I excel
-              in the dynamic process of continuous improvement, ensuring that
-              the solutions I build evolve alongside the ever-changing landscape
-              of technology and user expectations.
-            </p>
-            <p className="">
-              One of my favorite quotes, attributed to Peter Drucker, guides my
-              work:
-            </p>
-            <p className="text-2xl font-medium md:text-3xl">
-              “There is nothing so useless as doing efficiently that which
-              should not be done at all.”
-            </p>
-            <p className="">
-              This quote deeply resonates with me. I am not interested in
-              creating mere aesthetic illusions. My passion lies in developing
-              software solutions that are purposeful, impactful, and meaningful.
-            </p>
           </div>
         </div>
       </div>

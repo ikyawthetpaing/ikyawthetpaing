@@ -9,6 +9,7 @@ import {
   LucideProps,
   Menu,
   MoveRight,
+  Send,
   Server,
   Share2,
   Smartphone,
@@ -37,6 +38,7 @@ export const Icons = {
   chevronRight: ChevronRight,
   server: Server,
   share: Share2,
+  send: Send,
   kyax: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

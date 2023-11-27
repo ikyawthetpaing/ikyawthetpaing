@@ -1,5 +1,5 @@
 import { type MetadataRoute } from "next";
-import { allPosts } from "contentlayer/generated";
+import { allPosts, allProjects } from "contentlayer/generated";
 
 import { baseConfig } from "@/config/base";
 
@@ -11,10 +11,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date().toISOString(),
   }));
 
+  const projects = allProjects.map((project) => ({
+    url: absoluteUrl(`${project.slug}`),
+    lastModified: new Date().toISOString(),
+  }));
+
   const routes = baseConfig.mainNavItems.map((route) => ({
     url: absoluteUrl(route.href),
     lastModified: new Date().toISOString(),
   }));
 
-  return [...routes, ...posts];
+  return [...routes, ...posts, ...projects];
 }

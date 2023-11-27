@@ -1,9 +1,6 @@
 import { Metadata } from "next";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { ContactForm } from "@/components/contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -24,30 +21,7 @@ export default function ContactPage() {
         </p>
       </div>
       <div className="mx-auto w-full max-w-4xl">
-        <form>
-          <div className="flex flex-col gap-8">
-            <div className="grid gap-8 sm:grid-cols-2 ">
-              <div className="flex flex-col gap-2">
-                <Label>Name *</Label>
-                <Input type="text" placeholder="Hello ..." />
-              </div>
-              <div className="flex flex-col gap-2">
-                <Label>Email *</Label>
-                <Input type="email" placeholder="Where can I reply?" />
-              </div>
-            </div>
-            <div>
-              <div className="flex flex-col gap-2">
-                <Label>Message *</Label>
-                <Textarea
-                  placeholder="What is in your mind?"
-                  className="h-64"
-                />
-              </div>
-            </div>
-            <Button className="w-full sm:w-fit">Send Message</Button>
-          </div>
-        </form>
+        <ContactForm />
       </div>
     </section>
   );
