@@ -1,12 +1,14 @@
-import { Icon as IconType } from "@/types";
+import { IconName as IconType } from "@/types";
 import {
   AppWindow,
   ChevronLeft,
   ChevronRight,
+  Facebook,
   Globe,
   Instagram,
   Linkedin,
   LucideProps,
+  Mail,
   Menu,
   MoveRight,
   Send,
@@ -39,6 +41,8 @@ export const Icons = {
   server: Server,
   share: Share2,
   send: Send,
+  facebook: Facebook,
+  mail: Mail,
   kyax: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

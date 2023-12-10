@@ -32,14 +32,14 @@ export const creatorConfig: CreatorConfig = {
   ],
   services: [
     {
-      title: "Custom Software Development",
+      title: "Software Development",
       description:
         "I engineer tailored software solutions. Share your needs, and I'll craft efficient, custom applications, turning your unique requirements into seamless, user-friendly software experiences.",
       icon: "smartphone",
       href: "/project",
     },
     {
-      title: "Website Development",
+      title: "Web Development",
       description:
         "I craft exceptional websites. Share your vision, and I'll design a user-friendly, visually stunning site that represents your brand online, making your digital presence stand out.",
       icon: "globe",
@@ -124,9 +124,21 @@ export const creatorConfig: CreatorConfig = {
     "Continuous learning",
   ],
   imageGallery: [
-    { alt: "", url: "/images/portrait_1.jpg" },
-    { alt: "", url: "/images/portrait_2.jpg" },
-    { alt: "", url: "/images/portrait_3.jpg" },
-    { alt: "", url: "/images/portrait_4.jpg" },
+    {
+      alt: "Selfie at the beach wearing a black t-shirt",
+      url: "/images/portrait_1.jpg",
+    },
+    {
+      alt: "Beach trip selfie with black t-shirt",
+      url: "/images/portrait_2.jpg",
+    },
+    {
+      alt: "Sunny day selfie in black t-shirt at the beach",
+      url: "/images/portrait_3.jpg",
+    },
+    {
+      alt: "Relaxing by the shore in a black t-shirt",
+      url: "/images/portrait_4.jpg",
+    },
   ],
 };

@@ -29,18 +29,6 @@ export function ProjectItem({ project }: Props) {
               <h3 className="text-2xl font-medium">{project.name}</h3>
               <p className="text-muted-foreground">{project.description}</p>
             </div>
-            {/* <div className="flex gap-4">
-              <Link href={project.preview.href} target="_blank">
-                <Badge className="bg-background text-foreground hover:bg-background/75">
-                  {project.preview.label}
-                </Badge>
-              </Link>
-              <Link href={project.githubLink} target="_blank">
-                <Badge className="bg-background text-foreground hover:bg-background/75">
-                  Code
-                </Badge>
-              </Link>
-            </div> */}
           </div>
         </div>
       </div>

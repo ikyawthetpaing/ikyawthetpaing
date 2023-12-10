@@ -8,7 +8,6 @@ import "@/styles/mdx.css";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { compareDesc } from "date-fns";
 
 import { absoluteUrl, cn, formatDate } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
@@ -122,9 +121,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <div className="py-6">
         <MdxPager
           currentItem={project}
-          allItems={allProjects.sort((a, b) => {
-            return compareDesc(new Date(a.date), new Date(b.date));
-          })}
+          allItems={allProjects.sort((a, b) => a.index - b.index)}
         />
       </div>
       <div className="flex justify-center py-6 lg:py-10">

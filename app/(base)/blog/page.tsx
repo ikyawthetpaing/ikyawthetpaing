@@ -33,7 +33,7 @@ export default function BlogPage() {
           <div className="grid gap-10 sm:grid-cols-2">
             {posts.map((post, index) => (
               <article
-                key={post._id}
+                key={index}
                 className="group relative flex flex-col space-y-2"
               >
                 {post.image && (

@@ -20,10 +20,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-/**
- * Sends an email with the provided contact data.
- * @param {ContactSchema} data - The contact form data.
- */
 export async function sendMail(data: ContactSchema) {
   try {
     const { subject } = data;

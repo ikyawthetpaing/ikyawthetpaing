@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { allProjects } from "@/.contentlayer/generated";
-import { compareDesc } from "date-fns";
 
 import { ProjectItem } from "@/components/project-item";
 
@@ -11,9 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectPage() {
-  const projects = allProjects.sort((a, b) => {
-    return compareDesc(new Date(a.date), new Date(b.date));
-  });
+  const projects = allProjects.sort((a, b) => a.index - b.index);
   return (
     <section className="container">
       <div className="flex flex-col gap-12">

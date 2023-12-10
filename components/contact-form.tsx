@@ -17,8 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
-import { Icons } from "./icons";
+import { Icons } from "@/components/icons";
 
 export function ContactForm() {
   const form = useForm<ContactSchema>({
@@ -52,7 +51,11 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Name *</FormLabel>
                 <FormControl>
-                  <Input placeholder="What should I call you?" {...field} />
+                  <Input
+                    placeholder="What should I call you?"
+                    autoComplete="name"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -65,7 +68,11 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Email *</FormLabel>
                 <FormControl>
-                  <Input placeholder="Where can I reply?" {...field} />
+                  <Input
+                    placeholder="Where can I reply?"
+                    autoComplete="email"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

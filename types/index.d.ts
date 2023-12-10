@@ -27,12 +27,17 @@ export type CreatorConfig = {
   media: {
     title: string;
     href: string;
-    icon: Icon;
+    icon: IconName;
   }[];
-  services: { title: string; description: string; icon: Icon; href: string }[];
+  services: {
+    title: string;
+    description: string;
+    icon: IconName;
+    href: string;
+  }[];
   bigClients: {
     name: string;
-    icon: Icon;
+    icon: IconName;
   }[];
   skills: string[];
   imageGallery: { alt: string; url: string }[];
@@ -44,9 +49,15 @@ export type NavItem = {
   disabled?: boolean;
 };
 
-export type Icon = keyof typeof Icons;
+export type IconName = keyof typeof Icons;
 
 export type Option = {
   label: string;
   value: string;
+};
+
+export type Share = {
+  iconName: IconName;
+  mediraName: string;
+  link: string;
 };
