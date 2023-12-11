@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -20,6 +21,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Icons } from "@/components/icons";
 
 export function ContactForm() {
+  const [isSending, setIsSending] = useState(false);
+
   const form = useForm<ContactSchema>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -30,15 +33,23 @@ export function ContactForm() {
     },
   });
 
-  function onSubmit(data: ContactSchema) {
-    toast.promise(sendMail(data), {
-      loading: "Sending your message...",
-      success: () => {
-        return "Thank you for reaching out! I'll get back to you shortly.";
+  const onSubmit = (data: ContactSchema) => {
+    toast.promise(
+      async () => {
+        setIsSending(true);
+        await sendMail(data);
+        setIsSending(false);
       },
-      error: "Oops! Something went wrong. Please try again later.",
-    });
-  }
+      {
+        loading: "Sending your message...",
+        success: () => {
+          form.reset();
+          return "Thank you for reaching out! I'll get back to you shortly.";
+        },
+        error: "Oops! Something went wrong. Please try again later.",
+      }
+    );
+  };
 
   return (
     <Form {...form}>
@@ -109,7 +120,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button className="sm:ml-auto sm:w-fit">
+        <Button className="sm:ml-auto sm:w-fit" disabled={isSending}>
           Send Message <Icons.send className="ml-2 h-4 w-4" />
         </Button>
       </form>

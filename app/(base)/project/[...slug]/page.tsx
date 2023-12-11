@@ -9,6 +9,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import { projects } from "@/lib/helpers";
 import { absoluteUrl, cn, formatDate } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
@@ -119,10 +120,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <Mdx code={project.body.code} />
       <hr className="mt-12" />
       <div className="py-6">
-        <MdxPager
-          currentItem={project}
-          allItems={allProjects.sort((a, b) => a.index - b.index)}
-        />
+        <MdxPager currentItem={project} allItems={projects} />
       </div>
       <div className="flex justify-center py-6 lg:py-10">
         <Link

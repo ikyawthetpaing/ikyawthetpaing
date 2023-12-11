@@ -1,3 +1,4 @@
+import { allProjects } from "@/.contentlayer/generated";
 import { Share } from "@/types";
 
 export function generateMediaShares(
@@ -49,3 +50,5 @@ Best regards,
     title
   )}&body=${encodeURIComponent(emailBody)}`;
 }
+
+export const projects = allProjects.sort((a, b) => a.index - b.index);

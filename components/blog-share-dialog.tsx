@@ -39,9 +39,8 @@ export function BlogShareDialog({ url, title, description = "" }: Props) {
         </DialogHeader>
         <div>
           {shares.map((share, index) => (
-            <Link href={share.link} target="_blank">
+            <Link key={index} href={share.link} target="_blank">
               <div
-                key={index}
                 className={cn(
                   "hover:bg-accent text-muted-foreground flex items-center justify-center gap-2 py-3",
                   {

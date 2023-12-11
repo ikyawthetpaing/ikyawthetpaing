@@ -4,6 +4,7 @@ import { allProjects } from "@/.contentlayer/generated";
 
 import { creatorConfig } from "@/config/creator";
 
+import { projects } from "@/lib/helpers";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Icon } from "@/components/icons";
@@ -171,7 +172,7 @@ export default function Home() {
             </p>
           </div>
           <ul className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            {allProjects.map((project, index) => (
+            {projects.map((project, index) => (
               <li key={index}>
                 <ProjectItem project={project} />
               </li>
