@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { allProjects } from "@/.contentlayer/generated";
 
 import { creatorConfig } from "@/config/creator";
 
-import { projects } from "@/lib/helpers";
+import { posts, projects } from "@/lib/helpers";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Icon } from "@/components/icons";
+import { PostItem } from "@/components/post-item";
 import { ProjectItem } from "@/components/project-item";
 
 export default function Home() {
@@ -33,11 +33,11 @@ export default function Home() {
             <div className="flex flex-col justify-center gap-12">
               <div className="flex flex-col gap-6">
                 <h1 className="text-3xl font-medium uppercase sm:text-4xl md:text-5xl lg:text-6xl">
-                  {creatorConfig.name}
+                  {creatorConfig.name} <br />
+                  <span className="text-xl font-light uppercase md:text-2xl">
+                    {creatorConfig.role}
+                  </span>
                 </h1>
-                <h2 className="text-xl font-light uppercase md:text-2xl">
-                  {creatorConfig.role}
-                </h2>
                 <p className="text-muted-foreground max-w-lg">
                   {creatorConfig.description}
                 </p>
@@ -63,6 +63,7 @@ export default function Home() {
                 height={9999}
                 className="h-full w-full object-cover"
                 quality={100}
+                priority
               />
             </div>
           </div>
@@ -172,9 +173,26 @@ export default function Home() {
             </p>
           </div>
           <ul className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            {projects.map((project, index) => (
+            {projects.slice(0, 2).map((project, index) => (
               <li key={index}>
                 <ProjectItem project={project} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <section className="container">
+        <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-4xl font-semibold">Blogs</h2>
+            <p className="text-muted-foreground">
+              Latest blogs, which are my best choices to showcase.
+            </p>
+          </div>
+          <ul className="grid grid-cols-1 gap-12 md:grid-cols-2">
+            {posts.slice(0, 2).map((post, index) => (
+              <li key={index}>
+                <PostItem key={index} post={post} />
               </li>
             ))}
           </ul>

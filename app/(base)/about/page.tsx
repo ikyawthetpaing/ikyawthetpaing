@@ -23,12 +23,12 @@ export default function AboutPage() {
         <div className="flex flex-col gap-8 sm:flex-row">
           <div className="flex-1">
             <h2 className="text-4xl font-medium uppercase md:text-5xl lg:text-6xl">
-              I&apos;m Kyaw Thet Paing. A full-stack developer, creator, and
-              puzzle solver.
+              I&apos;m {creatorConfig.name}. A{" "}
+              {creatorConfig.role.toLowerCase()}, creator, and puzzle solver.
             </h2>
           </div>
           <div className="flex flex-1 flex-col justify-end gap-8">
-            <p className="">
+            <p>
               The intersection of art and technology has always intrigued me. I
               have a fearless approach to exploring this realm, diving into
               various tools and technologies without hesitation. From my early
@@ -68,13 +68,13 @@ export default function AboutPage() {
             </div>
             <div className="flex flex-col gap-8 ">
               <p>
-                As a full-stack developer, my passion lies in crafting
-                purpose-driven solutions that transcend mere code writing. I am
-                dedicated to architecting seamless digital experiences that
-                address tangible challenges. My approach centers around thriving
-                on user feedback, keenly understanding user needs, and
-                iteratively refining solutions over time to deliver enduring
-                impact.
+                As a {creatorConfig.role.toLowerCase()}, my passion lies in
+                crafting purpose-driven solutions that transcend mere code
+                writing. I am dedicated to architecting seamless digital
+                experiences that address tangible challenges. My approach
+                centers around thriving on user feedback, keenly understanding
+                user needs, and iteratively refining solutions over time to
+                deliver enduring impact.
               </p>
               <p>
                 What sets me apart is not only my technical proficiency but also
@@ -85,7 +85,7 @@ export default function AboutPage() {
                 that the solutions I build evolve alongside the ever-changing
                 landscape of technology and user expectations.
               </p>
-              <p className="">
+              <p>
                 One of my favorite quotes, attributed to Peter Drucker, guides
                 my work:
               </p>
@@ -93,7 +93,7 @@ export default function AboutPage() {
                 “There is nothing so useless as doing efficiently that which
                 should not be done at all.”
               </p>
-              <p className="">
+              <p>
                 This quote deeply resonates with me. I am not interested in
                 creating mere aesthetic illusions. My passion lies in developing
                 software solutions that are purposeful, impactful, and

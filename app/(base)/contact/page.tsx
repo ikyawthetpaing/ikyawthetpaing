@@ -1,11 +1,12 @@
 import { Metadata } from "next";
 
+import { creatorConfig } from "@/config/creator";
+
 import { ContactForm } from "@/components/contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Partner with a skilled software developer to turn your concepts into powerful digital solutions.",
+  description: `Partner with a skilled ${creatorConfig.role.toLowerCase()} to turn your concepts into powerful digital solutions.`,
 };
 
 export default function ContactPage() {

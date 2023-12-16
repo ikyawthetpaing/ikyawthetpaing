@@ -1,5 +1,6 @@
-import { allProjects } from "@/.contentlayer/generated";
+import { allPosts, allProjects } from "@/.contentlayer/generated";
 import { Share } from "@/types";
+import { compareDesc } from "date-fns";
 
 export function generateMediaShares(
   url: string,
@@ -52,3 +53,6 @@ Best regards,
 }
 
 export const projects = allProjects.sort((a, b) => a.index - b.index);
+export const posts = allPosts.sort((a, b) => {
+  return compareDesc(new Date(a.date), new Date(b.date));
+});

@@ -8,14 +8,12 @@ import "@/styles/mdx.css";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { compareDesc } from "date-fns";
 
-import { env } from "@/env.mjs";
-
+import { posts } from "@/lib/helpers";
 import { absoluteUrl, cn, formatDate } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { BlogShareDialog } from "@/components/blog-share-dialog";
-import { Icon, Icons } from "@/components/icons";
+import { Icons } from "@/components/icons";
 import { MdxPager } from "@/components/mdx/mdx-pager";
 
 interface PostPageProps {
@@ -25,7 +23,7 @@ interface PostPageProps {
 }
 
 async function getPostFromParams(params: PostPageProps["params"]) {
-  const slug = params?.slug?.join("/");
+  const slug = params.slug.join("/");
   const post = allPosts.find((post) => post.slugAsParams === slug);
 
   if (!post) {
@@ -43,8 +41,6 @@ export async function generateMetadata({
   if (!post) {
     return {};
   }
-
-  const url = env.NEXT_PUBLIC_APP_URL;
 
   const ogUrl = new URL(absoluteUrl(post.image));
   ogUrl.searchParams.set("heading", post.title);
@@ -166,14 +162,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <Mdx code={post.body.code} />
       <hr className="mt-12" />
       <div className="py-6">
-        <MdxPager
-          currentItem={post}
-          allItems={allPosts
-            .filter((post) => post.published)
-            .sort((a, b) => {
-              return compareDesc(new Date(a.date), new Date(b.date));
-            })}
-        />
+        <MdxPager currentItem={post} allItems={posts} />
       </div>
       <div className="flex justify-center py-6 lg:py-10">
         <Link href="/blog" className={cn(buttonVariants({ variant: "ghost" }))}>
