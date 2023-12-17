@@ -70,7 +70,7 @@ export default function Home() {
         </div>
       </section>
       <section className="container">
-        <div className="flex gap-12">
+        <div className="flex gap-8">
           <div className="flex flex-1">
             <ul className="flex w-full flex-col gap-12">
               {creatorConfig.services.map((service, index) => (
