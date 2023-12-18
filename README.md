@@ -1,4 +1,4 @@
-👋 Welcome to my GitHub! I'm Kyaw Thet Paing, a passionate full-stack developer turning coffee into code. I love solving complex problems with clean and efficient solutions.
+Hello there! I'm Kyaw Thet Paing, a passionate software engineer turning coffee into code. I love solving complex problems with clean and efficient solutions.
 
 🌐 Explore my work and blog at [ikyawthetpaing.vercel.app](https://ikyawthetpaing.vercel.app). Connect with me on [𝕏](https://twitter.com/ikyawthetpaing) for insights and tech memes.
 

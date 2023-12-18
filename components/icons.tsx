@@ -3,9 +3,10 @@ import {
   AppWindow,
   ChevronLeft,
   ChevronRight,
+  Dribbble,
   Facebook,
+  Github,
   Globe,
-  Instagram,
   Linkedin,
   LucideProps,
   Mail,
@@ -30,7 +31,6 @@ export function Icon({ name, ...props }: Props) {
 export const Icons = {
   twitter: Twitter,
   linkedin: Linkedin,
-  instagram: Instagram,
   menu: Menu,
   appWindow: AppWindow,
   smartphone: Smartphone,
@@ -43,6 +43,8 @@ export const Icons = {
   send: Send,
   facebook: Facebook,
   mail: Mail,
+  github: Github,
+  dribbble: Dribbble,
   kyax: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

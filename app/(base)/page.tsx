@@ -6,7 +6,7 @@ import { creatorConfig } from "@/config/creator";
 import { posts, projects } from "@/lib/helpers";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { Icon } from "@/components/icons";
+import { Icon, Icons } from "@/components/icons";
 import { PostItem } from "@/components/post-item";
 import { ProjectItem } from "@/components/project-item";
 
@@ -58,7 +58,7 @@ export default function Home() {
             <div className="max-w-lg overflow-hidden rounded-full">
               <Image
                 src="/images/landing.png"
-                alt="Kyaw Thet Paing's Art Sketch Image"
+                alt="Detailed portrait sketch of Kyaw Thet Paing"
                 width={9999}
                 height={9999}
                 className="h-full w-full object-cover"
@@ -179,6 +179,14 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <div className="flex justify-end">
+            <Link
+              href="/project"
+              className="flex items-center gap-2 font-medium duration-150 hover:gap-4 hover:underline hover:underline-offset-4"
+            >
+              Explore More <Icons.moveRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
       <section className="container">
@@ -196,6 +204,14 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <div className="flex justify-end">
+            <Link
+              href="/blog"
+              className="flex items-center gap-2 font-medium duration-150 hover:gap-4 hover:underline hover:underline-offset-4"
+            >
+              Explore More <Icons.moveRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
       <section className="container">

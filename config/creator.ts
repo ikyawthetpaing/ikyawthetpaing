@@ -15,19 +15,19 @@ export const creatorConfig: CreatorConfig = {
   },
   media: [
     {
+      title: "Github",
+      href: "https://www.github.com/ikyawthetpaing",
+      icon: "github",
+    },
+    {
       title: "LinkedIn",
       href: "https://www.linkedin.com/in/ikyawthetpaing",
       icon: "linkedin",
     },
     {
-      title: "Twitter",
-      href: "https://www.twitter.com/ikyawthetpaing",
-      icon: "twitter",
-    },
-    {
-      title: "Instagram",
-      href: "https://www.instagram.com/ikyawthetpaing",
-      icon: "instagram",
+      title: "Dribbble",
+      href: "https://www.dribbble.com/ikyawthetpaing",
+      icon: "dribbble",
     },
   ],
   services: [

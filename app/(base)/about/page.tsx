@@ -39,7 +39,7 @@ export default function AboutPage() {
             <div className="flex justify-end">
               <Link
                 href="/contact"
-                className="flex items-center gap-2 text-lg font-medium transition-all duration-150 hover:gap-4 hover:underline hover:underline-offset-4"
+                className="flex items-center gap-2 text-lg font-medium duration-150 hover:gap-4 hover:underline hover:underline-offset-4"
               >
                 Let&apos;s Chat <Icons.moveRight className="h-4 w-4" />
               </Link>
