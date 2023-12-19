@@ -2,9 +2,9 @@ import { CreatorConfig } from "@/types";
 
 export const creatorConfig: CreatorConfig = {
   name: "Kyaw Thet Paing",
-  role: "Software Engineer",
+  role: "Full-Stack Developer",
   description:
-    "I am a software engineer with a passion for building innovative and user-friendly applications. I have a strong foundation in full stack development, including experience with a variety of programming languages, frameworks, and databases.",
+    "I am a full-stack developer with a passion for building innovative and user-friendly applications. I have a strong foundation in full stack development, including experience with a variety of programming languages, frameworks, and databases.",
   username: "@ikyawthetpaing",
   email: "ikyawthetpaing@gmail.com",
   resumeFilePath: "/files/resume.pdf",
