@@ -4,9 +4,9 @@ export type SiteConfig = {
   name: string;
   title: string;
   description: string;
-  creator: string;
-  url: string;
-  ogImage: string;
+  creatorName: string;
+  siteUrl: string;
+  ogImageUrl: string;
   authors: Author[];
   keywords: string[];
 };
@@ -18,13 +18,14 @@ export type BaseConfig = {
 export type CreatorConfig = {
   name: string;
   username: string;
-  description: string;
+  bio: string;
   role: string;
   email: string;
   location: string;
-  resumeFilePath: string;
-  tel: Option;
-  media: {
+  avatarImageUrl: string;
+  resumeFileUrl: string;
+  telephone: Option;
+  socialMediaLinks: {
     title: string;
     href: string;
     icon: IconName;
@@ -46,7 +47,6 @@ export type CreatorConfig = {
 export type NavItem = {
   title: string;
   href: string;
-  disabled?: boolean;
 };
 
 export type IconName = keyof typeof Icons;
@@ -56,8 +56,13 @@ export type Option = {
   value: string;
 };
 
-export type Share = {
+export type SocialMediaShare = {
   iconName: IconName;
-  mediraName: string;
-  link: string;
+  platformName: string;
+  shareLink: string;
+};
+
+export type SocialMediaFollowLink = {
+  platformName: string;
+  followLink: string;
 };

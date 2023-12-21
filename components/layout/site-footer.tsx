@@ -28,14 +28,14 @@ export function SiteFooter({ navItems }: Props) {
               {creatorConfig.email}
             </Link>
             <Link
-              href={`tel:${creatorConfig.tel.value}`}
+              href={`tel:${creatorConfig.telephone.value}`}
               className="text-lg font-light"
             >
-              {creatorConfig.tel.label}
+              {creatorConfig.telephone.label}
             </Link>
           </div>
           <ul className="flex gap-4">
-            {creatorConfig.media.map((media, index) => (
+            {creatorConfig.socialMediaLinks.map((media, index) => (
               <li key={index}>
                 <Link href={media.href} target="_blank">
                   <div className="bg-accent rounded-full p-4">
@@ -60,7 +60,7 @@ export function SiteFooter({ navItems }: Props) {
         </div>
         <p className="text-center text-sm uppercase">
           &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
-          reserved.
+          reserved
         </p>
         <ul className="flex">
           {["#ed5b42", "#f4aa85", "#c3dae0", "#414247"].map((color, index) => (

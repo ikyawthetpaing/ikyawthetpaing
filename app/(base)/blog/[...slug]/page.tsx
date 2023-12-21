@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { allAuthors, allPosts } from "contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
 
 import { Mdx } from "@/components/mdx/mdx-components";
 
@@ -9,9 +9,12 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import { creatorConfig } from "@/config/creator";
+
 import { posts } from "@/lib/helpers";
 import { absoluteUrl, cn, formatDate } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { BlogFollowDialog } from "@/components/blog-follow-dialog";
 import { BlogShareDialog } from "@/components/blog-share-dialog";
 import { Icons } from "@/components/icons";
 import { MdxPager } from "@/components/mdx/mdx-pager";
@@ -50,9 +53,6 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
-    authors: post.authors.map((author) => ({
-      name: author,
-    })),
     openGraph: {
       title: post.title,
       description: post.description,
@@ -91,10 +91,6 @@ export default async function PostPage({ params }: PostPageProps) {
     notFound();
   }
 
-  const authors = post.authors.map((author) =>
-    allAuthors.find(({ slug }) => slug === `/authors/${author}`)
-  );
-
   return (
     <article className="container relative max-w-3xl py-6 lg:py-10">
       <div>
@@ -110,41 +106,32 @@ export default async function PostPage({ params }: PostPageProps) {
         <h1 className="font-heading mt-2 inline-block text-4xl leading-tight lg:text-5xl">
           {post.title}
         </h1>
-        {authors?.length ? (
-          <div className="mt-4 flex justify-between space-x-4">
-            {authors.map((author, index) =>
-              author ? (
-                <Link
-                  key={index}
-                  href={`https://twitter.com/${author.twitter}`}
-                  className="flex items-center space-x-2 text-sm"
-                >
-                  <Image
-                    src={author.avatar}
-                    alt={author.title}
-                    width={42}
-                    height={42}
-                    quality={100}
-                    className="rounded-full bg-white"
-                  />
-                  <div className="flex-1 space-y-1 text-left leading-tight">
-                    <p className="font-medium">{author.title}</p>
-                    <p className="text-muted-foreground text-[12px]">
-                      @{author.twitter}
-                    </p>
-                  </div>
-                </Link>
-              ) : null
-            )}
-            <div className="grid place-content-center">
-              <BlogShareDialog
-                url={absoluteUrl(post.slug)}
-                title={post.title}
-                description={post.description}
-              />
+        <div className="mt-4 flex justify-between space-x-4">
+          <div className="flex items-center space-x-2 text-sm">
+            <Image
+              src={creatorConfig.avatarImageUrl}
+              alt={creatorConfig.name}
+              width={42}
+              height={42}
+              quality={100}
+              className="rounded-full bg-white"
+            />
+            <div className="flex-1 space-y-1 text-left leading-tight">
+              <p className="font-medium">{creatorConfig.name}</p>
+              <p className="text-muted-foreground text-[12px]">
+                @{creatorConfig.username}
+              </p>
             </div>
           </div>
-        ) : null}
+          <div className="flex items-center gap-8">
+            <BlogFollowDialog username={creatorConfig.username} />
+            <BlogShareDialog
+              url={absoluteUrl(post.slug)}
+              title={post.title}
+              description={post.description}
+            />
+          </div>
+        </div>
       </div>
       {post.image && (
         <div className="bg-muted my-8 aspect-video overflow-x-hidden rounded-lg border transition-colors">

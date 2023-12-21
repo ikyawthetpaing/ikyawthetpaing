@@ -113,7 +113,7 @@ export default function AboutPage() {
                   ))}
                 </ul>
                 <Link
-                  href={creatorConfig.resumeFilePath}
+                  href={creatorConfig.resumeFileUrl}
                   className={cn(
                     buttonVariants({ variant: "outline" }),
                     "w-fit rounded-full px-8 transition-all duration-150 hover:px-12"

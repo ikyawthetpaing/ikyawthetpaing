@@ -17,7 +17,7 @@ export default function Home() {
         <div className="flex gap-12">
           <div className="flex flex-col justify-end">
             <ul className="flex flex-col gap-4">
-              {creatorConfig.media.map((media, index) => (
+              {creatorConfig.socialMediaLinks.map((media, index) => (
                 <li key={index}>
                   <Link href={media.href} target="_blank">
                     <Icon
@@ -39,7 +39,7 @@ export default function Home() {
                   </span>
                 </h1>
                 <p className="text-muted-foreground max-w-lg">
-                  {creatorConfig.description}
+                  {creatorConfig.bio}
                 </p>
               </div>
 
@@ -48,7 +48,7 @@ export default function Home() {
                   Let&apos;s Chat
                 </Link>
                 <Link
-                  href={creatorConfig.resumeFilePath}
+                  href={creatorConfig.resumeFileUrl}
                   className={buttonVariants({ variant: "outline" })}
                 >
                   Resume

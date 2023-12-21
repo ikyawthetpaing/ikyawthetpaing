@@ -49,9 +49,6 @@ export async function generateMetadata({
   return {
     title: project.title,
     description: project.description,
-    authors: project.authors.map((author) => ({
-      name: author,
-    })),
     openGraph: {
       title: project.title,
       description: project.description,
