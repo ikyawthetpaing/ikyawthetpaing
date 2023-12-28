@@ -1,127 +1,1086 @@
 ---
-title: Deep Dive into Design Patterns
-description: Exploring advanced design patterns like Observer, Proxy, and Decorator with real-world examples and use cases.
-image: /images/blogs/deep-dive-into-design-patterns.jpg
+title: "Deep Dive into Design Patterns"
+description: "Exploring advanced design patterns like Observer, Proxy, and Decorator with real-world examples and use cases."
+image: "/images/blogs/deep-dive-into-design-patterns.jpg"
 date: "2023-10-14"
 ---
 
-Design patterns are essential blueprints that guide developers in solving recurring design problems in software development. They encapsulate best practices and provide effective solutions for various scenarios. In this in-depth exploration, we'll take a profound dive into advanced design patterns like Observer, Proxy, and Decorator. Through real-world examples and hands-on code, we will unravel the mysteries behind these powerful patterns.
+Design patterns are essential tools in a software developer's toolkit. They provide proven solutions to common problems encountered during software design and development, offering a structured and efficient way to solve recurring design challenges. In this comprehensive guide, we'll take a deep dive into various design patterns, exploring their concepts and providing practical Python examples to illustrate their usage.
 
-## Understanding the Observer Pattern
+## Table of Contents
 
-The Observer pattern is used to establish a one-to-many dependency between objects. When the state of one object changes, all its dependents are notified and updated automatically. Imagine a real-world scenario where weather data is observed by multiple devices:
+1. **Introduction to Design Patterns**
 
-```javascript
-class WeatherStation {
-  constructor() {
-    this.temperature = 0;
-    this.observers = [];
-  }
+   - 1.1 What are Design Patterns?
+   - 1.2 Why Use Design Patterns?
+   - 1.3 Categories of Design Patterns
 
-  addObserver(observer) {
-    this.observers.push(observer);
-  }
+2. **Creational Design Patterns**
 
-  setTemperature(temperature) {
-    this.temperature = temperature;
-    this.notifyObservers();
-  }
+   - 2.1 Singleton Pattern
+   - 2.2 Factory Method Pattern
+   - 2.3 Abstract Factory Pattern
+   - 2.4 Builder Pattern
+   - 2.5 Prototype Pattern
 
-  notifyObservers() {
-    for (const observer of this.observers) {
-      observer.update(this.temperature);
-    }
-  }
-}
+3. **Structural Design Patterns**
 
-class TemperatureDisplay {
-  update(temperature) {
-    console.log(`Temperature: ${temperature}°C`);
-  }
-}
+   - 3.1 Adapter Pattern
+   - 3.2 Bridge Pattern
+   - 3.3 Composite Pattern
+   - 3.4 Decorator Pattern
+   - 3.5 Facade Pattern
+   - 3.6 Flyweight Pattern
+   - 3.7 Proxy Pattern
 
-const station = new WeatherStation();
-const display = new TemperatureDisplay();
+4. **Behavioral Design Patterns**
+   - 4.1 Observer Pattern
+   - 4.2 Strategy Pattern
+   - 4.3 Command Pattern
+   - 4.4 Chain of Responsibility Pattern
+   - 4.5 Interpreter Pattern
+   - 4.6 Iterator Pattern
+   - 4.7 Mediator Pattern
+   - 4.8 Memento Pattern
+   - 4.9 State Pattern
+   - 4.10 Template Method Pattern
+   - 4.11 Visitor Pattern
 
-station.addObserver(display);
-station.setTemperature(25); // Output: Temperature: 25°C
+## 1. Introduction to Design Patterns
+
+### 1.1 What are Design Patterns?
+
+Design patterns are recurring solutions to common problems in software design. They are templates that can be applied to solve particular design issues in a flexible and reusable way. These patterns encapsulate best practices, providing a guide for structuring code to achieve maintainability, flexibility, and scalability.
+
+### 1.2 Why Use Design Patterns?
+
+The use of design patterns offers several advantages:
+
+- **Reusability:** Design patterns provide tested, proven development paradigms that contribute to the reusability of code.
+- **Scalability:** Patterns can be scaled easily to fit a particular problem.
+
+- **Maintainability:** They promote clean and organized code, making it easier to maintain and modify.
+
+### 1.3 Categories of Design Patterns
+
+Design patterns are typically categorized into three main groups:
+
+- **Creational Patterns:** These patterns deal with object creation mechanisms. They help instantiate objects in a way that is suitable to the situation.
+- **Structural Patterns:** These patterns focus on the composition of classes or objects. They help define clear relationships between different components.
+- **Behavioral Patterns:** These patterns are concerned with the interaction between objects and the responsibility of objects. They help define communication between objects.
+
+## 2. Creational Design Patterns
+
+### 2.1 Singleton Pattern
+
+The Singleton pattern ensures that a class has only one instance and provides a global point of access to that instance.
+
+```python
+class Singleton:
+    _instance = None
+
+    def __new__(cls):
+        if not cls._instance:
+            cls._instance = super(Singleton, cls).__new__(cls)
+        return cls._instance
+
+# Example usage
+singleton_instance1 = Singleton()
+singleton_instance2 = Singleton()
+
+print(singleton_instance1 is singleton_instance2)  # Output: True
 ```
 
-In this example, `WeatherStation` acts as the subject, while `TemperatureDisplay` is the observer. When the temperature changes, the observer is automatically notified and updated.
+### 2.2 Factory Method Pattern
 
-## Exploring the Proxy Pattern
+The Factory Method pattern defines an interface for creating an object but leaves the choice of its type to the subclasses.
 
-The Proxy pattern involves creating a surrogate or placeholder object, which controls access to another object. This can be useful for implementing lazy initialization, access control, logging, or monitoring. Let's consider a proxy for loading high-resolution images:
+```python
+from abc import ABC, abstractmethod
 
-```javascript
-class Image {
-  constructor(url) {
-    this.url = url;
-  }
+class Creator(ABC):
+    @abstractmethod
+    def factory_method(self):
+        pass
 
-  display() {
-    console.log(`Displaying image from ${this.url}`);
-  }
-}
+    def create_instance(self):
+        instance = self.factory_method()
+        return instance
 
-class ImageProxy {
-  constructor(url) {
-    this.url = url;
-    this.image = null;
-  }
+class ConcreteCreatorA(Creator):
+    def factory_method(self):
+        return ConcreteProductA()
 
-  display() {
-    if (!this.image) {
-      this.image = new Image(this.url);
-    }
-    this.image.display();
-  }
-}
+class ConcreteCreatorB(Creator):
+    def factory_method(self):
+        return ConcreteProductB()
 
-const highResImage = new ImageProxy("high-res-image.jpg");
-highResImage.display(); // Output: Displaying image from high-res-image.jpg
+class Product(ABC):
+    @abstractmethod
+    def operation(self):
+        pass
+
+class ConcreteProductA(Product):
+    def operation(self):
+        return "Product A operation"
+
+class ConcreteProductB(Product):
+    def operation(self):
+        return "Product B operation"
+
+# Example usage
+creator_a = ConcreteCreatorA()
+product_a = creator_a.create_instance()
+print(product_a.operation())  # Output: Product A operation
 ```
 
-In this scenario, the `ImageProxy` controls access to the actual `Image` object, allowing for efficient loading and displaying of high-resolution images only when necessary.
+### 2.3 Abstract Factory Pattern
 
-## Mastering the Decorator Pattern
+The Abstract Factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
-The Decorator pattern enables behavior to be added to individual objects without altering their structures. It is often used for extending functionalities dynamically. Consider a coffee example, where decorators add condiments to a base coffee:
+```python
+from abc import ABC, abstractmethod
 
-```javascript
-class SimpleCoffee {
-  cost() {
-    return 5;
-  }
-}
+class AbstractFactory(ABC):
+    @abstractmethod
+    def create_product_a(self):
+        pass
 
-class MilkDecorator {
-  constructor(coffee) {
-    this.coffee = coffee;
-  }
+    @abstractmethod
+    def create_product_b(self):
+        pass
 
-  cost() {
-    return this.coffee.cost() + 2;
-  }
-}
+class ConcreteFactory1(AbstractFactory):
+    def create_product_a(self):
+        return ConcreteProductA1()
 
-class SugarDecorator {
-  constructor(coffee) {
-    this.coffee = coffee;
-  }
+    def create_product_b(self):
+        return ConcreteProductB1()
 
-  cost() {
-    return this.coffee.cost() + 1;
-  }
-}
+class ConcreteFactory2(AbstractFactory):
+    def create_product_a(self):
+        return ConcreteProductA2()
 
-const myCoffee = new SimpleCoffee();
-const milkCoffee = new MilkDecorator(myCoffee);
-const sweetMilkCoffee = new SugarDecorator(milkCoffee);
+    def create_product_b(self):
+        return ConcreteProductB2()
 
-console.log(`Cost of sweet milk coffee: $${sweetMilkCoffee.cost()}`); // Output: Cost of sweet milk coffee: $8
+class AbstractProductA(ABC):
+    @abstractmethod
+    def operation(self):
+        pass
+
+class ConcreteProductA1(AbstractProductA):
+    def operation(self):
+        return "Product A1 operation"
+
+class ConcreteProductA2(AbstractProductA):
+    def operation(self):
+        return "Product A2 operation"
+
+class AbstractProductB(ABC):
+    @abstractmethod
+    def operation(self):
+        pass
+
+class ConcreteProductB1(AbstractProductB):
+    def operation(self):
+        return "Product B1 operation"
+
+class ConcreteProductB2(AbstractProductB):
+    def operation(self):
+        return "Product B2 operation"
+
+# Example usage
+factory1 = ConcreteFactory1()
+product_a1 = factory1.create_product_a()
+product_b1 = factory1.create_product_b()
+
+print(product_a1.operation())  # Output: Product A1 operation
+print(product_b1.operation())  # Output: Product B1 operation
 ```
 
-In this example, `MilkDecorator` and `SugarDecorator` dynamically add costs to the base `SimpleCoffee` object without altering its structure.
+### 2.4 Builder Pattern
 
-By understanding and mastering advanced design patterns like Observer, Proxy, and Decorator, developers can significantly enhance their software design skills. These patterns provide elegant solutions to complex problems, ensuring maintainability, scalability, and flexibility in software applications. Happy coding!
+The Builder pattern separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
+
+```python
+from abc import ABC, abstractmethod
+
+class Builder(ABC):
+    @abstractmethod
+    def build_part_a(self):
+        pass
+
+    @abstractmethod
+    def build_part_b(self):
+        pass
+
+    @abstractmethod
+    def get_result(self):
+        pass
+
+class ConcreteBuilder(Builder):
+    def __init__(self):
+        self.product = Product()
+
+    def build_part_a(self):
+        self.product.add("Part A")
+
+    def build_part_b(self):
+        self.product.add("Part B")
+
+    def get_result(self):
+        return self.product
+
+class Product:
+    def __init__(self):
+        self.parts = []
+
+    def add(self, part):
+        self.parts.append(part)
+
+    def show(self):
+        print("Product parts:", ', '.join(self.parts))
+
+class Director:
+    def __init__(self, builder):
+        self.builder = builder
+
+    def construct(self):
+        self.builder.build_part_a()
+        self.builder.build_part_b()
+
+# Example usage
+builder = ConcreteBuilder()
+director = Director(builder)
+
+director.construct()
+product =
+
+ builder.get_result()
+product.show()  # Output: Product parts: Part A, Part B
+```
+
+### 2.5 Prototype Pattern
+
+The Prototype pattern creates new objects by copying an existing object, known as the prototype.
+
+```python
+from copy import deepcopy
+
+class Prototype:
+    def clone(self):
+        return deepcopy(self)
+
+class ConcretePrototype(Prototype):
+    def __init__(self, data):
+        self.data = data
+
+# Example usage
+prototype = ConcretePrototype(data="Initial Data")
+clone1 = prototype.clone()
+clone2 = prototype.clone()
+
+print(clone1.data)  # Output: Initial Data
+print(clone2.data)  # Output: Initial Data
+
+# Modifying the data in one clone does not affect others
+clone1.data = "Modified Data"
+print(clone1.data)  # Output: Modified Data
+print(clone2.data)  # Output: Initial Data
+```
+
+## 3. Structural Design Patterns
+
+### 3.1 Adapter Pattern
+
+The Adapter pattern allows the interface of an existing class to be used as another interface.
+
+```python
+class Adaptee:
+    def specific_request(self):
+        return "Adaptee's specific request"
+
+class Target:
+    def request(self):
+        return "Target's request"
+
+class Adapter(Target):
+    def __init__(self, adaptee):
+        self.adaptee = adaptee
+
+    def request(self):
+        return f"Adapter: {self.adaptee.specific_request()}"
+
+# Example usage
+adaptee = Adaptee()
+adapter = Adapter(adaptee)
+
+print(adapter.request())  # Output: Adapter: Adaptee's specific request
+```
+
+### 3.2 Bridge Pattern
+
+The Bridge pattern decouples abstraction from implementation so that both can vary independently.
+
+```python
+from abc import ABC, abstractmethod
+
+class Implementor(ABC):
+    @abstractmethod
+    def operation_implementation(self):
+        pass
+
+class ConcreteImplementorA(Implementor):
+    def operation_implementation(self):
+        return "Concrete Implementor A operation"
+
+class ConcreteImplementorB(Implementor):
+    def operation_implementation(self):
+        return "Concrete Implementor B operation"
+
+class Abstraction:
+    def __init__(self, implementor):
+        self.implementor = implementor
+
+    def operation(self):
+        return self.implementor.operation_implementation()
+
+class RefinedAbstraction(Abstraction):
+    def additional_operation(self):
+        return "Additional operation in Refined Abstraction"
+
+# Example usage
+implementor_a = ConcreteImplementorA()
+implementor_b = ConcreteImplementorB()
+
+abstraction_a = Abstraction(implementor_a)
+abstraction_b = Abstraction(implementor_b)
+
+print(abstraction_a.operation())  # Output: Concrete Implementor A operation
+print(abstraction_b.operation())  # Output: Concrete Implementor B operation
+
+refined_abstraction = RefinedAbstraction(implementor_a)
+print(refined_abstraction.operation())           # Output: Concrete Implementor A operation
+print(refined_abstraction.additional_operation())  # Output: Additional operation in Refined Abstraction
+```
+
+### 3.3 Composite Pattern
+
+The Composite pattern lets clients treat individual objects and compositions of objects uniformly.
+
+```python
+from abc import ABC, abstractmethod
+
+class Component(ABC):
+    @abstractmethod
+    def operation(self):
+        pass
+
+class Leaf(Component):
+    def operation(self):
+        return "Leaf operation"
+
+class Composite(Component):
+    def __init__(self):
+        self.children = []
+
+    def add(self, component):
+        self.children.append(component)
+
+    def remove(self, component):
+        self.children.remove(component)
+
+    def operation(self):
+        results = []
+        for child in self.children:
+            results.append(child.operation())
+        return f"Composite operation: {', '.join(results)}"
+
+# Example usage
+leaf = Leaf()
+composite = Composite()
+composite.add(Leaf())
+composite.add(Leaf())
+
+print(leaf.operation())         # Output: Leaf operation
+print(composite.operation())    # Output: Composite operation: Leaf operation, Leaf operation
+```
+
+### 3.4 Decorator Pattern
+
+The Decorator pattern attaches additional responsibilities to an object dynamically.
+
+```python
+from abc import ABC, abstractmethod
+
+class Component(ABC):
+    @abstractmethod
+    def operation(self):
+        pass
+
+class ConcreteComponent(Component):
+    def operation(self):
+        return "ConcreteComponent operation"
+
+class Decorator(Component):
+    def __init__(self, component):
+        self.component = component
+
+    def operation(self):
+        return f"Decorator operation: {self.component.operation()}"
+
+class ConcreteDecoratorA(Decorator):
+    def operation(self):
+        return f"ConcreteDecoratorA operation: {self.component.operation()}"
+
+class ConcreteDecoratorB(Decorator):
+    def operation(self):
+        return f"ConcreteDecoratorB operation: {self.component.operation()}"
+
+# Example usage
+component = ConcreteComponent()
+decorator_a = ConcreteDecoratorA(component)
+decorator_b = ConcreteDecoratorB(decorator_a)
+
+print(component.operation())      # Output: ConcreteComponent operation
+print(decorator_a.operation())    # Output: ConcreteDecoratorA operation: ConcreteComponent operation
+print(decorator_b.operation())    # Output: ConcreteDecoratorB operation: ConcreteDecoratorA operation: ConcreteComponent operation
+```
+
+### 3.5 Facade Pattern
+
+The Facade pattern provides a unified interface to a set of interfaces in a subsystem, making it easier to use.
+
+```python
+class SubsystemA:
+    def operation_a(self):
+        return "SubsystemA operation"
+
+class SubsystemB:
+    def operation_b(self):
+        return "SubsystemB operation"
+
+class SubsystemC:
+    def operation_c(self):
+        return "SubsystemC operation"
+
+class Facade:
+    def __init__(self):
+        self.subsystem_a = SubsystemA()
+        self.subsystem_b = SubsystemB()
+        self.subsystem_c = SubsystemC()
+
+    def operation(self):
+        results = []
+        results.append(self.subsystem_a.operation_a())
+        results.append(self.subsystem_b.operation_b())
+        results.append(self.subsystem_c.operation_c())
+        return f"Facade operation: {', '.join(results)}"
+
+# Example usage
+facade = Facade()
+print(facade.operation())  # Output: Facade operation: SubsystemA operation, SubsystemB operation, SubsystemC operation
+```
+
+### 3.6 Flyweight Pattern
+
+The Flyweight pattern minimizes memory usage or computational expenses by sharing as much as possible with related objects.
+
+```python
+class Flyweight:
+    def operation(self, shared_state):
+        pass
+
+class ConcreteFlyweight(Flyweight):
+    def operation(self, shared_state):
+        return f"ConcreteFlyweight operation with shared state: {shared_state}"
+
+class UnsharedConcreteFlyweight(Flyweight):
+    def operation(self, unique_state):
+        return f"UnsharedConcreteFlyweight operation with unique state: {unique_state}"
+
+class FlyweightFactory:
+    def __init__(self):
+        self.flyweights = {}
+
+    def get_flyweight(self, key):
+        if key not in self.flyweights:
+            self.flyweights[key] = ConcreteFlyweight()
+        return self.flyweights[key]
+
+# Example usage
+flyweight_factory = FlyweightFactory()
+flyweight1 = flyweight_factory.get_flyweight("shared_key")
+flyweight2 = flyweight_factory.get_flyweight("shared_key")
+
+print(flyweight1.operation("state"))  # Output: ConcreteFly
+```
+
+## 3.7 Proxy Pattern
+
+The Proxy pattern provides a surrogate or placeholder for another object to control access to it.
+
+```python
+from abc import ABC, abstractmethod
+
+class Subject(ABC):
+    @abstractmethod
+    def request(self):
+        pass
+
+class RealSubject(Subject):
+    def request(self):
+        return "RealSubject request"
+
+class Proxy(Subject):
+    def __init__(self, real_subject):
+        self.real_subject = real_subject
+
+    def request(self):
+        # Perform some additional operations before or after forwarding the request to the RealSubject
+        return f"Proxy request: {self.real_subject.request()}"
+
+# Example usage
+real_subject = RealSubject()
+proxy = Proxy(real_subject)
+
+print(proxy.request())  # Output: Proxy request: RealSubject request
+```
+
+## 4. Behavioral Design Patterns
+
+### 4.1 Observer Pattern
+
+The Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+
+```python
+from abc import ABC, abstractmethod
+
+class Observer(ABC):
+    @abstractmethod
+    def update(self, message):
+        pass
+
+class ConcreteObserver(Observer):
+    def update(self, message):
+        print(f"Received message: {message}")
+
+class Subject:
+    def __init__(self):
+        self.observers = []
+
+    def add_observer(self, observer):
+        self.observers.append(observer)
+
+    def remove_observer(self, observer):
+        self.observers.remove(observer)
+
+    def notify_observers(self, message):
+        for observer in self.observers:
+            observer.update(message)
+
+# Example usage
+subject = Subject()
+observer1 = ConcreteObserver()
+observer2 = ConcreteObserver()
+
+subject.add_observer(observer1)
+subject.add_observer(observer2)
+
+subject.notify_observers("Hello Observers!")
+# Output:
+# Received message: Hello Observers!
+# Received message: Hello Observers!
+```
+
+### 4.2 Strategy Pattern
+
+The Strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. It lets the algorithm vary independently from clients that use it.
+
+```python
+from abc import ABC, abstractmethod
+
+class Strategy(ABC):
+    @abstractmethod
+    def execute(self):
+        pass
+
+class ConcreteStrategyA(Strategy):
+    def execute(self):
+        return "ConcreteStrategyA execution"
+
+class ConcreteStrategyB(Strategy):
+    def execute(self):
+        return "ConcreteStrategyB execution"
+
+class Context:
+    def __init__(self, strategy):
+        self.strategy = strategy
+
+    def set_strategy(self, strategy):
+        self.strategy = strategy
+
+    def execute_strategy(self):
+        return self.strategy.execute()
+
+# Example usage
+strategy_a = ConcreteStrategyA()
+strategy_b = ConcreteStrategyB()
+
+context = Context(strategy_a)
+print(context.execute_strategy())  # Output: ConcreteStrategyA execution
+
+context.set_strategy(strategy_b)
+print(context.execute_strategy())  # Output: ConcreteStrategyB execution
+```
+
+### 4.3 Command Pattern
+
+The Command pattern encapsulates a request as an object, thereby allowing for parameterization of clients with different requests, queuing of requests, and logging of the parameters.
+
+```python
+from abc import ABC, abstractmethod
+
+class Command(ABC):
+    @abstractmethod
+    def execute(self):
+        pass
+
+class ConcreteCommand(Command):
+    def __init__(self, receiver):
+        self.receiver = receiver
+
+    def execute(self):
+        return self.receiver.action()
+
+class Receiver:
+    def action(self):
+        return "Receiver action"
+
+class Invoker:
+    def __init__(self, command):
+        self.command = command
+
+    def set_command(self, command):
+        self.command = command
+
+    def execute_command(self):
+        return self.command.execute()
+
+# Example usage
+receiver = Receiver()
+command = ConcreteCommand(receiver)
+invoker = Invoker(command)
+
+print(invoker.execute_command())  # Output: Receiver action
+```
+
+### 4.4 Chain of Responsibility Pattern
+
+The Chain of Responsibility pattern passes the request along a chain of handlers. Each handler decides either to process the request or to pass it to the next handler in the chain.
+
+```python
+from abc import ABC, abstractmethod
+
+class Handler(ABC):
+    def __init__(self, successor=None):
+        self.successor = successor
+
+    @abstractmethod
+    def handle_request(self, request):
+        pass
+
+class ConcreteHandlerA(Handler):
+    def handle_request(self, request):
+        if request == "A":
+            return "ConcreteHandlerA handled the request"
+        elif self.successor:
+            return self.successor.handle_request(request)
+        else:
+            return "Request not handled"
+
+class ConcreteHandlerB(Handler):
+    def handle_request(self, request):
+        if request == "B":
+            return "ConcreteHandlerB handled the request"
+        elif self.successor:
+            return self.successor.handle_request(request)
+        else:
+            return "Request not handled"
+
+# Example usage
+handler_chain = ConcreteHandlerA(successor=ConcreteHandlerB())
+
+print(handler_chain.handle_request("A"))  # Output: ConcreteHandlerA handled the request
+print(handler_chain.handle_request("B"))  # Output: ConcreteHandlerB handled the request
+print(handler_chain.handle_request("C"))  # Output: Request not handled
+```
+
+### 4.5 Interpreter Pattern
+
+The Interpreter pattern defines a grammar for the language, as well as an interpreter that interprets sentences in the language.
+
+```python
+from abc import ABC, abstractmethod
+
+class AbstractExpression(ABC):
+    @abstractmethod
+    def interpret(self, context):
+        pass
+
+class TerminalExpression(AbstractExpression):
+    def interpret(self, context):
+        return context.contains(self)
+
+class NonterminalExpression(AbstractExpression):
+    def __init__(self, expression1, expression2):
+        self.expression1 = expression1
+        self.expression2 = expression2
+
+    def interpret(self, context):
+        return self.expression1.interpret(context) and self.expression2.interpret(context)
+
+class Context:
+    def __init__(self):
+        self.expression_set = set()
+
+    def add_expression(self, expression):
+        self.expression_set.add(expression)
+
+    def contains(self, expression):
+        return expression in self.expression_set
+
+# Example usage
+context = Context()
+
+expression_a = TerminalExpression()
+expression_b = TerminalExpression()
+expression_c = NonterminalExpression(expression_a, expression_b)
+
+context.add_expression(expression_a)
+context.add_expression(expression_b)
+context.add_expression(expression_c)
+
+print(expression_c.interpret(context))  # Output: True
+```
+
+### 4.6 Iterator Pattern
+
+The Iterator pattern provides a way to access elements of an aggregate object sequentially without exposing its underlying representation.
+
+```python
+from abc import ABC, abstractmethod
+
+class Iterator(ABC):
+    @abstractmethod
+    def has_next(self):
+        pass
+
+    @abstractmethod
+    def next(self):
+        pass
+
+class ConcreteIterator(Iterator):
+    def __init__(self, collection):
+        self.collection = collection
+        self.index = 0
+
+    def has_next(self):
+        return self.index < len(self.collection)
+
+    def next(self):
+        if self.has_next():
+            item = self.collection[self.index]
+            self.index += 1
+            return item
+        else:
+            raise StopIteration("No more elements")
+
+class Aggregate(ABC):
+    @abstractmethod
+    def create_iterator(self):
+        pass
+
+class ConcreteAggregate(Aggregate):
+    def __init__(self, collection):
+        self.collection = collection
+
+    def create_iterator(self):
+        return ConcreteIterator(self.collection)
+
+
+
+# Example usage
+collection = [1, 2, 3, 4, 5]
+aggregate = ConcreteAggregate(collection)
+iterator = aggregate.create_iterator()
+
+while iterator.has_next():
+    print(iterator.next())
+# Output:
+# 1
+# 2
+# 3
+# 4
+# 5
+```
+
+### 4.7 Mediator Pattern
+
+The Mediator pattern defines an object that centralizes communication between a set of objects, making the system more loosely coupled and easier to maintain.
+
+```python
+from abc import ABC, abstractmethod
+
+class Mediator(ABC):
+    @abstractmethod
+    def notify(self, sender, event):
+        pass
+
+class Colleague(ABC):
+    def __init__(self, mediator):
+        self.mediator = mediator
+
+    @abstractmethod
+    def send(self, event):
+        pass
+
+    @abstractmethod
+    def receive(self, event):
+        pass
+
+class ConcreteMediator(Mediator):
+    def __init__(self, colleague1, colleague2):
+        self.colleague1 = colleague1
+        self.colleague2 = colleague2
+
+    def notify(self, sender, event):
+        if sender == self.colleague1:
+            self.colleague2.receive(event)
+        else:
+            self.colleague1.receive(event)
+
+class ConcreteColleague1(Colleague):
+    def send(self, event):
+        self.mediator.notify(self, event)
+
+    def receive(self, event):
+        print(f"Colleague1 received: {event}")
+
+class ConcreteColleague2(Colleague):
+    def send(self, event):
+        self.mediator.notify(self, event)
+
+    def receive(self, event):
+        print(f"Colleague2 received: {event}")
+
+# Example usage
+mediator = ConcreteMediator(colleague1=ConcreteColleague1, colleague2=ConcreteColleague2)
+colleague1 = ConcreteColleague1(mediator)
+colleague2 = ConcreteColleague2(mediator)
+
+colleague1.send("Hello from Colleague1!")
+# Output: Colleague2 received: Hello from Colleague1!
+
+colleague2.send("Greetings from Colleague2!")
+# Output: Colleague1 received: Greetings from Colleague2!
+```
+
+### 4.8 Memento Pattern
+
+The Memento pattern provides the ability to restore an object to its previous state.
+
+```python
+class Memento:
+    def __init__(self, state):
+        self.state = state
+
+class Originator:
+    def __init__(self):
+        self.state = None
+
+    def set_state(self, state):
+        self.state = state
+
+    def create_memento(self):
+        return Memento(state=self.state)
+
+    def restore_memento(self, memento):
+        self.state = memento.state
+
+class Caretaker:
+    def __init__(self):
+        self.mementos = []
+
+    def add_memento(self, memento):
+        self.mementos.append(memento)
+
+    def get_memento(self, index):
+        return self.mementos[index]
+
+# Example usage
+originator = Originator()
+caretaker = Caretaker()
+
+originator.set_state("State 1")
+caretaker.add_memento(originator.create_memento())
+
+originator.set_state("State 2")
+caretaker.add_memento(originator.create_memento())
+
+originator.restore_memento(caretaker.get_memento(0))
+print(originator.state)  # Output: State 1
+
+originator.restore_memento(caretaker.get_memento(1))
+print(originator.state)  # Output: State 2
+```
+
+### 4.9 State Pattern
+
+The State pattern allows an object to alter its behavior when its internal state changes.
+
+```python
+from abc import ABC, abstractmethod
+
+class State(ABC):
+    @abstractmethod
+    def handle_request(self):
+        pass
+
+class ConcreteStateA(State):
+    def handle_request(self):
+        return "ConcreteStateA handles the request"
+
+class ConcreteStateB(State):
+    def handle_request(self):
+        return "ConcreteStateB handles the request"
+
+class Context:
+    def __init__(self, state):
+        self.state = state
+
+    def set_state(self, state):
+        self.state = state
+
+    def request(self):
+        return self.state.handle_request()
+
+# Example usage
+state_a = ConcreteStateA()
+state_b = ConcreteStateB()
+
+context = Context(state_a)
+print(context.request())  # Output: ConcreteStateA handles the request
+
+context.set_state(state_b)
+print(context.request())  # Output: ConcreteStateB handles the request
+```
+
+### 4.10 Template Method Pattern
+
+The Template Method pattern defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure.
+
+```python
+from abc import ABC, abstractmethod
+
+class AbstractClass(ABC):
+    def template_method(self):
+        result = []
+        result.append(self.base_operation1())
+        result.append(self.required_operation1())
+        result.append(self.base_operation2())
+        result.append(self.required_operation2())
+        return ', '.join(result)
+
+    @abstractmethod
+    def required_operation1(self):
+        pass
+
+    @abstractmethod
+    def required_operation2(self):
+        pass
+
+    def base_operation1(self):
+        return "AbstractClass base_operation1"
+
+    def base_operation2(self):
+        return "AbstractClass base_operation2"
+
+class ConcreteClassA(AbstractClass):
+    def required_operation1(self):
+        return "ConcreteClassA operation1"
+
+    def required_operation2(self):
+        return "ConcreteClassA operation2"
+
+class ConcreteClassB(AbstractClass):
+    def required_operation1(self):
+        return "ConcreteClassB operation1"
+
+    def required_operation2(self):
+        return "ConcreteClassB operation2"
+
+# Example usage
+concrete_class_a = ConcreteClassA()
+concrete_class_b = ConcreteClassB()
+
+print(concrete_class_a.template_method())
+# Output: AbstractClass base_operation1, ConcreteClassA operation1, AbstractClass base_operation2, ConcreteClassA operation2
+
+print(concrete_class_b.template_method())
+# Output: AbstractClass base_operation1, ConcreteClassB operation1, AbstractClass base_operation2, ConcreteClassB operation2
+```
+
+### 4.11 Visitor Pattern
+
+The Visitor pattern defines a new operation to a collection of objects without changing the objects themselves.
+
+```python
+from abc import ABC, abstractmethod
+
+class Visitor(ABC):
+    @abstractmethod
+    def visit_concrete_element_a(self, element):
+        pass
+
+    @abstractmethod
+    def visit_concrete_element_b(self, element):
+        pass
+
+class Element(ABC):
+    @abstractmethod
+    def accept(self, visitor):
+        pass
+
+class ConcreteElementA(Element):
+    def accept(self, visitor):
+        visitor.visit_concrete_element_a(self)
+
+class ConcreteElementB(Element):
+    def accept(self, visitor):
+        visitor.visit_concrete_element_b(self)
+
+class ConcreteVisitor(Visitor):
+    def visit_concrete_element_a(self, element):
+        return f"ConcreteVisitor visits {element.__class__.__name__}"
+
+    def visit_concrete_element_b(self, element):
+        return f"ConcreteVisitor visits {element.__class__.__name__}"
+
+# Example usage
+elements = [ConcreteElementA(), ConcreteElementB()]
+visitor = ConcreteVisitor()
+
+for element in elements:
+    print(element.accept(visitor))
+# Output:
+# ConcreteVisitor visits ConcreteElementA
+# ConcreteVisitor visits ConcreteElementB
+```
+
+## Conclusion
+
+Design patterns are essential tools in a software developer's toolbox, providing solutions to common design problems and promoting best practices in software development. In this article, we explored some fundamental creational, structural, and behavioral design patterns, providing Python examples for each.
+
+By incorporating design patterns into your projects, you can enhance code readability, maintainability, and scalability. Remember that these patterns are not strict rules but rather guidelines that can be adapted to fit the specific needs of your application. As you continue to develop your software engineering skills, mastering the art of design patterns will contribute to building robust and maintainable software systems.

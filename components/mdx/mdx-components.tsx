@@ -64,7 +64,6 @@ const components = {
   a: ({ className, ...props }: HTMLAttributes<HTMLAnchorElement>) => (
     <a
       className={cn("font-medium underline underline-offset-4", className)}
-      target="_blank"
       {...props}
     />
   ),
