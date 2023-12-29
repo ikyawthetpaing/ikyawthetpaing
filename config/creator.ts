@@ -1,9 +1,11 @@
 import { CreatorConfig } from "@/types";
 
+import { generateProfileLink } from "@/lib/helpers";
+
 export const creatorConfig: CreatorConfig = {
   name: "Kyaw Thet Paing",
-  role: "Full-Stack Developer",
-  bio: "I am a full-stack developer with a passion for building innovative and user-friendly applications. I have a strong foundation in full stack development, including experience with a variety of programming languages, frameworks, and databases.",
+  role: "Software Engineer",
+  bio: "I am a software engineer with a passion for building innovative and user-friendly applications. I have a strong foundation in full stack development, including experience with a variety of programming languages, frameworks, and databases.",
   username: "ikyawthetpaing",
   email: "ikyawthetpaing@gmail.com",
   avatarImageUrl: "/images/portrait_1.jpg",
@@ -16,40 +18,40 @@ export const creatorConfig: CreatorConfig = {
   socialMediaLinks: [
     {
       title: "Github",
-      href: "https://www.github.com/ikyawthetpaing",
+      href: generateProfileLink("ikyawthetpaing", "github"),
       icon: "github",
     },
     {
-      title: "LinkedIn",
-      href: "https://www.linkedin.com/in/ikyawthetpaing",
-      icon: "linkedin",
+      title: "Twitter",
+      href: generateProfileLink("ikyawthetpaing", "twitter"),
+      icon: "twitter",
     },
     {
-      title: "Dribbble",
-      href: "https://www.dribbble.com/ikyawthetpaing",
-      icon: "dribbble",
+      title: "LinkedIn",
+      href: generateProfileLink("ikyawthetpaing", "linkedin"),
+      icon: "linkedin",
     },
   ],
   services: [
     {
       title: "Custom Software Development",
       description:
-        "I engineer tailored software solutions. Share your needs, and I'll craft efficient, custom applications, turning your unique requirements into seamless, user-friendly software experiences.",
+        "Leveraging my expertise in various programming languages and frameworks, I offer tailored solutions for clients seeking custom software development. Whether it's web applications, mobile apps, or enterprise-level systems, I specialize in creating innovative and efficient software solutions that meet specific business needs.",
       icon: "smartphone",
       href: "/project",
     },
     {
-      title: "Web Development",
+      title: "Full Stack Development",
       description:
-        "I craft exceptional websites. Share your vision, and I'll design a user-friendly, visually stunning site that represents your brand online, making your digital presence stand out.",
+        "As a full-stack developer, I provide end-to-end development services, covering both frontend and backend aspects of applications. From creating intuitive user interfaces to designing robust server-side architecture, I ensure seamless integration and optimal performance across the entire software stack.",
       icon: "globe",
       href: "/project",
     },
     {
-      title: "Web Design",
+      title: "Technical Consultation and Support",
       description:
-        "I design captivating websites. Share your vision, and I'll transform it into a visually appealing, user-friendly site that reflects your brand identity, ensuring a memorable online experience for your visitors.",
-      icon: "appWindow",
+        "Beyond development, I offer technical consultation services to guide clients through the software development lifecycle. This includes advising on technology stack selection, system architecture, and best practices. Additionally, I provide ongoing support to address any issues, implement updates, and ensure the continued success of the developed software.",
+      icon: "helpingHand",
       href: "/project",
     },
   ],

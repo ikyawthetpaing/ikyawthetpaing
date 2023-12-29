@@ -11,7 +11,7 @@ import Link from "next/link";
 
 import { creatorConfig } from "@/config/creator";
 
-import { posts } from "@/lib/helpers";
+import { generateProfileLink, posts } from "@/lib/helpers";
 import { absoluteUrl, cn, formatDate } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { BlogFollowDialog } from "@/components/blog-follow-dialog";
@@ -107,22 +107,27 @@ export default async function PostPage({ params }: PostPageProps) {
           {post.title}
         </h1>
         <div className="mt-4 flex justify-between space-x-4">
-          <div className="flex items-center space-x-2 text-sm">
-            <Image
-              src={creatorConfig.avatarImageUrl}
-              alt={creatorConfig.name}
-              width={42}
-              height={42}
-              quality={100}
-              className="rounded-full bg-white"
-            />
-            <div className="flex-1 space-y-1 text-left leading-tight">
-              <p className="font-medium">{creatorConfig.name}</p>
-              <p className="text-muted-foreground text-[12px]">
-                @{creatorConfig.username}
-              </p>
+          <Link
+            href={generateProfileLink(creatorConfig.username, "linkedin")}
+            target="_blank"
+          >
+            <div className="flex items-center space-x-2 text-sm">
+              <Image
+                src={creatorConfig.avatarImageUrl}
+                alt={creatorConfig.name}
+                width={42}
+                height={42}
+                quality={100}
+                className="rounded-full bg-white"
+              />
+              <div className="flex-1 space-y-1 text-left leading-tight">
+                <p className="font-medium">{creatorConfig.name}</p>
+                <p className="text-muted-foreground text-[12px]">
+                  @{creatorConfig.username}
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
           <div className="flex items-center gap-8">
             <BlogFollowDialog username={creatorConfig.username} />
             <BlogShareDialog

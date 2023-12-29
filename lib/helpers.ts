@@ -1,5 +1,9 @@
 import { allPosts, allProjects } from "@/.contentlayer/generated";
-import { SocialMediaFollowLink, SocialMediaShare } from "@/types";
+import {
+  SocialMediaFollowLink,
+  SocialMediaPlatform,
+  SocialMediaShare,
+} from "@/types";
 import { compareDesc } from "date-fns";
 
 export const projects = allProjects.sort((a, b) => a.index - b.index);
@@ -81,4 +85,27 @@ export function generateSocialMediaFollowLinks(username: string) {
     },
   ];
   return followLinks;
+}
+
+const platformUrls: Record<SocialMediaPlatform, string> = {
+  linkedin: "https://www.linkedin.com/in/",
+  facebook: "https://www.facebook.com/",
+  instagram: "https://www.instagram.com/",
+  github: "https://github.com/",
+  dribbble: "https://dribbble.com/",
+  medium: "https://medium.com/",
+  twitter: "https://twitter.com/",
+};
+
+export function generateProfileLink(
+  username: string,
+  platformName: SocialMediaPlatform
+) {
+  const platformUrl = platformUrls[platformName];
+
+  if (!platformUrl) {
+    throw new Error("Unsupported platform");
+  }
+
+  return `${platformUrl}${username}`;
 }

@@ -66,3 +66,12 @@ export type SocialMediaFollowLink = {
   platformName: string;
   followLink: string;
 };
+
+export type SocialMediaPlatform =
+  | "linkedin"
+  | "facebook"
+  | "instagram"
+  | "github"
+  | "dribbble"
+  | "medium"
+  | "twitter";

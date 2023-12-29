@@ -7,6 +7,7 @@ import {
   Facebook,
   Github,
   Globe,
+  HelpingHand,
   Linkedin,
   LucideProps,
   Mail,
@@ -45,6 +46,7 @@ export const Icons = {
   mail: Mail,
   github: Github,
   dribbble: Dribbble,
+  helpingHand: HelpingHand,
   kyax: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

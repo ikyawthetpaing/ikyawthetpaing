@@ -2,6 +2,7 @@ import { SiteConfig } from "@/types";
 
 import { creatorConfig } from "@/config/creator";
 
+import { generateProfileLink } from "@/lib/helpers";
 import { absoluteUrl } from "@/lib/utils";
 
 export const siteConfig: SiteConfig = {
@@ -14,7 +15,7 @@ export const siteConfig: SiteConfig = {
   authors: [
     {
       name: creatorConfig.name,
-      url: `https://linkedin.com/in/${creatorConfig.username}`,
+      url: generateProfileLink(creatorConfig.username, "linkedin"),
     },
   ],
   creatorName: creatorConfig.name,
