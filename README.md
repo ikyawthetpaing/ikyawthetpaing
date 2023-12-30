@@ -1,4 +1,4 @@
-Hello there! I'm Kyaw Thet Paing, a passionate full-stack developer turning coffee into code. I love solving complex problems with clean and efficient solutions.
+👋 Hello there! I'm Kyaw Thet Paing, a passionate software engineer turning coffee into code. I love solving complex problems with clean and efficient solutions.
 
 🌐 Explore my portfolio and blog at [ikyawthetpaing.vercel.app](https://ikyawthetpaing.vercel.app). Connect with me on [LinkedIn](https://linkedin.com/in/ikyawthetpaing) for professional networking and more exciting content!
 
@@ -12,6 +12,7 @@ Hello there! I'm Kyaw Thet Paing, a passionate full-stack developer turning coff
 
 - [Voxellax](https://github.com/ikyawthetpaing/voxellax) - E-commerce platform for digital products.
 - [Euolingo](https://github.com/ikyawthetpaing/euolingo.git) - Playful language learning app.
+- [Real Xstate](https://github.com/ikyawthetpaing/realxstate.git) - Modern real estate agency platform.
 - [Nexus](https://github.com/ikyawthetpaing/nexus.git) - Cutting-edge social media application.
 - [Syncloud](https://github.com/ikyawthetpaing/syncloud.git) - API infrastructure for innovative services.
 
