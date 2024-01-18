@@ -15,6 +15,10 @@ export const creatorConfig: CreatorConfig = {
     label: "(+66) 937-418-692",
     value: "+66937418692",
   },
+  portraitSketchImage: {
+    src: "/images/portrait-sketch.png",
+    alt: "Detailed portrait sketch of Kyaw Thet Paing",
+  },
   socialMediaLinks: [
     {
       title: "Github",
@@ -97,19 +101,19 @@ export const creatorConfig: CreatorConfig = {
   imageGallery: [
     {
       alt: "Selfie at the beach wearing a black t-shirt",
-      url: "/images/portrait_1.jpg",
+      src: "/images/portrait-1.jpg",
     },
     {
       alt: "Beach trip selfie with black t-shirt",
-      url: "/images/portrait_2.jpg",
+      src: "/images/portrait-2.jpg",
     },
     {
       alt: "Sunny day selfie in black t-shirt at the beach",
-      url: "/images/portrait_3.jpg",
+      src: "/images/portrait-3.jpg",
     },
     {
       alt: "Relaxing by the shore in a black t-shirt",
-      url: "/images/portrait_4.jpg",
+      src: "/images/portrait-4.jpg",
     },
   ],
 };

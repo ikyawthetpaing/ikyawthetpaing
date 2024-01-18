@@ -24,24 +24,13 @@ export type CreatorConfig = {
   location: string;
   avatarImageUrl: string;
   resumeFileUrl: string;
-  telephone: Option;
-  socialMediaLinks: {
-    title: string;
-    href: string;
-    icon: IconName;
-  }[];
-  services: {
-    title: string;
-    description: string;
-    icon: IconName;
-    href: string;
-  }[];
-  bigClients: {
-    name: string;
-    icon: IconName;
-  }[];
+  telephone: ContactOption;
+  socialMediaLinks: SocialMediaLink[];
+  services: Service[];
+  bigClients: ClientInfo[];
   skills: string[];
-  imageGallery: { alt: string; url: string }[];
+  imageGallery: ImageInfo[];
+  portraitSketchImage: ImageInfo;
 };
 
 export type NavItem = {
@@ -51,7 +40,7 @@ export type NavItem = {
 
 export type IconName = keyof typeof Icons;
 
-export type Option = {
+export type ContactOption = {
   label: string;
   value: string;
 };
@@ -75,3 +64,26 @@ export type SocialMediaPlatform =
   | "dribbble"
   | "medium"
   | "twitter";
+
+export type SocialMediaLink = {
+  title: string;
+  href: string;
+  icon: IconName;
+};
+
+export type Service = {
+  title: string;
+  description: string;
+  icon: IconName;
+  href: string;
+};
+
+export type ClientInfo = {
+  name: string;
+  icon: IconName;
+};
+
+export type ImageInfo = {
+  src: string;
+  alt: string;
+};
