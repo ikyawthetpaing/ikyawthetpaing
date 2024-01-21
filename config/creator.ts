@@ -8,7 +8,7 @@ export const creatorConfig: CreatorConfig = {
   bio: "I am a software engineer with a passion for building innovative and user-friendly applications. I have a strong foundation in full stack development, including experience with a variety of programming languages, frameworks, and databases.",
   username: "ikyawthetpaing",
   email: "ikyawthetpaing@gmail.com",
-  avatarImageUrl: "/images/portrait_1.jpg",
+  avatarImageUrl: "/images/portrait-1.jpg",
   resumeFileUrl: "/files/resume.pdf",
   location: "Bangkok, Thailand",
   telephone: {
