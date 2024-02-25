@@ -23,13 +23,15 @@ export function SiteFooter({ navItems }: Props) {
             </h4>
             <Link
               href={`mailto:${creatorConfig.email}`}
-              className="text-2xl font-medium sm:text-3xl"
+              className="text-2xl font-medium sm:text-2xl hover:text-foreground text-muted-foreground"
+              target="_blank"
             >
               {creatorConfig.email}
             </Link>
             <Link
               href={`tel:${creatorConfig.telephone.value}`}
-              className="text-lg font-light"
+              className="text-lg font-light hover:text-foreground text-muted-foreground"
+              target="_blank"
             >
               {creatorConfig.telephone.label}
             </Link>
@@ -38,10 +40,10 @@ export function SiteFooter({ navItems }: Props) {
             {creatorConfig.socialMediaLinks.map((media, index) => (
               <li key={index}>
                 <Link href={media.href} target="_blank">
-                  <div className="bg-accent rounded-full p-4">
+                  <div className="bg-accent rounded-full p-4 group">
                     <Icon
                       name={media.icon}
-                      className="text-muted-foreground h-6 w-6"
+                      className="text-muted-foreground h-6 w-6 group-hover:text-foreground"
                     />
                   </div>
                 </Link>

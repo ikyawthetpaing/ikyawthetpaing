@@ -39,14 +39,13 @@ export default function AboutPage() {
           <div className="flex justify-end">
             <Link
               href="/contact"
-              className="flex items-center gap-2 text-lg font-medium duration-150 hover:gap-4 hover:underline hover:underline-offset-4"
+              className="flex items-center gap-2 font-medium duration-150 hover:gap-4 hover:underline hover:underline-offset-4"
             >
               Let&apos;s Chat <Icons.moveRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
       </div>
-
       <div className="columns-1 gap-8 sm:columns-2">
         <div className="grid gap-8">
           <div className="grid grid-cols-2 gap-4 sm:gap-6">
@@ -103,10 +102,11 @@ export default function AboutPage() {
               <h3 className="text-2xl font-medium">Skills</h3>
               <ul className="flex flex-wrap gap-2">
                 {skills.map((skill, index) => (
-                  <li key={index}>
-                    <Badge variant="outline" key={index}>
-                      {skill}
-                    </Badge>
+                  <li
+                    key={index}
+                    className="px-3 py-1 rounded-lg border text-xs font-semibold"
+                  >
+                    {skill}
                   </li>
                 ))}
               </ul>

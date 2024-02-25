@@ -12,6 +12,51 @@ import { Icon, Icons } from "@/components/icons";
 import { PostItem } from "@/components/post-item";
 import { ProjectItem } from "@/components/project-item";
 
+export default function HomePage() {
+  const {
+    name,
+    role,
+    bio,
+    resumeFileUrl,
+    socialMediaLinks,
+    portraitSketchImage,
+    services,
+    bigClients,
+  } = creatorConfig;
+
+  return (
+    <div className="grid gap-32">
+      <IntroSection
+        name={name}
+        role={role}
+        bio={bio}
+        resumeFileUrl={resumeFileUrl}
+        portraitSketchImage={portraitSketchImage}
+        socialMediaLinks={socialMediaLinks}
+      />
+      <ServicesSection services={services} />
+      <BigClientsSection bigClients={bigClients} />
+      <WorksAndBlogsSection
+        title="Works"
+        description="Explore carefully curated projects that represent my best work."
+        linkHref="/project"
+        items={projects.slice(0, 2).map((project) => (
+          <ProjectItem project={project} />
+        ))}
+      />
+      <WorksAndBlogsSection
+        title="Blogs"
+        description="Explore my latest and best blog posts for insights and expertise."
+        linkHref="/blog"
+        items={posts.slice(0, 2).map((post) => (
+          <PostItem post={post} />
+        ))}
+      />
+      <WorkInquiry />
+    </div>
+  );
+}
+
 const IntroSection = ({
   name,
   role,
@@ -36,7 +81,7 @@ const IntroSection = ({
               <Link href={media.href} target="_blank">
                 <Icon
                   name={media.icon}
-                  className="text-muted-foreground h-5 w-5"
+                  className="text-muted-foreground h-5 w-5 hover:text-foreground duration-150 transition-all"
                 />
               </Link>
             </li>
@@ -56,12 +101,12 @@ const IntroSection = ({
           </div>
 
           <div className="flex gap-6">
-            <Link href="/contact" className={buttonVariants()}>
+            <Link href="/contact" className={cn(buttonVariants(), "hover:px-6 duration-150 transition-all")}>
               Let&apos;s Chat
             </Link>
             <Link
               href={resumeFileUrl}
-              className={buttonVariants({ variant: "outline" })}
+              className={cn(buttonVariants({ variant: "outline" }), "hover:px-6 duration-150 transition-all")}
             >
               Resume
             </Link>
@@ -161,7 +206,7 @@ const BigClientsSection = ({ bigClients }: { bigClients: ClientInfo[] }) => (
           </p>
         </div>
         <div className="flex items-center gap-4">
-          <h3 className="text-6xl font-medium">73</h3>
+          <h3 className="text-6xl font-medium">45</h3>
           <p className="text-muted-foreground">
             Satisfied
             <br />
@@ -169,7 +214,7 @@ const BigClientsSection = ({ bigClients }: { bigClients: ClientInfo[] }) => (
           </p>
         </div>
         <div className="flex items-center gap-4">
-          <h3 className="text-6xl font-medium">237</h3>
+          <h3 className="text-6xl font-medium">128</h3>
           <p className="text-muted-foreground">
             Projects Completed In
             <br />
@@ -251,48 +296,3 @@ const WorkInquiry = () => (
     </div>
   </section>
 );
-
-export default function HomePage() {
-  const {
-    name,
-    role,
-    bio,
-    resumeFileUrl,
-    socialMediaLinks,
-    portraitSketchImage,
-    services,
-    bigClients,
-  } = creatorConfig;
-
-  return (
-    <div className="grid gap-32">
-      <IntroSection
-        name={name}
-        role={role}
-        bio={bio}
-        resumeFileUrl={resumeFileUrl}
-        portraitSketchImage={portraitSketchImage}
-        socialMediaLinks={socialMediaLinks}
-      />
-      <ServicesSection services={services} />
-      <BigClientsSection bigClients={bigClients} />
-      <WorksAndBlogsSection
-        title="Works"
-        description="Explore carefully curated projects that represent my best work."
-        linkHref="/project"
-        items={projects.slice(0, 2).map((project) => (
-          <ProjectItem project={project} />
-        ))}
-      />
-      <WorksAndBlogsSection
-        title="Blogs"
-        description="Explore my latest and best blog posts for insights and expertise."
-        linkHref="/blog"
-        items={posts.slice(0, 2).map((post) => (
-          <PostItem post={post} />
-        ))}
-      />
-      <WorkInquiry />
-    </div>
-  );
-}
