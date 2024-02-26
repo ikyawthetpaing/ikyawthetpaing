@@ -4,16 +4,31 @@ import Link from "next/link";
 
 import { creatorConfig } from "@/config/creator";
 
-import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
+import { absoluteUrl, cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Learn about my journey, my expertise, and how I can help you achieve your software goals.",
-};
+export function generateMetadata(): Metadata {
+  const title = "About";
+  const description =
+    "Learn about my journey, my expertise, and how I can help you achieve your software goals.";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      url: absoluteUrl("/about"),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 export default function AboutPage() {
   const { name, role, imageGallery, skills, resumeFileUrl } = creatorConfig;
@@ -104,7 +119,7 @@ export default function AboutPage() {
                 {skills.map((skill, index) => (
                   <li
                     key={index}
-                    className="px-3 py-1 rounded-lg border text-xs font-semibold"
+                    className="rounded-lg border px-3 py-1 text-xs font-semibold"
                   >
                     {skill}
                   </li>

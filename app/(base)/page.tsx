@@ -81,7 +81,7 @@ const IntroSection = ({
               <Link href={media.href} target="_blank">
                 <Icon
                   name={media.icon}
-                  className="text-muted-foreground h-5 w-5 hover:text-foreground duration-150 transition-all"
+                  className="text-muted-foreground hover:text-foreground h-5 w-5 transition-all duration-150"
                 />
               </Link>
             </li>
@@ -101,12 +101,21 @@ const IntroSection = ({
           </div>
 
           <div className="flex gap-6">
-            <Link href="/contact" className={cn(buttonVariants(), "hover:px-6 duration-150 transition-all")}>
+            <Link
+              href="/contact"
+              className={cn(
+                buttonVariants(),
+                "transition-all duration-150 hover:px-6"
+              )}
+            >
               Let&apos;s Chat
             </Link>
             <Link
               href={resumeFileUrl}
-              className={cn(buttonVariants({ variant: "outline" }), "hover:px-6 duration-150 transition-all")}
+              className={cn(
+                buttonVariants({ variant: "outline" }),
+                "transition-all duration-150 hover:px-6"
+              )}
             >
               Resume
             </Link>

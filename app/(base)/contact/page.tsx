@@ -1,12 +1,28 @@
 import { Metadata } from "next";
 
+import { absoluteUrl } from "@/lib/utils";
 import { ContactForm } from "@/components/contact-form";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Partner with me to turn your concepts into powerful digital solutions.",
-};
+export function generateMetadata(): Metadata {
+  const title = "Contact";
+  const description =
+    "Partner with me to turn your concepts into powerful digital solutions.";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: absoluteUrl("/contact"),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 export default function ContactPage() {
   return (

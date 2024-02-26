@@ -24,8 +24,10 @@ export function MainNavItems({ navItems, ...props }: Props) {
             <Link
               href={navItem.href}
               className={cn(
-                "text-lg font-medium uppercase duration-150 transition-all",
-                isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                "text-lg font-medium uppercase transition-all duration-150",
+                isActive
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
               )}
             >
               {navItem.title}

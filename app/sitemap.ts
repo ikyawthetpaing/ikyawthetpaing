@@ -1,18 +1,13 @@
 import { type MetadataRoute } from "next";
-import { allPosts, allProjects } from "contentlayer/generated";
+import { allDocuments } from "contentlayer/generated";
 
 import { baseConfig } from "@/config/base";
 
 import { absoluteUrl } from "@/lib/utils";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const posts = allPosts.map((post) => ({
-    url: absoluteUrl(`${post.slug}`),
-    lastModified: new Date().toISOString(),
-  }));
-
-  const projects = allProjects.map((project) => ({
-    url: absoluteUrl(`${project.slug}`),
+export default function sitemap(): MetadataRoute.Sitemap {
+  const docs = allDocuments.map((doc) => ({
+    url: absoluteUrl(`${doc.slug}`),
     lastModified: new Date().toISOString(),
   }));
 
@@ -21,5 +16,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date().toISOString(),
   }));
 
-  return [...routes, ...posts, ...projects];
+  return [...routes, ...docs];
 }
