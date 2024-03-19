@@ -28,3 +28,13 @@ export function formatDate(input: string | number): string {
 export function truncate(str: string, length: number) {
   return str.length > length ? `${str.substring(0, length)}...` : str;
 }
+
+export function slugify(str: string) {
+  return str
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/&/g, "-and-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-");
+}

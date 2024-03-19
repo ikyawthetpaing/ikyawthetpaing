@@ -7,13 +7,13 @@ date: "2023-10-14"
 
 Design patterns are essential tools in a software developer's toolkit. They provide proven solutions to common problems encountered during software design and development, offering a structured and efficient way to solve recurring design challenges. In this comprehensive guide, we'll take a deep dive into various design patterns, exploring their concepts and providing practical Python examples to illustrate their usage.
 
-### 1. Introduction to Design Patterns
+## 1. Introduction to Design Patterns
 
-#### 1.1 What are Design Patterns?
+### 1.1 What are Design Patterns?
 
 Design patterns are recurring solutions to common problems in software design. They are templates that can be applied to solve particular design issues in a flexible and reusable way. These patterns encapsulate best practices, providing a guide for structuring code to achieve maintainability, flexibility, and scalability.
 
-#### 1.2 Why Use Design Patterns?
+### 1.2 Why Use Design Patterns?
 
 The use of design patterns offers several advantages:
 
@@ -22,7 +22,7 @@ The use of design patterns offers several advantages:
 
 - **Maintainability:** They promote clean and organized code, making it easier to maintain and modify.
 
-#### 1.3 Categories of Design Patterns
+### 1.3 Categories of Design Patterns
 
 Design patterns are typically categorized into three main groups:
 
@@ -30,9 +30,9 @@ Design patterns are typically categorized into three main groups:
 - **Structural Patterns:** These patterns focus on the composition of classes or objects. They help define clear relationships between different components.
 - **Behavioral Patterns:** These patterns are concerned with the interaction between objects and the responsibility of objects. They help define communication between objects.
 
-### 2. Creational Design Patterns
+## 2. Creational Design Patterns
 
-#### 2.1 Singleton Pattern
+### 2.1 Singleton Pattern
 
 The Singleton pattern ensures that a class has only one instance and provides a global point of access to that instance.
 
@@ -52,7 +52,7 @@ singleton_instance2 = Singleton()
 print(singleton_instance1 is singleton_instance2)  # Output: True
 ```
 
-#### 2.2 Factory Method Pattern
+### 2.2 Factory Method Pattern
 
 The Factory Method pattern defines an interface for creating an object but leaves the choice of its type to the subclasses.
 
@@ -95,7 +95,7 @@ product_a = creator_a.create_instance()
 print(product_a.operation())  # Output: Product A operation
 ```
 
-#### 2.3 Abstract Factory Pattern
+### 2.3 Abstract Factory Pattern
 
 The Abstract Factory pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
@@ -160,7 +160,7 @@ print(product_a1.operation())  # Output: Product A1 operation
 print(product_b1.operation())  # Output: Product B1 operation
 ```
 
-#### 2.4 Builder Pattern
+### 2.4 Builder Pattern
 
 The Builder pattern separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
 
@@ -222,7 +222,7 @@ product =
 product.show()  # Output: Product parts: Part A, Part B
 ```
 
-#### 2.5 Prototype Pattern
+### 2.5 Prototype Pattern
 
 The Prototype pattern creates new objects by copying an existing object, known as the prototype.
 
@@ -251,9 +251,9 @@ print(clone1.data)  # Output: Modified Data
 print(clone2.data)  # Output: Initial Data
 ```
 
-### 3. Structural Design Patterns
+## 3. Structural Design Patterns
 
-#### 3.1 Adapter Pattern
+### 3.1 Adapter Pattern
 
 The Adapter pattern allows the interface of an existing class to be used as another interface.
 
@@ -280,7 +280,7 @@ adapter = Adapter(adaptee)
 print(adapter.request())  # Output: Adapter: Adaptee's specific request
 ```
 
-#### 3.2 Bridge Pattern
+### 3.2 Bridge Pattern
 
 The Bridge pattern decouples abstraction from implementation so that both can vary independently.
 
@@ -326,7 +326,7 @@ print(refined_abstraction.operation())           # Output: Concrete Implementor 
 print(refined_abstraction.additional_operation())  # Output: Additional operation in Refined Abstraction
 ```
 
-#### 3.3 Composite Pattern
+### 3.3 Composite Pattern
 
 The Composite pattern lets clients treat individual objects and compositions of objects uniformly.
 
@@ -368,7 +368,7 @@ print(leaf.operation())         # Output: Leaf operation
 print(composite.operation())    # Output: Composite operation: Leaf operation, Leaf operation
 ```
 
-#### 3.4 Decorator Pattern
+### 3.4 Decorator Pattern
 
 The Decorator pattern attaches additional responsibilities to an object dynamically.
 
@@ -409,7 +409,7 @@ print(decorator_a.operation())    # Output: ConcreteDecoratorA operation: Concre
 print(decorator_b.operation())    # Output: ConcreteDecoratorB operation: ConcreteDecoratorA operation: ConcreteComponent operation
 ```
 
-#### 3.5 Facade Pattern
+### 3.5 Facade Pattern
 
 The Facade pattern provides a unified interface to a set of interfaces in a subsystem, making it easier to use.
 
@@ -444,7 +444,7 @@ facade = Facade()
 print(facade.operation())  # Output: Facade operation: SubsystemA operation, SubsystemB operation, SubsystemC operation
 ```
 
-#### 3.6 Flyweight Pattern
+### 3.6 Flyweight Pattern
 
 The Flyweight pattern minimizes memory usage or computational expenses by sharing as much as possible with related objects.
 
@@ -478,7 +478,7 @@ flyweight2 = flyweight_factory.get_flyweight("shared_key")
 print(flyweight1.operation("state"))  # Output: ConcreteFly
 ```
 
-### 3.7 Proxy Pattern
+## 3.7 Proxy Pattern
 
 The Proxy pattern provides a surrogate or placeholder for another object to control access to it.
 
@@ -509,9 +509,9 @@ proxy = Proxy(real_subject)
 print(proxy.request())  # Output: Proxy request: RealSubject request
 ```
 
-### 4. Behavioral Design Patterns
+## 4. Behavioral Design Patterns
 
-#### 4.1 Observer Pattern
+### 4.1 Observer Pattern
 
 The Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
@@ -555,7 +555,7 @@ subject.notify_observers("Hello Observers!")
 # Received message: Hello Observers!
 ```
 
-#### 4.2 Strategy Pattern
+### 4.2 Strategy Pattern
 
 The Strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. It lets the algorithm vary independently from clients that use it.
 
@@ -596,7 +596,7 @@ context.set_strategy(strategy_b)
 print(context.execute_strategy())  # Output: ConcreteStrategyB execution
 ```
 
-#### 4.3 Command Pattern
+### 4.3 Command Pattern
 
 The Command pattern encapsulates a request as an object, thereby allowing for parameterization of clients with different requests, queuing of requests, and logging of the parameters.
 
@@ -637,7 +637,7 @@ invoker = Invoker(command)
 print(invoker.execute_command())  # Output: Receiver action
 ```
 
-#### 4.4 Chain of Responsibility Pattern
+### 4.4 Chain of Responsibility Pattern
 
 The Chain of Responsibility pattern passes the request along a chain of handlers. Each handler decides either to process the request or to pass it to the next handler in the chain.
 
@@ -678,7 +678,7 @@ print(handler_chain.handle_request("B"))  # Output: ConcreteHandlerB handled the
 print(handler_chain.handle_request("C"))  # Output: Request not handled
 ```
 
-#### 4.5 Interpreter Pattern
+### 4.5 Interpreter Pattern
 
 The Interpreter pattern defines a grammar for the language, as well as an interpreter that interprets sentences in the language.
 
@@ -726,7 +726,7 @@ context.add_expression(expression_c)
 print(expression_c.interpret(context))  # Output: True
 ```
 
-#### 4.6 Iterator Pattern
+### 4.6 Iterator Pattern
 
 The Iterator pattern provides a way to access elements of an aggregate object sequentially without exposing its underlying representation.
 
@@ -787,7 +787,7 @@ while iterator.has_next():
 # 5
 ```
 
-#### 4.7 Mediator Pattern
+### 4.7 Mediator Pattern
 
 The Mediator pattern defines an object that centralizes communication between a set of objects, making the system more loosely coupled and easier to maintain.
 
@@ -848,7 +848,7 @@ colleague2.send("Greetings from Colleague2!")
 # Output: Colleague1 received: Greetings from Colleague2!
 ```
 
-#### 4.8 Memento Pattern
+### 4.8 Memento Pattern
 
 The Memento pattern provides the ability to restore an object to its previous state.
 
@@ -897,7 +897,7 @@ originator.restore_memento(caretaker.get_memento(1))
 print(originator.state)  # Output: State 2
 ```
 
-#### 4.9 State Pattern
+### 4.9 State Pattern
 
 The State pattern allows an object to alter its behavior when its internal state changes.
 
@@ -938,7 +938,7 @@ context.set_state(state_b)
 print(context.request())  # Output: ConcreteStateB handles the request
 ```
 
-#### 4.10 Template Method Pattern
+### 4.10 Template Method Pattern
 
 The Template Method pattern defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure.
 
@@ -993,7 +993,7 @@ print(concrete_class_b.template_method())
 # Output: AbstractClass base_operation1, ConcreteClassB operation1, AbstractClass base_operation2, ConcreteClassB operation2
 ```
 
-#### 4.11 Visitor Pattern
+### 4.11 Visitor Pattern
 
 The Visitor pattern defines a new operation to a collection of objects without changing the objects themselves.
 
@@ -1040,7 +1040,7 @@ for element in elements:
 # ConcreteVisitor visits ConcreteElementB
 ```
 
-### Conclusion
+## Conclusion
 
 Design patterns are essential tools in a software developer's toolbox, providing solutions to common design problems and promoting best practices in software development. In this article, we explored some fundamental creational, structural, and behavioral design patterns, providing Python examples for each.
 

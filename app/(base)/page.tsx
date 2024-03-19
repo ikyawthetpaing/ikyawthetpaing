@@ -21,7 +21,7 @@ export default function HomePage() {
     socialMediaLinks,
     portraitSketchImage,
     services,
-    bigClients,
+    // bigClients,
   } = creatorConfig;
 
   return (
@@ -35,12 +35,12 @@ export default function HomePage() {
         socialMediaLinks={socialMediaLinks}
       />
       <ServicesSection services={services} />
-      <BigClientsSection bigClients={bigClients} />
+      {/* <BigClientsSection bigClients={bigClients} /> */}
       <WorksAndBlogsSection
         title="Works"
         description="Explore carefully curated projects that represent my best work."
         linkHref="/project"
-        items={projects.slice(0, 2).map((project) => (
+        items={projects.slice(0, 4).map((project) => (
           <ProjectItem project={project} />
         ))}
       />
@@ -48,7 +48,7 @@ export default function HomePage() {
         title="Blogs"
         description="Explore my latest and best blog posts for insights and expertise."
         linkHref="/blog"
-        items={posts.slice(0, 2).map((post) => (
+        items={posts.slice(0, 4).map((post) => (
           <PostItem post={post} />
         ))}
       />

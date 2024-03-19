@@ -88,7 +88,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <article className="container relative max-w-3xl py-6 lg:py-10">
+    <article className="container relative py-6 lg:py-10">
       <div>
         <div className="text-muted-foreground text-sm">
           {project.date && (

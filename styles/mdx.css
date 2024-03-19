@@ -1,11 +1,97 @@
-[data-rehype-pretty-code-fragment] code {
-  @apply border-0;
+.prose .anchor {
+  @apply absolute invisible no-underline;
+
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
 }
 
-[data-rehype-pretty-code-fragment] [data-line] {
-  @apply px-4;
+.anchor:hover {
+  @apply visible;
 }
 
-[data-rehype-pretty-code-fragment] pre {
-  @apply px-0;
+.prose a {
+  @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+.prose .anchor:after {
+  @apply text-neutral-300 dark:text-neutral-700;
+  content: "#";
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+}
+
+.prose pre {
+  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900;
+}
+
+.prose code {
+  @apply px-1 py-0.5 rounded-lg border;
+}
+
+.prose pre code {
+  @apply p-0;
+  border: initial;
+  line-height: 1.5;
+}
+
+.prose code span {
+  @apply font-medium;
+}
+
+.prose img {
+  /* Don't apply styles to next/image */
+  @apply m-0;
+}
+
+.prose h2,
+h3,
+h4 {
+  @apply font-medium tracking-tighter !important;
+}
+
+.prose strong {
+  @apply font-medium;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+code::after,
+code::before {
+  @apply hidden;
+}
+
+/* Remove Safari input shadow on mobile */
+input[type="text"],
+input[type="email"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.prose h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply scroll-m-12;
 }
