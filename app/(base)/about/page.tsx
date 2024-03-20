@@ -6,10 +6,9 @@ import { creatorConfig } from "@/config/creator";
 
 import { absoluteUrl, cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { Icons } from "@/components/icons";
 
 export function generateMetadata(): Metadata {
-  const title = "About";
+  const title = "About Me";
   const description =
     "Learn about my journey, my expertise, and how I can help you achieve your software goals.";
 
@@ -38,9 +37,9 @@ export default function AboutPage() {
       <h1 className="text-muted-foreground text-3xl font-light">About Me —</h1>
       <div className="flex flex-col gap-8 sm:flex-row">
         <div className="flex-1">
-          <h2 className="text-4xl font-medium uppercase md:text-5xl lg:text-6xl">
+          <p className="text-4xl uppercase tracking-tighter md:text-5xl">
             I&apos;m {name}. A {role}, creator, and puzzle solver.
-          </h2>
+          </p>
         </div>
         <div className="flex flex-1 flex-col justify-end gap-8">
           <p>
@@ -54,9 +53,9 @@ export default function AboutPage() {
           <div className="flex justify-end">
             <Link
               href="/contact"
-              className="flex items-center gap-2 font-medium duration-150 hover:gap-4 hover:underline hover:underline-offset-4"
+              className="flex items-center gap-2 underline-offset-4 hover:underline"
             >
-              Let&apos;s Chat <Icons.moveRight className="h-4 w-4" />
+              Let&apos;s Chat →
             </Link>
           </div>
         </div>
@@ -114,7 +113,7 @@ export default function AboutPage() {
           </div>
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
-              <h3 className="text-2xl font-medium">Skills</h3>
+              <h3 className="text-2xl font-medium">Skills:</h3>
               <ul className="flex flex-wrap gap-2">
                 {skills.map((skill, index) => (
                   <li

@@ -89,13 +89,7 @@ export const creatorConfig: CreatorConfig = {
     "API Development and Integration",
     "Collaboration and Teamwork",
     "Technical Documentation",
-    "Continuous Learning and Adaptability",
-    // "Problem Solving and Algorithmic Thinking",
-    // "Software Architecture and Design Patterns",
-    // "Agile and Scrum Methodologies",
-    // "Mobile App Development: iOS, Android, React Native",
-    // "Security: Application Security, Secure Coding Practices",
-    // "Debugging and Performance Optimization",
+    "Problem Solving and Algorithmic Thinking",
   ],
   imageGallery: [
     {

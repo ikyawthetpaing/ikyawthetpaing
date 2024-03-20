@@ -13,7 +13,7 @@
 }
 
 .prose a {
-  @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  @apply underline-offset-2;
 }
 
 .prose .anchor:after {
@@ -44,13 +44,12 @@
 }
 
 .prose img {
-  /* Don't apply styles to next/image */
-  @apply m-0;
+  @apply m-0 rounded-2xl;
 }
 
 .prose h2,
-h3,
-h4 {
+.prose h3,
+.prose h4 {
   @apply font-medium tracking-tighter !important;
 }
 
@@ -58,40 +57,39 @@ h4 {
   @apply font-medium;
 }
 
-pre::-webkit-scrollbar {
+.prose pre::-webkit-scrollbar {
   display: none;
 }
 
-pre {
+.prose pre {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
 
-code::after,
-code::before {
+.prose code::after,
+.prose code::before {
   @apply hidden;
 }
 
 /* Remove Safari input shadow on mobile */
-input[type="text"],
-input[type="email"] {
+.prose input[type="text"],
+.prose input[type="email"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-table {
+.prose table {
   display: block;
   max-width: fit-content;
   overflow-x: auto;
   white-space: nowrap;
 }
 
-.prose h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.prose h2 {
   @apply scroll-m-12;
+}
+
+.prose h3 {
+  @apply scroll-m-8;
 }

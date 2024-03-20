@@ -46,7 +46,9 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        "bebas-neue": ["Bebas Neue", ...fontFamily.sans],
+        heading: ["Montserrat Alternates", ...fontFamily.sans],
+        sans: ["Inter", ...fontFamily.sans],
       },
       keyframes: {
         "accordion-down": {

@@ -8,7 +8,7 @@ interface TocProps {
 export function TableOfContents({ tocItems }: TocProps) {
   return (
     <div className="relative flex flex-col gap-4 border-b pb-6">
-      <h2 className="font-bold">Table of Contents</h2>
+      <h2 className="font-heading font-bold">Table of Contents</h2>
       <Tree tree={tocItems} />
     </div>
   );
@@ -24,10 +24,10 @@ function Tree({ tree, level = 1 }: TreeProps) {
     <ul className={cn("m-0 list-none", { "pl-4": level !== 1 })}>
       {tree.items.map((item, index) => {
         return (
-          <li key={index} className={cn("mt-0", { "pt-2": index !== 0 })}>
+          <li key={index}>
             <a
               href={item.url}
-              className="text-muted-foreground hover:text-foreground inline-block no-underline transition-colors"
+              className="text-muted-foreground hover:text-foreground mb-2 inline-block leading-none tracking-tight no-underline transition-colors"
             >
               {item.title}
             </a>

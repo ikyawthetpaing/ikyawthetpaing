@@ -1,9 +1,6 @@
 import { IconName as IconType } from "@/types";
 import {
   AppWindow,
-  ChevronLeft,
-  ChevronRight,
-  Dribbble,
   Facebook,
   Github,
   Globe,
@@ -14,8 +11,6 @@ import {
   Menu,
   MoveRight,
   Send,
-  Server,
-  Share2,
   Smartphone,
   Twitter,
 } from "lucide-react";
@@ -37,15 +32,10 @@ export const Icons = {
   smartphone: Smartphone,
   globe: Globe,
   moveRight: MoveRight,
-  chevronLeft: ChevronLeft,
-  chevronRight: ChevronRight,
-  server: Server,
-  share: Share2,
   send: Send,
   facebook: Facebook,
   mail: Mail,
   github: Github,
-  dribbble: Dribbble,
   helpingHand: HelpingHand,
   kyax: ({ ...props }: LucideProps) => (
     <svg

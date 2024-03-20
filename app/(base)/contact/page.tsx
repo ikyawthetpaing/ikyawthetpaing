@@ -26,17 +26,17 @@ export function generateMetadata(): Metadata {
 
 export default function ContactPage() {
   return (
-    <section className="container flex flex-col gap-12">
+    <section className="mx-auto flex max-w-4xl flex-col gap-12 px-8">
       <div className="flex flex-col items-center gap-8">
-        <h1 className="max-w-4xl text-center text-6xl font-bold md:text-8xl">
-          <span className="text-muted-foreground">Say Hi!</span> and tell me
-          about your idea
+        <h1 className="text-center text-5xl font-medium md:text-7xl">
+          <span className="text-muted-foreground">Say Hi!</span> And Tell Me
+          About Your Idea.
         </h1>
         <p className="text-xl font-light">
           Have a nice works? Reach out and let&apos;s chat.
         </p>
       </div>
-      <div className="mx-auto w-full max-w-4xl">
+      <div className="mx-auto w-full">
         <ContactForm />
       </div>
     </section>

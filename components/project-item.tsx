@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/.contentlayer/generated";
 
-import { Icon } from "@/components/icons";
-
 interface Props {
   project: Project;
 }
@@ -13,36 +11,34 @@ export function ProjectItem({ project }: Props) {
     <div className="bg-accent flex h-full flex-col justify-between overflow-hidden rounded-3xl border">
       <div className="flex flex-col gap-4 p-6 sm:px-12 sm:py-8 ">
         <div className="flex gap-4">
+          <Link
+            href={project.live_demo_url}
+            target="_blank"
+            className="bg-background aspect-square h-14 rounded-full"
+          >
+            <Image
+              src={project.logo_image_url}
+              alt={project.name}
+              className="h-full w-full"
+              width={192}
+              height={192}
+            />
+          </Link>
           <div>
-            <div className="bg-background w-fit rounded-full p-4">
-              {project.projectType === "application" ? (
-                <Icon name="smartphone" className="h-5 w-5" />
-              ) : project.projectType === "website" ? (
-                <Icon name="globe" className="h-5 w-5" />
-              ) : project.projectType === "backend" ? (
-                <Icon name="server" className="h-5 w-5" />
-              ) : null}
-            </div>
-          </div>
-          <div className="flex flex-col gap-4">
-            <div>
-              <h3 className="text-2xl font-medium">{project.name}</h3>
-              <p className="text-muted-foreground">{project.description}</p>
-            </div>
+            <h3 className="text-2xl font-medium">{project.name}</h3>
+            <p className="text-muted-foreground">{project.description}</p>
           </div>
         </div>
       </div>
       <Link href={project.slug}>
-        <div className="aspect-video overflow-hidden">
-          <Image
-            src={project.image}
-            alt={project.name}
-            width={9999}
-            height={9999}
-            className="h-full w-full object-cover"
-            quality={100}
-          />
-        </div>
+        <Image
+          src={project.thumbnail_url}
+          alt={project.title}
+          width={9999}
+          height={9999}
+          className="aspect-video w-full object-cover"
+          quality={100}
+        />
       </Link>
     </div>
   );

@@ -1,8 +1,6 @@
 import Link from "next/link";
 
-import { cn, truncate } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-import { Icons } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
 interface MdxPagerItem {
   title: string;
@@ -27,28 +25,27 @@ export function MdxPager({
   }
 
   return (
-    <div
-      className={cn("flex items-center justify-between", className)}
-      {...props}
-    >
+    <div className={cn("flex justify-between gap-8", className)} {...props}>
       {pager?.prev ? (
         <Link
           href={pager.prev.slug}
-          className={cn(buttonVariants({ variant: "ghost" }))}
+          className="flex items-center justify-start gap-2 underline-offset-4 hover:underline"
         >
-          <Icons.chevronLeft className="mr-2 h-4 w-4" aria-hidden="true" />
-          {truncate(pager.prev.title, 20)}
+          ← Previous: {pager.prev.title}
         </Link>
-      ) : null}
+      ) : (
+        <div></div>
+      )}
       {pager?.next ? (
         <Link
           href={pager.next.slug}
-          className={cn(buttonVariants({ variant: "ghost" }), "ml-auto")}
+          className="flex items-center justify-end gap-2 underline-offset-4 hover:underline"
         >
-          {truncate(pager.next.title, 20)}
-          <Icons.chevronRight className="ml-2 h-4 w-4" aria-hidden="true" />
+          Next: {pager.next.title} →
         </Link>
-      ) : null}
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }

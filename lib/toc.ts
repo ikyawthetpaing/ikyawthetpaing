@@ -1,19 +1,16 @@
-// @ts-nocheck
-// TODO: I'll fix this later.
-
 import { toc } from "mdast-util-toc";
 import { remark } from "remark";
 import { visit } from "unist-util-visit";
 
 const textTypes = ["text", "emphasis", "strong", "inlineCode"];
 
-function flattenNode(node) {
-  const p = [];
-  visit(node, (node) => {
+function flattenNode(node: any): string {
+  const p: string[] = [];
+  visit(node, (node: any) => {
     if (!textTypes.includes(node.type)) return;
     p.push(node.value);
   });
-  return p.join(``);
+  return p.join("");
 }
 
 interface Item {
@@ -26,20 +23,20 @@ export interface TableOfContentsItems {
   items?: Item[];
 }
 
-function getItems(node, current): TableOfContentsItems {
+function getItems(node: any, current: any): TableOfContentsItems {
   if (!node) {
     return {};
   }
 
   if (node.type === "paragraph") {
-    visit(node, (item) => {
+    visit(node, (item: any) => {
       if (item.type === "link") {
         current.url = item.url;
-        current.title = flattenNode(node);
+        current.title = flattenNode(item);
       }
 
       if (item.type === "text") {
-        current.title = flattenNode(node);
+        current.title = flattenNode(item);
       }
     });
 
@@ -47,8 +44,7 @@ function getItems(node, current): TableOfContentsItems {
   }
 
   if (node.type === "list") {
-    current.items = node.children.map((i) => getItems(i, {}));
-
+    current.items = node.children.map((i: any) => getItems(i, {}));
     return current;
   } else if (node.type === "listItem") {
     const heading = getItems(node.children[0], {});
@@ -63,7 +59,7 @@ function getItems(node, current): TableOfContentsItems {
   return {};
 }
 
-const getToc = () => (node, file) => {
+const getToc = () => (node: any, file: any) => {
   const table = toc(node);
   const items = getItems(table.map, {});
 
@@ -75,5 +71,5 @@ export async function getTableOfContents(
 ): Promise<TableOfContentsItems> {
   const result = await remark().use(getToc).process(content);
 
-  return result.data;
+  return result.data as TableOfContentsItems;
 }

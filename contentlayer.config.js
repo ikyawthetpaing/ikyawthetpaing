@@ -1,7 +1,4 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypePrettyCode from "rehype-pretty-code";
-import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
@@ -26,6 +23,35 @@ const computedFields = {
   },
 };
 
+export const Author = defineDocumentType(() => ({
+  name: "Author",
+  filePathPattern: "author/**/*.mdx",
+  contentType: "mdx",
+  fields: {
+    name: {
+      type: "string",
+      required: true,
+    },
+    role: {
+      type: "string",
+      required: true,
+    },
+    avatar_image_url: {
+      type: "string",
+      required: true,
+    },
+    linkedin_profile_url: {
+      type: "string",
+      required: true,
+    },
+    github_profile_url: {
+      type: "string",
+      required: true,
+    },
+  },
+  computedFields,
+}));
+
 export const Post = defineDocumentType(() => ({
   name: "Post",
   filePathPattern: "blog/**/*.mdx",
@@ -48,6 +74,10 @@ export const Post = defineDocumentType(() => ({
       default: true,
     },
     image: {
+      type: "string",
+      required: true,
+    },
+    author: {
       type: "string",
       required: true,
     },
@@ -76,15 +106,35 @@ export const Project = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
-    projectType: {
+    logo_image_url: {
       type: "string",
       required: true,
     },
-    date: {
+    project_type: {
+      type: "string",
+      required: true,
+    },
+    thumbnail_url: {
+      type: "string",
+      required: true,
+    },
+    repository_url: {
+      type: "string",
+      required: true,
+    },
+    live_demo_url: {
+      type: "string",
+      required: true,
+    },
+    technologies_used: {
+      type: "string",
+      required: true,
+    },
+    publish_date: {
       type: "date",
       required: true,
     },
-    image: {
+    owner: {
       type: "string",
       required: true,
     },
@@ -94,7 +144,7 @@ export const Project = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Post, Project],
+  documentTypes: [Post, Project, Author],
   mdx: {
     remarkPlugins: [remarkGfm],
   },

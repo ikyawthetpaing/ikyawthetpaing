@@ -18,19 +18,19 @@ export function SiteFooter({ navItems }: Props) {
         <div className="container flex flex-col items-center gap-8">
           <h3 className="text-xl font-semibold">Keep In Touch</h3>
           <div className="flex flex-col gap-2 text-center">
-            <h4 className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-lg">
               {creatorConfig.location}
-            </h4>
+            </p>
             <Link
               href={`mailto:${creatorConfig.email}`}
-              className="hover:text-foreground text-muted-foreground text-2xl font-medium sm:text-2xl"
+              className="hover:text-foreground text-muted-foreground text-2xl font-medium underline-offset-4 hover:underline sm:text-2xl"
               target="_blank"
             >
               {creatorConfig.email}
             </Link>
             <Link
               href={`tel:${creatorConfig.telephone.value}`}
-              className="hover:text-foreground text-muted-foreground text-lg font-light"
+              className="hover:text-foreground text-muted-foreground text-lg font-light underline-offset-4 hover:underline"
               target="_blank"
             >
               {creatorConfig.telephone.label}

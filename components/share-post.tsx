@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { IconName } from "@/types";
+import { IconName, SocialMediaShare } from "@/types";
 
 import { Icon } from "@/components/icons";
 
@@ -41,11 +41,7 @@ function generateSocialMediaShares(props: Props) {
   )}&url=${encodeURIComponent(url)}`;
   const emailShareLink = generateEmailShareLink(title, url, description);
 
-  const shares: {
-    iconName: IconName;
-    platformName: string;
-    shareLink: string;
-  }[] = [
+  const shares: SocialMediaShare[] = [
     {
       iconName: "facebook",
       platformName: "Facebook",

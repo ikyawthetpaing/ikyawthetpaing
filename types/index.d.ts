@@ -51,11 +51,6 @@ export type SocialMediaShare = {
   shareLink: string;
 };
 
-export type SocialMediaFollowLink = {
-  platformName: string;
-  followLink: string;
-};
-
 export type SocialMediaPlatform =
   | "linkedin"
   | "facebook"
