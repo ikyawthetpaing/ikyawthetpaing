@@ -2,6 +2,8 @@ import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
+import { Icons } from "../icons";
+
 interface MdxPagerItem {
   title: string;
   slug: string;
@@ -31,7 +33,7 @@ export function MdxPager({
           href={pager.prev.slug}
           className="flex items-center justify-start gap-2 underline-offset-4 hover:underline"
         >
-          ← Previous: {pager.prev.title}
+          <Icons.moveLeft className="h-4 w-4" /> Previous: {pager.prev.title}
         </Link>
       ) : (
         <div></div>
@@ -41,7 +43,7 @@ export function MdxPager({
           href={pager.next.slug}
           className="flex items-center justify-end gap-2 underline-offset-4 hover:underline"
         >
-          Next: {pager.next.title} →
+          Next: {pager.next.title} <Icons.moveRight className="h-4 w-4" />
         </Link>
       ) : (
         <div></div>

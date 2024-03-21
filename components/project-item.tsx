@@ -25,7 +25,7 @@ export function ProjectItem({ project }: Props) {
             />
           </Link>
           <div>
-            <h3 className="text-2xl font-medium">{project.name}</h3>
+            <p className="text-2xl font-medium">{project.name}</p>
             <p className="text-muted-foreground">{project.description}</p>
           </div>
         </div>

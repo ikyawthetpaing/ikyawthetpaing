@@ -7,6 +7,7 @@ import { allPosts } from "contentlayer/generated";
 import { getAuthor, posts } from "@/lib/helpers";
 import { getTableOfContents } from "@/lib/toc";
 import { absoluteUrl, formatDate } from "@/lib/utils";
+import { Icons } from "@/components/icons";
 import { Mdx } from "@/components/mdx/mdx";
 import { MdxPager } from "@/components/mdx/mdx-pager";
 import { SharePost } from "@/components/share-post";
@@ -89,8 +90,11 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <article className="container relative flex flex-col gap-8">
-      <Link href="/blog" className="w-max underline-offset-4 hover:underline">
-        ← Back
+      <Link
+        href="/blog"
+        className="flex w-max items-center gap-2 underline-offset-4 hover:underline"
+      >
+        <Icons.moveLeft className="h-4 w-4" /> Back
       </Link>
       <div className="flex flex-col items-center gap-4">
         <Link href="/blog" className="rounded-lg border px-3 py-1 text-sm">
@@ -135,9 +139,9 @@ export default async function PostPage({ params }: PostPageProps) {
                 height={56}
               />
               <div className="flex flex-col gap-1">
-                <h3 className="flex items-center gap-2 font-semibold">
+                <p className="flex items-center gap-2 font-semibold">
                   {author.name}
-                </h3>
+                </p>
                 <p className="text-muted-foreground text-sm">{author.role}</p>
               </div>
             </Link>

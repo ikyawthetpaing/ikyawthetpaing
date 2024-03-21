@@ -4,9 +4,9 @@ import { createElement, HTMLAttributes, ReactNode } from "react";
 import Image, { ImageProps } from "next/image";
 import Link from "next/link";
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
-import { highlight } from "sugar-high";
 
 import { cn, slugify } from "@/lib/utils";
+import { HighlightedCode } from "@/components/mdx/highlighted-code";
 
 function CustomLink(props: any) {
   let href = props.href;
@@ -45,11 +45,6 @@ function Callout({
   );
 }
 
-function Code({ children, ...props }: HTMLAttributes<HTMLElement>) {
-  let codeHTML = highlight(children?.toString() || "");
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
-}
-
 function createHeading(level: number) {
   // eslint-disable-next-line react/display-name
   return ({ children }: { children: ReactNode }) => {
@@ -79,7 +74,7 @@ let components = {
   Image: RoundedImage,
   a: CustomLink,
   Callout,
-  code: Code,
+  code: HighlightedCode,
 };
 
 function CustomMDX({ ...props }: MDXRemoteProps) {

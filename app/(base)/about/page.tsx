@@ -6,6 +6,7 @@ import { creatorConfig } from "@/config/creator";
 
 import { absoluteUrl, cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { Icons } from "@/components/icons";
 
 export function generateMetadata(): Metadata {
   const title = "About Me";
@@ -55,7 +56,7 @@ export default function AboutPage() {
               href="/contact"
               className="flex items-center gap-2 underline-offset-4 hover:underline"
             >
-              Let&apos;s Chat →
+              Let&apos;s Chat <Icons.moveRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

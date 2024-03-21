@@ -1,8 +1,10 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import remarkGfm from "remark-gfm";
+import {
+  ComputedFields,
+  defineDocumentType,
+  makeSource,
+} from "contentlayer/source-files";
 
-/** @type {import('contentlayer/source-files').ComputedFields} */
-const computedFields = {
+const computedFields: ComputedFields = {
   slug: {
     type: "string",
     resolve: (doc) => `/${doc._raw.flattenedPath}`,
@@ -10,16 +12,6 @@ const computedFields = {
   slugAsParams: {
     type: "string",
     resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
-  },
-  readingTime: {
-    type: "number",
-    resolve: (doc) => {
-      const content = String(doc.body.raw);
-      const wordsPerMinute = 200;
-      const numberOfWords = content.split(/\s/g).length;
-      const minutes = numberOfWords / wordsPerMinute;
-      return Math.ceil(minutes);
-    },
   },
 };
 
@@ -82,7 +74,19 @@ export const Post = defineDocumentType(() => ({
       required: true,
     },
   },
-  computedFields,
+  computedFields: {
+    ...computedFields,
+    readingTime: {
+      type: "number",
+      resolve: (doc) => {
+        const content = doc.body.raw as string;
+        const wordsPerMinute = 200;
+        const numberOfWords = content.split(/\s/g).length;
+        const minutes = numberOfWords / wordsPerMinute;
+        return Math.ceil(minutes);
+      },
+    },
+  },
 }));
 
 export const Project = defineDocumentType(() => ({
@@ -145,7 +149,4 @@ export const Project = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: "./content",
   documentTypes: [Post, Project, Author],
-  mdx: {
-    remarkPlugins: [remarkGfm],
-  },
 });

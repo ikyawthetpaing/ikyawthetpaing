@@ -1,4 +1,4 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -46,9 +46,10 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        "bebas-neue": ["Bebas Neue", ...fontFamily.sans],
+        "bebas-neue": ["Bebas Neue", ...fontFamily.serif],
         heading: ["Montserrat Alternates", ...fontFamily.sans],
         sans: ["Inter", ...fontFamily.sans],
+        mono: ["JetBrains Mono", ...fontFamily.mono],
       },
       keyframes: {
         "accordion-down": {

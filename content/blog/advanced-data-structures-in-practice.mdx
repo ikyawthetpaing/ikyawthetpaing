@@ -124,9 +124,7 @@ class Trie:
             if char not in node.children:
                 return False
             node = node.children[char]
-        return node.is_end
-
-_of_word
+        return node.is_end_of_word
 
 # Example usage
 trie = Trie()

@@ -9,6 +9,7 @@ import Link from "next/link";
 
 import { getAuthor, projects } from "@/lib/helpers";
 import { absoluteUrl, formatDate } from "@/lib/utils";
+import { Icons } from "@/components/icons";
 import { Mdx } from "@/components/mdx/mdx";
 import { MdxPager } from "@/components/mdx/mdx-pager";
 import { SharePost } from "@/components/share-post";
@@ -90,9 +91,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <article className="container flex flex-col gap-8">
       <Link
         href="/project"
-        className="w-max underline-offset-4 hover:underline"
+        className="flex w-max items-center gap-2 underline-offset-4 hover:underline"
       >
-        ← Back
+        <Icons.moveLeft className="h-4 w-4" /> Back
       </Link>
       <div className="flex flex-col items-center gap-4">
         <Link href="/project" className="rounded-lg border px-3 py-1 text-sm">
@@ -184,9 +185,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 className="bg-muted aspect-square w-14 rounded-full"
               />
               <div>
-                <h3 className="flex items-center gap-2 font-semibold">
+                <p className="flex items-center gap-2 font-semibold">
                   {owner.name}
-                </h3>
+                </p>
                 <p className="text-muted-foreground text-sm">{owner.role}</p>
               </div>
             </Link>

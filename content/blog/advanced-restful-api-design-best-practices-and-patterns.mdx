@@ -21,7 +21,7 @@ HATEOAS (Hypermedia As The Engine Of Application State) is a fundamental concept
 
 - **Enhanced Flexibility:** The server can dynamically tailor the response based on the client's capabilities and context, promoting more efficient communication.
 
-### Example:
+**Example:**
 
 Consider a simple API endpoint that returns a list of blog posts:
 
@@ -62,7 +62,7 @@ While HATEOAS provides a solid foundation for hypermedia-driven APIs, it's impor
 
 - **Supporting Multiple Representations:** Offering different representations of the same resource based on the client's preferences enhances flexibility and interoperability.
 
-### Example:
+**Example:**
 
 An API endpoint returning a product detail could embed additional information like product reviews and offer a form for adding a new review, all within the same response:
 
@@ -124,7 +124,7 @@ APIs are not static entities. They evolve over time as new features are added, b
 
 - **Media Type Versioning:** Using different media types for different versions (e.g., `application/vnd.myapi.v1+json`).
 
-### Example:
+**Example:**
 
 ```http
 GET /api/v1/products
@@ -158,7 +158,7 @@ In the realm of API design, handling large datasets gracefully is a paramount co
    GET /api/products?cursor=eyJpZCI6MTIzfQ==
    ```
 
-### Example:
+**Example:**
 
 Consider an API endpoint that retrieves a list of products with offset-based pagination:
 
@@ -218,7 +218,7 @@ Caching is a pivotal aspect of advanced RESTful API design, enhancing performanc
    Cache-Control: public, max-age=3600
    ```
 
-### Example:
+**Example:**
 
 Let's consider client-side caching. A client requests a list of products:
 
@@ -283,7 +283,7 @@ Ensuring the security of your advanced RESTful API is paramount in the modern di
    }
    ```
 
-### Example:
+**Example:**
 
 Consider a scenario where a user requests their profile information:
 
@@ -355,7 +355,7 @@ A well-designed RESTful API is not complete without robust testing practices and
    - **Authorization:** Bearer <token>
    ```
 
-### Example:
+**Example:**
 
 For testing, imagine an integration test for creating a new product:
 
@@ -410,7 +410,7 @@ GraphQL, a query language for APIs, offers a flexible alternative to traditional
 
 - **Dynamic Responses:** Clients can define the structure of the response, enabling dynamic and efficient interactions.
 
-#### Example:
+**Example:**
 
 Consider a GraphQL query to retrieve product details:
 
@@ -458,7 +458,7 @@ As your API evolves, versioning becomes critical to maintaining compatibility wi
   GET /api/v2/products
   ```
 
-#### Example:
+**Example:**
 
 Implementing time-based versioning using URI:
 

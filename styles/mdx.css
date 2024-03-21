@@ -13,7 +13,7 @@
 }
 
 .prose a {
-  @apply underline-offset-2;
+  @apply underline-offset-2 decoration-neutral-400 dark:decoration-neutral-600 decoration-2;
 }
 
 .prose .anchor:after {
@@ -25,26 +25,8 @@
   @apply visible;
 }
 
-.prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900;
-}
-
-.prose code {
-  @apply px-1 py-0.5 rounded-lg border;
-}
-
-.prose pre code {
-  @apply p-0;
-  border: initial;
-  line-height: 1.5;
-}
-
-.prose code span {
-  @apply font-medium;
-}
-
 .prose img {
-  @apply m-0 rounded-2xl;
+  @apply m-0 rounded-2xl border;
 }
 
 .prose h2,
@@ -55,6 +37,28 @@
 
 .prose strong {
   @apply font-medium;
+}
+
+.prose h2 {
+  @apply scroll-m-12;
+}
+
+.prose h3 {
+  @apply scroll-m-8;
+}
+
+.prose pre {
+  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900;
+}
+
+.prose code {
+  @apply px-1 py-0.5 rounded-lg border font-mono font-medium text-muted-foreground;
+}
+
+.prose pre code {
+  @apply p-0;
+  border: initial;
+  line-height: 1.5;
 }
 
 .prose pre::-webkit-scrollbar {
@@ -69,27 +73,4 @@
 .prose code::after,
 .prose code::before {
   @apply hidden;
-}
-
-/* Remove Safari input shadow on mobile */
-.prose input[type="text"],
-.prose input[type="email"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.prose table {
-  display: block;
-  max-width: fit-content;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-.prose h2 {
-  @apply scroll-m-12;
-}
-
-.prose h3 {
-  @apply scroll-m-8;
 }
