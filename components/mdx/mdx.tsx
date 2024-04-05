@@ -6,7 +6,7 @@ import Link from "next/link";
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 
 import { cn, slugify } from "@/lib/utils";
-import { HighlightedCode } from "@/components/mdx/highlighted-code";
+import { Code } from "@/components/mdx/code";
 
 function CustomLink(props: any) {
   let href = props.href;
@@ -74,7 +74,7 @@ let components = {
   Image: RoundedImage,
   a: CustomLink,
   Callout,
-  code: HighlightedCode,
+  code: Code,
 };
 
 function CustomMDX({ ...props }: MDXRemoteProps) {

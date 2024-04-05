@@ -1,0 +1,94 @@
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
+
+*/
+
+.hl {
+  color: #abb2bf;
+  background: #282c34;
+}
+
+.hl-comment,
+.hl-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hl-doctag,
+.hl-keyword,
+.hl-formula {
+  color: #c678dd;
+}
+
+.hl-section,
+.hl-name,
+.hl-selector-tag,
+.hl-deletion,
+.hl-subst {
+  color: #e06c75;
+}
+
+.hl-literal {
+  color: #56b6c2;
+}
+
+.hl-string,
+.hl-regexp,
+.hl-addition,
+.hl-attribute,
+.hl-meta .hl-string {
+  color: #98c379;
+}
+
+.hl-attr,
+.hl-variable,
+.hl-template-variable,
+.hl-type,
+.hl-selector-class,
+.hl-selector-attr,
+.hl-selector-pseudo,
+.hl-number {
+  color: #d19a66;
+}
+
+.hl-symbol,
+.hl-bullet,
+.hl-link,
+.hl-meta,
+.hl-selector-id,
+.hl-title {
+  color: #61aeee;
+}
+
+.hl-built_in,
+.hl-title.class_,
+.hl-class .hl-title {
+  color: #e6c07b;
+}
+
+.hl-emphasis {
+  font-style: italic;
+}
+
+.hl-strong {
+  font-weight: bold;
+}
+
+.hl-link {
+  text-decoration: underline;
+}

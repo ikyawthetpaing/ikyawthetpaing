@@ -1,11 +1,13 @@
+import "@/styles/code.css";
+
 import { HTMLAttributes } from "react";
 import { rehype } from "rehype";
 import rehypeHighlight from "rehype-highlight";
 
-export async function HighlightedCode({
+export async function Code({
   children,
   ...props
-}: HTMLAttributes<HTMLElement>): Promise<JSX.Element> {
+}: HTMLAttributes<HTMLElement>) {
   const processedCode = await processCodeBlock(
     children?.toString(),
     props.className
@@ -19,12 +21,12 @@ export async function HighlightedCode({
 }
 
 async function processCodeBlock(
-  children: string | undefined,
+  children?: string,
   className?: string
 ): Promise<string> {
   const processedFile = await rehype()
     .data("settings", { fragment: true })
-    .use(rehypeHighlight, { prefix: "--sh-" })
+    .use(rehypeHighlight, { prefix: "hl-" })
     .process(
       `<pre><code className="${className}">${children || ""}</code></pre>`
     );

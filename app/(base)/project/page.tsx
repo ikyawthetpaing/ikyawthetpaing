@@ -6,7 +6,7 @@ import { ProjectItem } from "@/components/project-item";
 
 const title = "Projects";
 const description =
-  "Explore my projects that demonstrate my ability to design, develop, and deliver high-quality software solutions.";
+  "Explore my projects that demonstrate my ability to design, develop, and deliver high-quality products.";
 
 export const metadata: Metadata = {
   title,

@@ -9,7 +9,7 @@ export const siteConfig: SiteConfig = {
   name: creatorConfig.name,
   title: `${creatorConfig.name} | ${creatorConfig.role}`,
   description:
-    "Discover my world of software development expertise through a portfolio of innovative projects and meticulously crafted code.",
+    "Discover my world of web development expertise through a portfolio of innovative projects and meticulously crafted code.",
   siteUrl: absoluteUrl(),
   ogImageUrl: absoluteUrl("/og.jpg"),
   authors: [

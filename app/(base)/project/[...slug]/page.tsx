@@ -91,9 +91,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <article className="container flex flex-col gap-8">
       <Link
         href="/project"
-        className="flex w-max items-center gap-2 underline-offset-4 hover:underline"
+        className="w-max underline-offset-4 hover:underline"
       >
-        <Icons.moveLeft className="h-4 w-4" /> Back
+        &#129120; Back
       </Link>
       <div className="flex flex-col items-center gap-4">
         <Link href="/project" className="rounded-lg border px-3 py-1 text-sm">

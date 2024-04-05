@@ -8,7 +8,7 @@ import { creatorConfig } from "@/config/creator";
 import { posts, projects } from "@/lib/helpers";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { Icon, Icons } from "@/components/icons";
+import { Icon } from "@/components/icons";
 import { PostItem } from "@/components/post-item";
 import { ProjectItem } from "@/components/project-item";
 
@@ -208,7 +208,7 @@ const BigClientsSection = ({ bigClients }: { bigClients: ClientInfo[] }) => (
       <div className="flex flex-col gap-12 md:flex-row md:justify-center">
         <div className="flex items-center gap-4">
           <h3 className="text-6xl font-medium">
-            {new Date().getFullYear() - 2021}
+            {new Date().getFullYear() - 2022}
           </h3>
           <p className="text-muted-foreground">
             Years
@@ -217,7 +217,7 @@ const BigClientsSection = ({ bigClients }: { bigClients: ClientInfo[] }) => (
           </p>
         </div>
         <div className="flex items-center gap-4">
-          <h3 className="text-6xl font-medium">45</h3>
+          <h3 className="text-6xl font-medium">8</h3>
           <p className="text-muted-foreground">
             Satisfied
             <br />
@@ -225,11 +225,11 @@ const BigClientsSection = ({ bigClients }: { bigClients: ClientInfo[] }) => (
           </p>
         </div>
         <div className="flex items-center gap-4">
-          <h3 className="text-6xl font-medium">128</h3>
+          <h3 className="text-6xl font-medium">32</h3>
           <p className="text-muted-foreground">
             Projects Completed In
             <br />
-            34 Countries
+            16 Countries
           </p>
         </div>
       </div>
@@ -262,9 +262,9 @@ const WorksAndBlogsSection = ({
       <div className="flex justify-end">
         <Link
           href={linkHref}
-          className="flex items-center gap-2 font-medium duration-150 hover:gap-4 hover:underline hover:underline-offset-4"
+          className="font-medium hover:underline hover:underline-offset-4"
         >
-          Explore More <Icons.moveRight className="h-4 w-4" />
+          Explore More &#129122;
         </Link>
       </div>
     </div>

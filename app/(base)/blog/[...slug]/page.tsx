@@ -90,11 +90,8 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <article className="container relative flex flex-col gap-8">
-      <Link
-        href="/blog"
-        className="flex w-max items-center gap-2 underline-offset-4 hover:underline"
-      >
-        <Icons.moveLeft className="h-4 w-4" /> Back
+      <Link href="/blog" className="w-max underline-offset-4 hover:underline">
+        &#129120; Back
       </Link>
       <div className="flex flex-col items-center gap-4">
         <Link href="/blog" className="rounded-lg border px-3 py-1 text-sm">

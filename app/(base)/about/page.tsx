@@ -54,9 +54,9 @@ export default function AboutPage() {
           <div className="flex justify-end">
             <Link
               href="/contact"
-              className="flex items-center gap-2 underline-offset-4 hover:underline"
+              className="underline-offset-4 hover:underline"
             >
-              Let&apos;s Chat <Icons.moveRight className="h-4 w-4" />
+              Let&apos;s Chat &#129122;
             </Link>
           </div>
         </div>

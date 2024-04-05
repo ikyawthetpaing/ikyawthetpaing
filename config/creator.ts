@@ -4,8 +4,8 @@ import { generateProfileLink } from "@/lib/helpers";
 
 export const creatorConfig: CreatorConfig = {
   name: "Kyaw Thet Paing",
-  role: "Software Engineer",
-  bio: "I am a software engineer with a passion for building innovative and user-friendly applications. I have a strong foundation in full stack development, including experience with a variety of programming languages, frameworks, and databases.",
+  role: "Web Developer",
+  bio: "I am a web developer with a passion for building innovative and user-friendly websites. I have a strong foundation in full stack development, including experience with a variety of programming languages, frameworks, and databases.",
   username: "ikyawthetpaing",
   email: "ikyawthetpaing@gmail.com",
   avatarImageUrl: "/images/portrait-1.jpg",
@@ -78,9 +78,9 @@ export const creatorConfig: CreatorConfig = {
     },
   ],
   skills: [
-    "Programming Languages: Java, Python, C++, JavaScript",
+    "Programming Languages: Java, C#, JavaScript, PHP, Python, C/C++, Rust",
     "Web Development: HTML, CSS, JavaScript, React, Angular, Node.js",
-    "Backend Development: Node.js, Express.js, Django, Flask",
+    "Backend Development: Node.js, Express.js, Django, Flask, Laravel, .NET",
     "Database Management: MySQL, MongoDB, PostgreSQL, Redis",
     "Cloud Computing: AWS, Azure, Google Cloud Platform",
     "Version Control: Git, GitHub, GitLab",

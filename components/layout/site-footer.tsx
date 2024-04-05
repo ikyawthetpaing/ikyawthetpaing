@@ -52,7 +52,7 @@ export function SiteFooter({ navItems }: Props) {
           </ul>
         </div>
         <div className="container flex justify-between gap-12">
-          <Link href="/">
+          <Link href="/" className="h-max">
             <Icons.kyax className="h-5" />
           </Link>
           <MainNavItems
