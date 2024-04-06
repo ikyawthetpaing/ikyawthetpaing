@@ -14,7 +14,7 @@ export function ProjectItem({ project }: Props) {
           <Link
             href={project.live_demo_url}
             target="_blank"
-            className="bg-background aspect-square h-14 rounded-full"
+            className="bg-background aspect-square h-14 rounded-full border"
           >
             <Image
               src={project.logo_image_url}

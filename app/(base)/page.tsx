@@ -277,10 +277,10 @@ const WorkInquiry = () => (
       <div>
         <Image
           src="/images/pet.png"
-          alt="Pet Image"
+          alt="Cute border collie dog cartoon"
           width={9999}
           height={9999}
-          className="ml-12 w-28 translate-y-2 object-cover"
+          className="ml-12 w-28 translate-y-1 object-cover"
         />
       </div>
       <div className="bg-accent rounded-3xl p-8 sm:p-12 md:p-24 lg:px-32">
