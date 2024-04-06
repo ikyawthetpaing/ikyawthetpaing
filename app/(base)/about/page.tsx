@@ -56,7 +56,7 @@ export default function AboutPage() {
               href="/contact"
               className="underline-offset-4 hover:underline"
             >
-              Let&apos;s Chat &#129122;
+              {"Let's Chat ->"}
             </Link>
           </div>
         </div>

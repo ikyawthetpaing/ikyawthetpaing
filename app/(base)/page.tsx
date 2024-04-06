@@ -8,7 +8,7 @@ import { creatorConfig } from "@/config/creator";
 import { posts, projects } from "@/lib/helpers";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { Icon } from "@/components/icons";
+import { Icon, Icons } from "@/components/icons";
 import { PostItem } from "@/components/post-item";
 import { ProjectItem } from "@/components/project-item";
 
@@ -264,7 +264,7 @@ const WorksAndBlogsSection = ({
           href={linkHref}
           className="font-medium hover:underline hover:underline-offset-4"
         >
-          Explore More &#129122;
+          {"Explore More ->"}
         </Link>
       </div>
     </div>

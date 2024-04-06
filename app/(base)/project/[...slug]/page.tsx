@@ -93,7 +93,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         href="/project"
         className="w-max underline-offset-4 hover:underline"
       >
-        &#129120; Back
+        {"<- Back"}
       </Link>
       <div className="flex flex-col items-center gap-4">
         <Link href="/project" className="rounded-lg border px-3 py-1 text-sm">

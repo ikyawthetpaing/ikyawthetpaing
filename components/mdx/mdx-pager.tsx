@@ -31,9 +31,10 @@ export function MdxPager({
       {pager?.prev ? (
         <Link
           href={pager.prev.slug}
-          className="flex justify-start underline-offset-4 hover:underline"
+          className="underline-offset-4 hover:underline"
         >
-          &#129120; Previous: {pager.prev.title}
+          {`<- Previous: `}{" "}
+          <span className="text-muted-foreground">{pager.prev.title}</span>
         </Link>
       ) : (
         <div></div>
@@ -41,9 +42,10 @@ export function MdxPager({
       {pager?.next ? (
         <Link
           href={pager.next.slug}
-          className="flex justify-end underline-offset-4 hover:underline"
+          className="underline-offset-4 hover:underline"
         >
-          Next: {pager.next.title} &#129122;
+          <span className="text-muted-foreground">{pager.next.title}</span>
+          {`: Next ->`}
         </Link>
       ) : (
         <div></div>

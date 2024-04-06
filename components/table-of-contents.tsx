@@ -7,7 +7,7 @@ interface TocProps {
 
 export function TableOfContents({ tocItems }: TocProps) {
   return (
-    <div className="relative flex flex-col gap-4 border-b pb-6">
+    <div className="flex flex-col gap-4 border-b pb-6">
       <h2 className="font-heading font-bold">Table of Contents</h2>
       <Tree tree={tocItems} />
     </div>
