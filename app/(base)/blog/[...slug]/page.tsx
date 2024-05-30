@@ -109,7 +109,7 @@ export default async function PostPage({ params }: PostPageProps) {
               </time>
             )}
             {post.date ? <span>•</span> : null}
-            <div>{post.readingTime}min read</div>
+            <div>{post.readingTime} min read</div>
           </div>
           <Image
             src={post.image}

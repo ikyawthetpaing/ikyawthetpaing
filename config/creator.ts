@@ -4,8 +4,8 @@ import { generateProfileLink } from "@/lib/helpers";
 
 export const creatorConfig: CreatorConfig = {
   name: "Kyaw Thet Paing",
-  role: "Web Designer & Developer",
-  bio: "I'm a freelance web developer passionate about crafting innovative and user-friendly websites that make a real impact.  I bring a full-stack skillset to the table, with experience in various programming languages, frameworks, and databases to tackle any project you have in mind.",
+  role: "Full-Stack Developer & Web Designer",
+  bio: "I'm a freelance full-stack developer & web designer passionate about crafting innovative and user-friendly websites that make a real impact.",
   username: "ikyawthetpaing",
   email: "ikyawthetpaing@gmail.com",
   avatarImageUrl: "/images/portrait-1.jpg",

@@ -91,7 +91,7 @@ const IntroSection = ({
       <div className="flex flex-1 flex-col gap-4 max-md:items-end md:flex-row md:justify-center">
         <div className="flex flex-col justify-center gap-12">
           <div className="flex flex-col gap-6">
-            <h1 className="flex flex-col-reverse gap-4">
+            <h1 className="flex flex-col gap-4">
               <span className="font-bebas-neue text-7xl font-medium uppercase lg:text-8xl">
                 {name}
               </span>
