@@ -20,7 +20,7 @@ export function MainNavSheet({ navItems }: Props) {
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <button className="md:hidden">
-          <Icons.menu className="h-7 w-7" />
+          <Icons.menu className="size-7" />
         </button>
       </SheetTrigger>
       <SheetContent>

@@ -74,7 +74,7 @@ export default function AboutPage() {
                   alt={image.alt}
                   width={9999}
                   height={9999}
-                  className="h-full w-full object-cover"
+                  className="size-full object-cover"
                   quality={100}
                 />
               </div>

@@ -4,7 +4,7 @@ import {
   Facebook,
   Github,
   Globe,
-  HelpingHand,
+  // HelpingHand,
   Linkedin,
   LucideProps,
   Mail,
@@ -12,6 +12,7 @@ import {
   Send,
   Smartphone,
   Twitter,
+  Store
 } from "lucide-react";
 
 interface Props extends LucideProps {
@@ -34,7 +35,8 @@ export const Icons = {
   facebook: Facebook,
   mail: Mail,
   github: Github,
-  helpingHand: HelpingHand,
+  // helpingHand: HelpingHand,
+  store: Store,
   kyax: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

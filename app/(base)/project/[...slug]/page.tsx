@@ -108,15 +108,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             {formatDate(project.publish_date)}
           </time>
         </div>
-        <Image
-          src={project.thumbnail_url}
-          alt={project.title}
-          width={9999}
-          height={9999}
-          className="bg-muted aspect-video w-full rounded-2xl border object-cover sm:rounded-3xl"
-          priority
-          quality={100}
-        />
+        <div className="bg-muted aspect-video w-full overflow-hidden rounded-2xl">
+          <Image
+            src={project.thumbnail_url}
+            alt={project.title}
+            width={9999}
+            height={9999}
+            priority
+            quality={100}
+          />
+        </div>
       </div>
       <div className="flex gap-8 max-md:flex-col">
         <div className="flex flex-col gap-8 md:w-60 lg:w-80">
@@ -148,26 +149,32 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   {formatDate(project.publish_date)}
                 </time>
               </li>
-              <li>
-                Links:{" "}
-                <span className="text-muted-foreground">
-                  <Link
-                    href={project.live_demo_url}
-                    className="underline underline-offset-4"
-                    target="_blank"
-                  >
-                    Preview
-                  </Link>
-                  ,{" "}
-                  <Link
-                    href={project.repository_url}
-                    className="underline underline-offset-4"
-                    target="_blank"
-                  >
-                    Source Code
-                  </Link>
-                </span>
-              </li>
+              {(project.live_demo_url || project.repository_url) && (
+                <li>
+                  Links:{" "}
+                  <span className="text-muted-foreground">
+                    {project.live_demo_url && (
+                      <Link
+                        href={project.live_demo_url}
+                        className="underline underline-offset-4"
+                        target="_blank"
+                      >
+                        Preview
+                      </Link>
+                    )}
+                    {project.live_demo_url && project.repository_url && ", "}
+                    {project.repository_url && (
+                      <Link
+                        href={project.repository_url}
+                        className="underline underline-offset-4"
+                        target="_blank"
+                      >
+                        Source Code
+                      </Link>
+                    )}
+                  </span>
+                </li>
+              )}
             </ul>
           </div>
 
@@ -182,7 +189,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 alt={owner.name}
                 width={56}
                 height={56}
-                className="bg-muted aspect-square w-14 rounded-full"
+                className="bg-muted aspect-square w-14 rounded-full object-cover"
               />
               <div>
                 <p className="flex items-center gap-2 font-semibold">

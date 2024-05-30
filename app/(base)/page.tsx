@@ -21,7 +21,7 @@ export default function HomePage() {
     socialMediaLinks,
     portraitSketchImage,
     services,
-    // bigClients,
+    bigClients,
   } = creatorConfig;
 
   return (
@@ -35,7 +35,7 @@ export default function HomePage() {
         socialMediaLinks={socialMediaLinks}
       />
       <ServicesSection services={services} />
-      {/* <BigClientsSection bigClients={bigClients} /> */}
+      <BigClientsSection bigClients={bigClients} />
       <WorksAndBlogsSection
         title="Works"
         description="Explore carefully curated projects that represent my best work."
@@ -81,7 +81,7 @@ const IntroSection = ({
               <Link href={media.href} target="_blank">
                 <Icon
                   name={media.icon}
-                  className="text-muted-foreground hover:text-foreground h-5 w-5 transition-all duration-150"
+                  className="text-muted-foreground hover:text-foreground size-5 transition-all duration-150"
                 />
               </Link>
             </li>
@@ -91,11 +91,11 @@ const IntroSection = ({
       <div className="flex flex-1 flex-col gap-4 max-md:items-end md:flex-row md:justify-center">
         <div className="flex flex-col justify-center gap-12">
           <div className="flex flex-col gap-6">
-            <h1 className="flex flex-col gap-4">
+            <h1 className="flex flex-col-reverse gap-4">
               <span className="font-bebas-neue text-7xl font-medium uppercase lg:text-8xl">
                 {name}
               </span>
-              <span className="font-sans text-xl font-light uppercase md:text-2xl">
+              <span className="text-muted-foreground font-sans text-lg font-light uppercase md:text-xl">
                 {role}
               </span>
             </h1>
@@ -129,7 +129,7 @@ const IntroSection = ({
             alt={portraitSketchImage.alt}
             width={9999}
             height={9999}
-            className="h-full w-full object-cover"
+            className="size-full object-cover"
             quality={100}
             priority
           />
@@ -155,7 +155,7 @@ const ServicesSection = ({ services }: { services: Service[] }) => (
                 <div className="bg-accent flex w-full flex-col gap-8 rounded-3xl p-6 sm:w-3/4 sm:px-12 sm:py-8">
                   <div className="flex flex-col gap-4">
                     <div className="bg-background w-fit rounded-full p-4">
-                      <Icon name={service.icon} className="h-5 w-5" />
+                      <Icon name={service.icon} className="size-5" />
                     </div>
                     <h2 className="text-xl font-medium">{service.title}</h2>
                     <p className="text-muted-foreground max-w-lg">
@@ -208,7 +208,7 @@ const BigClientsSection = ({ bigClients }: { bigClients: ClientInfo[] }) => (
       <div className="flex flex-col gap-12 md:flex-row md:justify-center">
         <div className="flex items-center gap-4">
           <h3 className="text-6xl font-medium">
-            {new Date().getFullYear() - 2022}
+            {new Date().getFullYear() - 2021}
           </h3>
           <p className="text-muted-foreground">
             Years
@@ -217,7 +217,7 @@ const BigClientsSection = ({ bigClients }: { bigClients: ClientInfo[] }) => (
           </p>
         </div>
         <div className="flex items-center gap-4">
-          <h3 className="text-6xl font-medium">8</h3>
+          <h3 className="text-6xl font-medium">12</h3>
           <p className="text-muted-foreground">
             Satisfied
             <br />
@@ -225,7 +225,7 @@ const BigClientsSection = ({ bigClients }: { bigClients: ClientInfo[] }) => (
           </p>
         </div>
         <div className="flex items-center gap-4">
-          <h3 className="text-6xl font-medium">32</h3>
+          <h3 className="text-6xl font-medium">36</h3>
           <p className="text-muted-foreground">
             Projects Completed In
             <br />

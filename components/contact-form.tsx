@@ -121,7 +121,7 @@ export function ContactForm() {
           )}
         />
         <Button className="sm:ml-auto sm:w-fit" disabled={isSending}>
-          Send Message <Icons.send className="ml-2 h-4 w-4" />
+          Send Message <Icons.send className="ml-2 size-4" />
         </Button>
       </form>
     </Form>

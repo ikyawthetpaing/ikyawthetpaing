@@ -18,7 +18,7 @@ export function SharePost(props: Props) {
           <li className="bg-muted text-muted-foreground hover:text-foreground rounded-xl p-2 transition-all duration-150">
             <Icon
               name={iconName}
-              className="h-4 w-4"
+              className="size-4"
               aria-label={platformName}
             />
           </li>

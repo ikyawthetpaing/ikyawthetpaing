@@ -4,8 +4,8 @@ import { generateProfileLink } from "@/lib/helpers";
 
 export const creatorConfig: CreatorConfig = {
   name: "Kyaw Thet Paing",
-  role: "Web Developer",
-  bio: "I am a web developer with a passion for building innovative and user-friendly websites. I have a strong foundation in full stack development, including experience with a variety of programming languages, frameworks, and databases.",
+  role: "Web Designer & Developer",
+  bio: "I'm a freelance web developer passionate about crafting innovative and user-friendly websites that make a real impact.  I bring a full-stack skillset to the table, with experience in various programming languages, frameworks, and databases to tackle any project you have in mind.",
   username: "ikyawthetpaing",
   email: "ikyawthetpaing@gmail.com",
   avatarImageUrl: "/images/portrait-1.jpg",
@@ -38,24 +38,24 @@ export const creatorConfig: CreatorConfig = {
   ],
   services: [
     {
+      title: "Website Design & Development",
+      description:
+        "I craft visually stunning and user-friendly websites that are tailored to your brand and business goals. I handle both the design and development aspects, ensuring a seamless and effective online presence.",
+      icon: "appWindow",
+      href: "/project",
+    },
+    {
+      title: "E-commerce Development",
+      description:
+        "I offer comprehensive e-commerce development services to help businesses establish a strong online presence. From custom shopping carts to secure payment gateways, I create robust and scalable e-commerce platforms tailored to your specific requirements.",
+      icon: "store",
+      href: "/project",
+    },
+    {
       title: "Custom Software Development",
       description:
         "I offer tailored solutions for clients seeking custom software development. Whether it's web applications, mobile apps, or enterprise-level systems, I specialize in creating innovative and efficient software solutions that meet specific business needs.",
       icon: "smartphone",
-      href: "/project",
-    },
-    {
-      title: "Full Stack Development",
-      description:
-        "I provide end-to-end development services, covering both frontend and backend aspects of applications. From creating intuitive user interfaces to designing robust server-side architecture, I ensure seamless integration and optimal performance across the entire software stack.",
-      icon: "globe",
-      href: "/project",
-    },
-    {
-      title: "Technical Consultation and Support",
-      description:
-        "I offer technical consultation services to guide clients through the software development lifecycle. This includes advising on technology stack selection, system architecture, and best practices. Additionally, I provide ongoing support to address any issues, implement updates, and ensure the continued success of the developed software.",
-      icon: "helpingHand",
       href: "/project",
     },
   ],

@@ -43,7 +43,7 @@ export function SiteFooter({ navItems }: Props) {
                   <div className="bg-accent group rounded-full p-4">
                     <Icon
                       name={media.icon}
-                      className="text-muted-foreground group-hover:text-foreground h-6 w-6"
+                      className="text-muted-foreground group-hover:text-foreground size-6"
                     />
                   </div>
                 </Link>

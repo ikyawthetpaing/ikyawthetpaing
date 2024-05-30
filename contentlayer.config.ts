@@ -110,10 +110,6 @@ export const Project = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
-    logo_image_url: {
-      type: "string",
-      required: true,
-    },
     project_type: {
       type: "string",
       required: true,
@@ -124,11 +120,9 @@ export const Project = defineDocumentType(() => ({
     },
     repository_url: {
       type: "string",
-      required: true,
     },
     live_demo_url: {
       type: "string",
-      required: true,
     },
     technologies_used: {
       type: "string",
