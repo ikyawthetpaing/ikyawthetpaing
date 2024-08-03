@@ -1,7 +1,6 @@
 import "@/styles/globals.css";
 
 import { Metadata, Viewport } from "next";
-import { Inter as FontSans } from "next/font/google";
 
 import { env } from "@/env.mjs";
 import { siteConfig } from "@/config/site";
@@ -10,8 +9,6 @@ import { absoluteUrl, cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@/components/analytics";
 import { ThemeProvider } from "@/components/theme-provider";
-
-// const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -73,12 +70,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "bg-background min-h-screen font-sans antialiased"
-          // fontSans.variable
-        )}
-      >
+      <body className={cn("bg-background min-h-screen font-sans antialiased")}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
           <Analytics />

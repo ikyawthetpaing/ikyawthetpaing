@@ -200,7 +200,10 @@ const BigClientsSection = ({ bigClients }: { bigClients: ClientInfo[] }) => (
         <ul className="grid grid-cols-2 md:grid-cols-4">
           {bigClients.map((bigClient, index) => (
             <li key={index} className="flex-1 shrink-0 px-12">
-              <Icon name={bigClient.icon} className="h-24" />
+              <Icon
+                name={bigClient.icon}
+                className="fill-muted-foreground h-24"
+              />
             </li>
           ))}
         </ul>

@@ -4,7 +4,7 @@ import { generateProfileLink } from "@/lib/helpers";
 
 export const creatorConfig: CreatorConfig = {
   name: "Kyaw Thet Paing",
-  role: "Full-Stack Developer & Web Designer",
+  role: "Web Development & Design Expert",
   bio: "I'm a freelance full-stack developer & web designer passionate about crafting innovative and user-friendly websites that make a real impact.",
   username: "ikyawthetpaing",
   email: "ikyawthetpaing@gmail.com",
@@ -12,7 +12,7 @@ export const creatorConfig: CreatorConfig = {
   resumeFileUrl: "/files/resume.pdf",
   location: "Bangkok, Thailand",
   telephone: {
-    label: "(+66) 937-418-692",
+    label: "(+66) 93-741-8692",
     value: "+66937418692",
   },
   portraitSketchImage: {
@@ -38,7 +38,7 @@ export const creatorConfig: CreatorConfig = {
   ],
   services: [
     {
-      title: "Website Design & Development",
+      title: "Website Development & Design",
       description:
         "I craft visually stunning and user-friendly websites that are tailored to your brand and business goals. I handle both the design and development aspects, ensuring a seamless and effective online presence.",
       icon: "appWindow",

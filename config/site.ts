@@ -11,7 +11,7 @@ export const siteConfig: SiteConfig = {
   description:
     "Discover my world of web development expertise through a portfolio of innovative projects and meticulously crafted code.",
   siteUrl: absoluteUrl(),
-  ogImageUrl: absoluteUrl("/og.jpg"),
+  ogImageUrl: absoluteUrl("/og.png"),
   authors: [
     {
       name: creatorConfig.name,

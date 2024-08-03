@@ -6,7 +6,6 @@ import { creatorConfig } from "@/config/creator";
 
 import { absoluteUrl, cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { Icons } from "@/components/icons";
 
 export function generateMetadata(): Metadata {
   const title = "About Me";
@@ -39,7 +38,7 @@ export default function AboutPage() {
       <div className="flex flex-col gap-8 sm:flex-row">
         <div className="flex-1">
           <p className="text-4xl uppercase tracking-tighter md:text-5xl">
-            I&apos;m {name}. A {role}, creator, and puzzle solver.
+            I&apos;m {name}. The {role}.
           </p>
         </div>
         <div className="flex flex-1 flex-col justify-end gap-8">
