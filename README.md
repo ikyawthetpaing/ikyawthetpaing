@@ -1,6 +1,6 @@
 👋 Hello there! I'm Kyaw Thet Paing, a passionate software engineer turning coffee into code. I love solving complex problems with clean and efficient solutions.
 
-🌐 Explore my portfolio and blog at [ikyawthetpaing.vercel.app](https://ikyawthetpaing.vercel.app). Connect with me on [LinkedIn](https://linkedin.com/in/ikyawthetpaing) or [X(Twitter)](https://twitter.com/ikyawthetpaing) for professional networking and more exciting content!
+🌐 Explore my portfolio and blog at [ikyawthetpaing.com](https://ikyawthetpaing.com). Connect with me on [LinkedIn](https://linkedin.com/in/ikyawthetpaing) or [X(Twitter)](https://twitter.com/ikyawthetpaing) for professional networking and more exciting content!
 
 💬 Ask me about software development, REST API design, and database management. Let's collaborate and build amazing things together!
 
