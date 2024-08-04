@@ -46,8 +46,6 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        "bebas-neue": ["Bebas Neue", ...fontFamily.serif],
-        heading: ["Montserrat Alternates", ...fontFamily.sans],
         sans: ["Inter", ...fontFamily.sans],
         mono: ["JetBrains Mono", ...fontFamily.mono],
       },

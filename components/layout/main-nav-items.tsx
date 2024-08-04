@@ -11,10 +11,10 @@ interface Props extends HTMLAttributes<HTMLUListElement> {
   navItems: NavItem[];
 }
 
-export function MainNavItems({ navItems, ...props }: Props) {
+export function MainNavItems({ navItems, className, ...props }: Props) {
   const pathname = usePathname();
   return (
-    <ul {...props}>
+    <ul className={cn("text-lg font-medium uppercase", className)} {...props}>
       {navItems.map((navItem, index) => {
         const isActive =
           pathname === navItem.href ||
@@ -24,7 +24,7 @@ export function MainNavItems({ navItems, ...props }: Props) {
             <Link
               href={navItem.href}
               className={cn(
-                "text-lg font-medium uppercase underline-offset-4 hover:underline",
+                "underline-offset-4 hover:underline",
                 isActive ? "text-foreground underline" : "text-muted-foreground"
               )}
             >
