@@ -7,7 +7,7 @@ export const creatorConfig: CreatorConfig = {
   role: "Web Development & Design Expert",
   bio: "I'm a freelance full-stack developer & web designer passionate about crafting innovative and user-friendly websites that make a real impact.",
   username: "ikyawthetpaing",
-  email: "ikyawthetpaing@gmail.com",
+  email: "contact@ikyawthetpaing.com",
   avatarImageUrl: "/images/portrait-1.jpg",
   resumeFileUrl: "/files/resume.pdf",
   location: "Bangkok, Thailand",

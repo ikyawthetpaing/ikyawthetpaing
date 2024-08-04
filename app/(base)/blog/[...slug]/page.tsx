@@ -108,7 +108,7 @@ export default async function PostPage({ params }: PostPageProps) {
               </time>
             )}
             {post.date ? <span>•</span> : null}
-            <div>{post.readingTime} min read</div>
+            <p>{post.readingTime} min read</p>
           </div>
           <Image
             src={post.image}
@@ -138,9 +138,9 @@ export default async function PostPage({ params }: PostPageProps) {
                     height={56}
                   />
                   <div className="flex flex-col gap-1">
-                    <p className="flex items-center gap-2 font-semibold">
+                    <h3 className="flex items-center gap-2 font-semibold">
                       {author.name}
-                    </p>
+                    </h3>
                     <p className="text-muted-foreground text-sm">
                       {author.role}
                     </p>

@@ -91,12 +91,12 @@ const IntroSection = ({
       <div className="flex flex-1 flex-col gap-4 max-md:items-end md:flex-row md:justify-center">
         <div className="flex flex-col justify-center gap-12">
           <div className="flex flex-col gap-6">
-            <h1 className="flex flex-col gap-4">
+            <h1>
               <span className="text-4xl font-medium uppercase sm:text-5xl md:text-6xl lg:text-7xl">
                 {name}
               </span>
-              <span className="text-muted-foreground text-lg font-light uppercase md:text-xl">
-                {role}
+              <span className="text-muted-foreground mt-4 block text-lg font-light uppercase md:text-xl">
+                {" – " + role}
               </span>
             </h1>
             <p className="text-muted-foreground max-w-lg">{bio}</p>

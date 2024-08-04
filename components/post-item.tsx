@@ -18,10 +18,13 @@ export function PostItem({ post }: Props) {
         height={9999}
         className="bg-muted aspect-video w-full rounded-3xl border object-cover"
       />
-      <h2 className="font-heading text-2xl font-medium">{post.title}</h2>
-      <p className="text-muted-foreground text-sm uppercase">
+      <h3 className="font-heading text-2xl font-medium">{post.title}</h3>
+      <time
+        dateTime={post.date}
+        className="text-muted-foreground text-sm uppercase"
+      >
         {formatDate(post.date)}
-      </p>
+      </time>
       <p className="text-muted-foreground">{post.description}</p>
       <Link href={post.slug} className="absolute inset-0">
         <span className="sr-only">View Article</span>

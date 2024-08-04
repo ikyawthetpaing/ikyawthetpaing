@@ -2,7 +2,6 @@ import Link from "next/link";
 import { NavItem } from "@/types";
 
 import { creatorConfig } from "@/config/creator";
-import { siteConfig } from "@/config/site";
 
 import { Icon, Icons } from "@/components/icons";
 import { MainNavItems } from "@/components/layout/main-nav-items";
@@ -18,12 +17,12 @@ export function SiteFooter({ navItems }: Props) {
         <div className="container flex flex-col items-center gap-8">
           <h3 className="text-xl font-semibold">Keep In Touch</h3>
           <div className="flex flex-col gap-2 text-center">
-            <p className="text-muted-foreground text-lg">
+            <span className="text-muted-foreground text-lg">
               {creatorConfig.location}
-            </p>
+            </span>
             <Link
               href={`mailto:${creatorConfig.email}`}
-              className="hover:text-foreground text-muted-foreground text-2xl font-medium underline-offset-4 hover:underline sm:text-2xl"
+              className="hover:text-foreground text-muted-foreground text-xl font-medium underline-offset-4 hover:underline sm:text-2xl"
               target="_blank"
             >
               {creatorConfig.email}
@@ -61,7 +60,7 @@ export function SiteFooter({ navItems }: Props) {
           />
         </div>
         <p className="text-center text-sm uppercase">
-          &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
+          &copy; {new Date().getFullYear()} {creatorConfig.username}. All rights
           reserved
         </p>
         <ul className="flex">
